@@ -23,11 +23,17 @@
 
 .boxes {
     background: darkgreen;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
-.boxes > h2, p {
+.boxes > h2 {
     margin: 4px;
     font-size: 90%;
     adding: 5px;
 }
+
+.boxes > p {
+    margin: 4px;
+    font-size: 90%;
+    text-align: center;
+    adding: 5px;
