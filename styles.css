@@ -29,11 +29,12 @@
 .boxes > h2 {
     margin: 4px;
     font-size: 90%;
-    adding: 5px;
+    padding: 5px;
 }
 
 .boxes > p {
     margin: 4px;
     font-size: 90%;
     text-align: center;
-    adding: 5px;
+    padding: 5px;
+}
