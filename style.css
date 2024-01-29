@@ -1,0 +1,19 @@
+.all-boxers {
+    margin: 0;
+    padding: 5px;
+    background-color: yellowgreen;
+  }
+  
+  .all-boxers > h1, .boxes {
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  .boxes {
+    background: white;
+  }
+  
+  .boxes > h2, p {
+    margin: 4px;
+    font-size: 90%;
+  }
