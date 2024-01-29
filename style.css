@@ -2,18 +2,18 @@
     margin: 0;
     padding: 5px;
     background-color: yellowgreen;
-  }
-  
-  .all-boxers > h1, .boxes {
+}
+
+.all-boxers > h1, .boxes {
     margin: 10px;
     padding: 5px;
-  }
-  
-  .boxes {
+}
+
+.boxes {
     background: white;
-  }
-  
-  .boxes > h2, p {
+}
+
+.boxes > h2, p {
     margin: 4px;
     font-size: 90%;
-  }
+}
