@@ -41,7 +41,6 @@ header, footer {
   .navbar a.active {
     background-color: #ddd;
     color: black;
-    border-radius: 25px;
   }
 
 main {
