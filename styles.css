@@ -9,9 +9,8 @@ body {
 }
 
 .header-title {
-    font-weight: 900;
     font-size: 20px;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Frank Ruhl Libre', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
