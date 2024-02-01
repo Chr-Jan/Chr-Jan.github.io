@@ -8,6 +8,10 @@ body {
     min-height: 100vh; /* Minimum 100% af viewhøjden */
 }
 
+header {
+    padding: 0%;
+}
+
 .header-title {
     font-size: 20px;
     font-family: 'Frank Ruhl Libre', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
