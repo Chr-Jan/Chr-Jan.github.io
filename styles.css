@@ -58,18 +58,18 @@ main {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 65%;
+    width: 85%;
     margin-bottom: 20px;
     padding: 15px;
 }
 
 .bubble:nth-child(odd) {
-    margin-right: 5%;
+    margin-right: 8%;
     margin-left: auto;
 }
 
 .bubble:nth-child(even) {
-    margin-left: 5%;
+    margin-left: 8%;
     margin-right: auto;
 }
 
