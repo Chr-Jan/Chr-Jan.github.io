@@ -5,62 +5,49 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Minimum 100% af viewhøjden */
+    min-height: 100vh;
 }
 
 header {
-    padding: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #333;
+    color: white;
 }
 
 .header-title {
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'Frank Ruhl Libre', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: auto;
+    padding: 14px 16px;
 }
 
 .navbar {
-    background-color: #333;
-    overflow: hidden;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .navbar a {
-    float: left;
-    display: block;
+    display: flex;
+}
+
+.navbar a {
     color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  
-  .navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .navbar a.active {
-    background-color: #ddd;
-    color: black;
-  }
+    padding: 14px 16px;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f2f2f2;
+    border-bottom-color: #ddd;
+}
+
+.navbar a.active {
+    color: #f2f2f2;
+    border-bottom-color: #ddd;
+}
 
 main {
-    flex: 1; 
+    flex: 1;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -71,13 +58,13 @@ main {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 65%; 
+    width: 65%;
     margin-bottom: 20px;
     padding: 15px;
 }
 
 .bubble:nth-child(odd) {
-    margin-right: 5%; 
+    margin-right: 5%;
     margin-left: auto;
 }
 
@@ -92,7 +79,8 @@ main {
     margin-top: 10px;
 }
 
-.date, .result {
+.date,
+.result {
     color: #888;
     font-style: italic;
 }
