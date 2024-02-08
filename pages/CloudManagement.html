@@ -42,9 +42,66 @@
                     <li>Sikkerhed foranstaltninger på Azure</li>
                 </ul>
             </ul>
-            <p>Resultat</p>
+            <h3>Resultat</h3>
             <ul class="result">
-                <li></li>
+                <lp><b>Azure</b></pl>
+                    <ul>
+                        <li><b>Azure accounts</b></li>
+                        <ul>
+                            <li>For at bruge Azure-tjenester skal du have en Azure-abonnement.</li>
+                            <li>Når du er ny og vil prøve Azure, kan du tilmelde dig en gratis konto på Azure-webstedet.</li>
+                            <li>Du kan oprette flere abonnementer efter behov til forskellige formål som udvikling, marketing osv.</li>
+                        </ul>
+                        <li><b>Azure's fysiske infrastruktur</b></li>
+                        <ul>
+                            <li>Azure har datacentre over hele kloden.</li>
+                            <li>Disse datacentre er organiseret i regioner, der dækker forskellige geografiske områder.</li>
+                            <ul>
+                                <li><b>Regions</b></li>
+                                <ul>
+                                    <li>En region er et geografisk område på planeten.</li>
+                                    <li>Regionen indeholder mindst ét, potentielt flere datacentre, der er tæt på hinanden.</li>
+                                    <li>Azure tildeler og styrer intelligente ressourcer inden for hver region for at sikre balance i arbejdsbelastninger.</li>
+                                    <li>Når du implementerer en ressource i Azure, skal du vælge den region, hvor du vil have din ressource implementeret.</li>
+                                </ul>
+                                <li><b>Availability Zones</b></li>
+                                <ul>
+                                    <li>Availability zones er fysisk separate datacentre inden for en Azure-region.</li>
+                                    <li>Hver availability zone består af et eller flere datacentre, der er udstyret med uafhængig strøm, køling og netværk.</li>
+                                    <li>En availability zone oprettes som en isolationsgrænse. Hvis en zone går ned, fortsætter den anden med at fungere.</li>
+                                    <li>Availability zones er forbundet via højhastigheds, private fiber-optiske netværk.</li>
+                                </ul>
+                                <li><b>Azure Region Pairs</b></li>
+                                <ul>
+                                    <li>De fleste af Azures regioner er parret med en anden region i samme område (som USA, Europa eller Asien), der er mindst 482 kilometer væk.</li>
+                                    <li>Dette gør det muligt at kopiere ressourcer mellem regionerne, hvilket hjælper med at reducere risikoen for afbrydelser som følge af ting som naturkatastrofer, uroligheder, strømafbrydelser eller fysiske netværksafbrydelser, der påvirker en hel region.</li>
+                                </ul>
+                            </ul>                        
+                        </ul>
+                        <li><b>Azure subscriptions</b></li>
+                        <ul>
+                            <li>Abonnementer i Azure er en enhed til styring, fakturering og skalerbarhed.</li>
+                            <li>Ligesom ressourcegrupper er en måde at logisk organisere ressourcer på, tillader abonnementer dig at logisk organisere dine ressourcegrupper og lette faktureringen.</li>
+                            <li>Brug af Azure kræver et Azure-abonnement, som giver dig godkendt og autoriseret adgang til Azure-produkter og -tjenester samt mulighed for at provisionere ressourcer.</li>
+                            <li>Et Azure-abonnement knytter sig til en Azure-konto, som er en identitet i Microsoft Azure AD eller i en katalog, som Microsoft Azure AD stoler på.</li>
+                            <li>En konto kan have flere abonnementer, men det er kun påkrævet at have ét. Du kan bruge abonnementerne til at konfigurere forskellige faktureringsmodeller og anvende forskellige adgangsstyringspolitikker.</li>
+                            <li>Der er to typer af abonnementsgrænser, du kan bruge:</li>
+                            <ul>
+                              <li>Faktureringsgrænse: Bestemmer, hvordan en Azure-konto faktureres for brug af Azure. Du kan oprette flere abonnementer til forskellige faktureringskrav.</li>
+                              <li>Adgangsstyringsgrænse: Azure anvender adgangsstyringspolitikker på abonnementsniveau, og du kan oprette separate abonnementer for at afspejle forskellige organisationsstrukturer.</li>
+                            </ul>
+                          </ul>
+                          <li><b>Azure Management Groups</b></li>
+                          <ul>
+                            <li>Management groups giver et niveau af omfang over abonnementer.</li>
+                            <li>Du kan organisere abonnementer i beholdere kaldet management groups og anvende governance-betingelser til disse.</li>
+                            <li>Alle abonnementer inden for en management group arver automatisk betingelserne fra management group'en.</li>
+                            <li>Management groups giver virksomhedsklassestyring på stor skala uanset hvilken type abonnementer, du måtte have.</li>
+                            <li>Management groups kan være indlejret.</li>
+                            <li>Der kan være op til 10.000 management groups i en enkelt mappe.</li>
+                          </ul>                        
+                    
+                    </ul>
             </ul>
             <h3>Kilder:</h3>
             <ul class="result">
