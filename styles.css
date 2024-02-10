@@ -73,7 +73,7 @@ main {
 }
 
 .bubble img {
-    max-width: 100px;
+    max-width: 300px;
     height: auto;
     margin-top: 10px;
 }
