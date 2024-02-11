@@ -17,9 +17,9 @@ header {
 }
 
 .header-title {
-    font-size: 14px;
+    font-size: 12px;
     font-family: 'Frank Ruhl Libre', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 14px 16px;
+    padding-right: 2%;
 }
 
 .navbar {
