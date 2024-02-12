@@ -227,15 +227,57 @@
             <p class="date">Uge 7-8</p>
             <h3>Forventning</h3>
             <ul class="result">
-                <li></li>
+                <li>Forsætte læringen fra sidste uge</li>
+                <ul>Nåede ikke at blive færdig</ul>
+                <li>Forhåbenligt færdiggøre en simple app til Android i Android Studio i <b>Kotlin</b></li>
             </ul>
             <h3>Forarbejdninger</h3>
             <ul class="result">
-                <li></li>
+                <li>Forsætter med den sidste uges matriale</li>
             </ul>
             <h3>Resultat</h3>
             <ul class="result">
-                <li></li>
+                <p>Designpanelet i Android Studio:</p>
+
+                <p>Android Studio giver dig mulighed for at få vist en forhåndsvisning af dine komponérbar funktioner direkte i IDE'en. Du kan få vist, hvordan din app ser ud i Designpanelet i Android Studio.</p>
+
+                <a href="../images/ASDesignPanel.jpg" target="_blank">
+                    <img src="../images/ASDesignPanel.jpg" alt="Design pane in Android Studio">
+                </a>
+
+                <p>For at få vist en forhåndsvisning af en komponérbar funktion i Android Studio, skal funktionen angive standardværdier for alle dens parametre. Derfor anbefales det ikke at forhåndsvis Greeting() funktionen direkte. I stedet kan du oprette en anden funktion, f.eks. BirthdayCardPreview(), som kalder Greeting() med de nødvendige argumenter.</p>
+                <pre><code>@Preview(showBackground = true)
+                @Composable
+                fun BirthdayCardPreview() {
+                    HappyBirthdayTheme {
+                        Greeting("Android")
+                    }
+                }
+                </code></pre>
+
+                <p>For at se din forhåndsvisning:</p>
+
+                <ol>
+                <li>I BirthdayCardPreview() funktionen, ændre "Android" argumentet i Greeting() funktionen til dit navn.</li>
+                <pre><code>@Preview(showBackground = true)
+                @Composable
+                fun BirthdayCardPreview() {
+                    HappyBirthdayTheme {
+                        Greeting("James")
+                    }
+                }
+                </code></pre>
+                <li>Forhåndsvisningen bliver automatisk opdateres.</li>
+                <ul>
+                    <a href="../images/FirstCodeBefore.jpg" target="_blank">
+                        <img src="../images/FirstCodeBefore.jpg" alt="Before first code added">
+                    </a>
+                    <a href="../images/FirstCodeAfter.jpg" target="_blank">
+                        <img src="../images/FirstCodeAfter.jpg" alt="After first code added">
+                    </a>
+                </ul>
+                </ol>
+
             </ul>
             <h3>Kilder:</h3>
             <ul class="result">
