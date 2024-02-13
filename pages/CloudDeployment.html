@@ -237,7 +237,9 @@
             </ul>
             <h3>Resultat</h3>
             <ul class="result">
-                <p>Designpanelet i Android Studio:</p>
+                <div alt="designpanel">
+                <b>Designpanelet i Android Studio:</b>
+                
 
                 <p>Android Studio giver dig mulighed for at få vist en forhåndsvisning af dine komponérbar funktioner direkte i IDE'en. Du kan få vist, hvordan din app ser ud i Designpanelet i Android Studio.</p>
 
@@ -284,8 +286,89 @@
                 <a href="../images/ASNewTextElement.jpg" target="_blank">
                     <img src="../images/ASNewTextElement.jpg" alt="First New Text Element Added">
                 </a>
+            </div>
 
-            </ul>
+            <div alt="ChangeFontSize">
+                <h2>Ændring af skriftstørrelse</h2>
+                <p>Du har tilføjet tekst til din brugergrænseflade, men det ligner ikke den endelige app endnu. Lær hvordan du ændrer størrelsen, tekstfarven og andre attributter, der påvirker tekstelementets udseende. Du kan også eksperimentere med forskellige skriftstørrelser og farver.</p>
+                
+                <h3>Skalérbare pixels (SP)</h3>
+                <p>Skriftstørrelsen i Android-apps måles i skalérbare pixels (SP). To forskellige måleenheder anvendes: density-independent pixels (DP) og skalérbare pixels (SP). SP tilpasser sig brugerens foretrukne tekststørrelse under telefonindstillingerne.</p>
+                
+                <p>I MainActivity.kt-filen, rul ned til Text() kompositionen i GreetingText() funktionen. Tilføj et <code>fontSize</code> argument til Text() funktionen og indstil det til en værdi af 100.sp.</p>
+                
+                <pre><code>Text(
+                    text = message,
+                    fontSize = 100.sp
+                )
+                </code></pre>
+                
+                <p>Android Studio fremhæver .sp koden, fordi du skal importere nogle klasser eller egenskaber for at kunne kompilere din app.</p>
+                
+                <p>Klik på .sp, som er markeret af Android Studio. Klik på Import i popup-vinduet for at importere <code>androidx.compose.ui.unit.sp</code> til at bruge .sp udvidelsesegenskaben.</p>
+                
+                <p>Rul til toppen af filen og bemærk importanvisningerne, hvor du skal se en <code>import androidx.compose.ui.unit.sp</code> erklæring, hvilket betyder, at Android Studio tilføjer pakken til din fil.</p>
+                
+                <p>Bemærk den opdaterede forhåndsvisning af skriftstørrelsen. Årsagen til overlapningen af meddelelsen er, at du skal specificere linjehøjden.</p>
+                
+                <p>Opdater Text kompositionen for at inkludere linjehøjden.</p>
+                
+                <pre><code>@Composable
+                fun GreetingText(message: String, modifier: Modifier = Modifier) {
+                    Text(
+                        text = message,
+                        fontSize = 100.sp,
+                        lineHeight = 116.sp,
+                    )
+                }
+                </code></pre>
+                
+                <a href="../images/ASFontSize.jpg" target="_blank">
+                    <img src="../images/ASFontSize.jpg" alt="Font Size Change">
+                </a>
+            </div>
+
+            <div tag="New Text Element">
+                <h2>Tilføj en anden tekst</h2>
+                <p>I MainActivity.kt-filen, rul ned til GreetingText() funktionen.</p>
+                <p>Tilføj en parameter med navnet <code>from</code> af typen String til funktionen for din signatur.</p>
+
+                <pre><code>fun GreetingText(message: String, from: String, modifier: Modifier = Modifier)
+                </code></pre>
+
+                <p>Bemærk: Rækkefølgen af funktionens parametre betyder ikke noget, hvis du bruger navngivne argumenter i funktionens kald.</p>
+
+                <p>Efter fødselsdagshilsen Tekst kompositionen, tilføj en anden Tekst komposition, der accepterer et tekstargument sat til værdien af <code>from</code>.</p>
+
+                <pre><code>@Composable
+                fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+                    Text(
+                        // ...
+                    )
+                    Text(
+                        text = from,
+                        fontSize = 36.sp
+                    )
+                }
+                </code></pre>
+
+                <p>Rul til BirthdayCardPreview() funktionen.</p>
+                <p>Tilføj endnu en String parameter for at signere dit kort, f.eks. "From Emma".</p>
+
+                <pre><code>GreetingText(message = "Happy Birthday Sam!", from ="From Emma")
+                </code></pre>
+
+                <p>Bemærk forhåndsvisningen.</p>
+
+                <p>En kompositions funktion kan beskrive flere UI-elementer. Hvis du dog ikke angiver, hvordan de skal arrangeres, kan Compose arrangere elementerne på en måde, du ikke kan lide. For eksempel genererer ovenstående kode to tekstelementer, der overlapper hinanden, fordi der ikke er nogen vejledning om, hvordan de to kompositioner skal arrangeres.</p>
+
+                <p>I din næste opgave vil du lære, hvordan du arrangerer kompositionerne i en række og en kolonne.</p>
+                <a href="../images/ASExtraTextElement.jpg" target="_blank">
+                    <img src="../images/ASExtraTextElement.jpg" alt="Extra element added">
+                </a>
+            </div>
+
+        </ul>
             <h3>Kilder:</h3>
             <ul class="result">
                 <li>
