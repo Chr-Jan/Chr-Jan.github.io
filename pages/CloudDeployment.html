@@ -289,10 +289,10 @@
             </div>
 
             <div alt="ChangeFontSize">
-                <h2>Ændring af skriftstørrelse</h2>
+                <h3>Ændring af skriftstørrelse</h3>
                 <p>Du har tilføjet tekst til din brugergrænseflade, men det ligner ikke den endelige app endnu. Lær hvordan du ændrer størrelsen, tekstfarven og andre attributter, der påvirker tekstelementets udseende. Du kan også eksperimentere med forskellige skriftstørrelser og farver.</p>
                 
-                <h3>Skalérbare pixels (SP)</h3>
+                <h4>Skalérbare pixels (SP)</h4>
                 <p>Skriftstørrelsen i Android-apps måles i skalérbare pixels (SP). To forskellige måleenheder anvendes: density-independent pixels (DP) og skalérbare pixels (SP). SP tilpasser sig brugerens foretrukne tekststørrelse under telefonindstillingerne.</p>
                 
                 <p>I MainActivity.kt-filen, rul ned til Text() kompositionen i GreetingText() funktionen. Tilføj et <code>fontSize</code> argument til Text() funktionen og indstil det til en værdi af 100.sp.</p>
@@ -329,7 +329,7 @@
             </div>
 
             <div tag="New Text Element">
-                <h2>Tilføj en anden tekst</h2>
+                <h3>Tilføj en anden tekst</h3>
                 <p>I MainActivity.kt-filen, rul ned til GreetingText() funktionen.</p>
                 <p>Tilføj en parameter med navnet <code>from</code> af typen String til funktionen for din signatur.</p>
 
@@ -366,6 +366,100 @@
                 <a href="../images/ASExtraTextElement.jpg" target="_blank">
                     <img src="../images/ASExtraTextElement.jpg" alt="Extra element added">
                 </a>
+            </div>
+
+            <div alt="Arrange the text">
+                <h2>Arranger tekstelementerne i en række og kolonne</h2>
+                <p>UI-hierarkiet er baseret på indhold, hvilket betyder, at en komponent kan indeholde en eller flere komponenter, og termerne forælder og barn bruges nogle gange.</p>
+                    <ul><li>Emnerne om Column, Row og Box kompositioner, der kan fungere som forældre UI-elementer bliver udforsket her.</li></ul>
+
+                <p>De tre grundlæggende, standard layout elementer i Compose er Column, Row og Box kompositioner. Du lærer mere om Box kompositionen i den næste kodekladde.</p>
+
+                <a href="../images/ParentUIElements.jpg" target="_blank">
+                    <img src="../images/ParentUIElements.jpg" alt="Parent UI">
+                </a>
+
+                <a href="../images/RowColumn.jpg" target="_blank">
+                    <img src="../images/RowColumn.jpg" alt="Parent UI">
+                </a>
+
+                <p>Column, Row og Box er kompositionsfunktioner, der tager komposable indhold som argumenter, så du kan placere elementer inden i disse layout elementer. For eksempel placeres hvert børnelement inde i en Row komposition vandret ved siden af hinanden i en række.</p>
+
+                <pre>
+                <code>
+                Row {
+                    Text("Første kolonne")
+                    Text("Anden kolonne")
+                }
+                </code>
+                </pre>
+
+                <h3>trailing lambda-syntaxen.</h3>
+
+                <p>Anvend trailing lambda-syntaxen til at arrangere tekstelementerne i en række:</p>
+
+                <pre>
+                <code>
+                @Composable
+                fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+                    Row {
+                        Text(
+                            text = message,
+                            fontSize = 100.sp,
+                            lineHeight = 116.sp,
+                        )
+                        Text(
+                            text = from,
+                            fontSize = 36.sp
+                        )
+                    }
+                }
+                </code>
+                </pre>
+
+                <p>Android Studio importerer automatisk Row-funktionen til dig. (Bemærk importen til androidx.compose.foundation.layout.Row)</p>
+
+                <p>Se den opdaterede forhåndsvisning i Design-panelet. Midlertidigt ændre skriftstørrelsen for fødselsdagshilsenen til 30.sp.</p>
+
+                <p>Birthday hilsen og underskrift vises nu ved siden af hinanden i en række.</p>
+
+                <a href="../images/AsRow.jpg" target="_blank">
+                    <img src="../images/AsRow.jpg" alt="AsRow">
+                </a>
+
+                <p>For at arrangere tekstelementerne i en kolonne:</p>
+
+                <pre>
+                <code>
+                @Composable
+                fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+                    Column {
+                        Text(
+                            text = message,
+                            fontSize = 100.sp,
+                            lineHeight = 116.sp
+                        )
+                        Text(
+                            text = from,
+                            fontSize = 36.sp
+                        )
+                    }
+                }
+                </code>
+                </pre>
+
+                
+                <a href="../images/AsColumn.jpg" target="_blank">
+                    <img src="../images/AsColumn.jpg" alt="AsColumn">
+                </a>
+
+                <p>Auto-importerede pakke af Android Studio:</p>
+                <pre>
+                <code>
+                import androidx.compose.foundation.layout.Column
+                </code>
+                </pre>
+                <p>Husk at du skal videregive modifier-parameteren til det underordnede element i kompositionerne. Det betyder, at du skal videregive modifier-parameteren til Column kompositionen.</p>
             </div>
 
         </ul>
