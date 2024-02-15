@@ -420,6 +420,25 @@
                 <p>Android Studio importerer automatisk Row-funktionen til dig. (Bemærk importen til androidx.compose.foundation.layout.Row)</p>
 
                 <p>Se den opdaterede forhåndsvisning i Design-panelet. Midlertidigt ændre skriftstørrelsen for fødselsdagshilsenen til 30.sp.</p>
+                
+                <pre>
+                    <code>
+                    @Composable
+                    fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+                        Row {
+                            Text(
+                                text = message,
+                                fontSize = 30.sp,
+                                lineHeight = 116.sp,
+                            )
+                            Text(
+                                text = from,
+                                fontSize = 36.sp
+                            )
+                        }
+                    }
+                    </code>
+                </pre>
 
                 <p>Birthday hilsen og underskrift vises nu ved siden af hinanden i en række.</p>
 
