@@ -480,7 +480,142 @@
                 </pre>
                 <p>Husk at du skal videregive modifier-parameteren til det underordnede element i kompositionerne. Det betyder, at du skal videregive modifier-parameteren til Column kompositionen.</p>
             </div>
+        <div tag="New greeting to the app">
+            <h3>Tilføj hilsen til appen</h3>
 
+            <p>I MainActivity.kt-filen, rul ned til onCreate() funktionen.</p>
+            <p>Kald GreetingText() funktionen fra Surface blokken.</p>
+            <p>Videregive GreetingText() funktionen din fødselsdagshilsen og signatur.</p>
+
+            <p>Den fuldførte onCreate() funktion bør se sådan ud:</p>
+
+            <pre>
+            <code>
+            class MainActivity : ComponentActivity() {
+                override fun onCreate(savedInstanceState: Bundle?) {
+                    super.onCreate(savedInstanceState)
+                    setContent {
+                        HappyBirthdayTheme {
+                            // En overfladebeholder, der bruger 'background' farven fra temaet
+                            Surface(
+                                modifier = Modifier.fillMaxSize(),
+                                color = MaterialTheme.colorScheme.background
+                            ) {
+                                GreetingText(message = "Tillykke med fødselsdagen Sam!", from = "Fra Emma")
+                            }
+                        }
+                    }
+                }
+            }
+            </code>
+            </pre>
+
+            <a href="../images/ASExtraGreeting.jpg" target="_blank">
+                <img src="../images/ASExtraGreeting.jpg" alt="NewGreeting">
+            </a>
+
+            <h3>Justér hilsen til midten</h3>
+            <p>For at justere hilsenen i midten af skærmen tilføj en parameter kaldet verticalArrangement og sæt den til Arrangement.Center. Du vil lære mere om verticalArrangement i en senere kodekladde.</p>
+
+            <pre>
+            <code>
+            @Composable
+            fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    modifier = modifier
+                ) {
+                    // ...
+                }
+            }
+            </code>
+            </pre>
+
+            <p>Tilføj 8.dp polstring omkring kolonnen. Det er en god praksis at bruge polstringsværdier i intervaller af 4.dp.</p>
+
+            <pre>
+            <code>
+            @Composable
+            fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    modifier = modifier.padding(8.dp)
+                ) {
+                    // ...
+                }
+            }
+            </code>
+            </pre>
+
+            <p>For at yderligere forbedre din app, juster hilsensteksten til midten ved hjælp af textAlign.</p>
+
+            <pre>
+            <code>
+            Text(
+                text = message,
+                fontSize = 100.sp,
+                lineHeight = 116.sp,
+                textAlign = TextAlign.Center
+            )
+            </code>
+            </pre>
+
+            <p>I det ovenstående skærmbillede er kun hilsenen centreret på grund af textAlign parameteren. Signaturen, "Fra Emma", har standardjusteringen, som er venstre.</p>
+
+            <p>Tilføj polstring til signaturen og juster den til højre.</p>
+
+            <pre>
+            <code>
+            Text(
+                text = from,
+                fontSize = 36.sp,
+                modifier = Modifier
+                    .padding(16.dp)
+                    .align(alignment = Alignment.End)
+            )
+            </code>
+            </pre>
+
+            <h3>Adopter god praksis</h3>
+            <p>Det er en god praksis at videregive modifier attributterne sammen med modifieren fra det overordnede kompositorium. Opdater modifier parameteren i GreetingText() som følger:</p>
+
+            <pre>
+            <code>
+            onCreate()
+
+            Surface(
+                //...
+            ) {
+                GreetingText(
+                    message = "Tillykke med fødselsdagen Sam!",
+                    from = "Fra Emma",
+                    modifier = Modifier.padding(8.dp)
+                )
+            }
+            </code>
+            </pre>
+
+            <pre>
+            <code>
+            @Composable
+            fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    modifier = modifier
+                ) {
+                    // ...
+                }
+            }
+            </code>
+            </pre>
+
+            <p>Og programmet er færdig:</p>
+
+            <a href="../images/ASFinish.jpg" target="_blank">
+                <img src="../images/ASFinish.jpg" alt="Finish">
+            </a>
+
+        </div>
         </ul>
             <h3>Kilder:</h3>
             <ul class="result">
