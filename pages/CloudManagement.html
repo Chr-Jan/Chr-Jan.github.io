@@ -124,19 +124,237 @@
             <p class="date">Uge 7-8</p>
             <h3>Forventning</h3>
             <ul class="result">
-                <li></li>
+                <li>Får en forståelse af Administratrive opgave løsning i Azure</li>
             </ul>
             <h3>Forarbejdninger</h3>
             <ul class="result">
-                <li></li>
+                <li>Igennem <a href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea" target="_blank">Microsoft Azure training and certifications</a>, hvor jeg har vælgt mit næste emne ud fra Microsoft egne lærings trin.</li>
             </ul>
             <h3>Resultat</h3>
             <ul class="result">
-                <li></li>
+            <div tag="Microsoft Entra ID">
+                <h4>Microsoft Entra ID</h4> 
+                <p>Microsoft Entra ID er Microsofts skybaserede directory- og identitetsstyringstjeneste med flere lejere. Den hjælper med at understøtte brugeradgang til ressourcer og applikationer som:</p>
+                <ul>
+                    <li>Interne ressourcer og apps placeret på dit firmas netværk</li>
+                    <li>Eksterne ressourcer som Microsoft 365, Azure-portalen og SaaS-applikationer</li>
+                    <li>Cloud-applikationer udviklet til din organisation</li>
+                </ul>
+                   
+                <h5>Fremtrædende Funktioner</h5>
+                <table>
+                    <tr>
+                        <th>Azure AD Funktion</th>
+                        <th>Beskrivelse</th>
+                    </tr>
+                    <tr>
+                        <td>Single sign-on (SSO) adgang</td>
+                        <td>Microsoft Entra ID giver sikker SSO-adgang til webapps i skyen og lokale apps. Brugere kan logge ind med den samme sæt legitimationsoplysninger for at få adgang til alle deres apps.</td>
+                    </tr>
+                    <tr>
+                        <td>Omnidirektionel enhedssupport</td>
+                        <td>Microsoft Entra ID fungerer med iOS, macOS, Android og Windows-enheder og tilbyder en fælles oplevelse på tværs af enhederne. Brugere kan starte apps fra en personlig webbaseret adgangspanel, mobilapp, Microsoft 365 eller brugerdefinerede firmaportaler ved hjælp af deres eksisterende arbejdslegitimationsoplysninger.</td>
+                    </tr>
+                    <tr>
+                        <td>Sikker fjernadgang</td>
+                        <td>Microsoft Entra ID muliggør sikker fjernadgang til lokale webapps. Sikker adgang kan omfatte multifaktor-autentificering (MFA), betinget adgangsstyring og gruppebaseret adgangsstyring. Brugere kan få adgang til lokale webapps fra ethvert sted, herunder fra den samme portal.</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud-udvidelighed</td>
+                        <td>Microsoft Entra ID kan udvides til skyen for at hjælpe dig med at administrere en konsistent sæt af brugere, grupper, adgangskoder og enheder på tværs af miljøer.</td>
+                    </tr>
+                    <tr>
+                        <td>Beskyttelse af følsomme data</td>
+                        <td>Microsoft Entra ID tilbyder unikke identitetsbeskyttelsesfunktioner til at sikre dine følsomme data og apps. Administratorer kan overvåge mistænkelig login-aktivitet og potentielle sårbarheder i en samlet visning af brugere og ressourcer i kataloget.</td>
+                    </tr>
+                    <tr>
+                        <td>Understøttelse af selvbetjening</td>
+                        <td>Microsoft Entra ID giver dig mulighed for at uddelegere udvalgte administratoropgaver til virksomhedsmedarbejdere. At tilbyde selvbetjeningsapp-adgang og adgangskodehåndtering gennem verifikationsprocesser kan reducere supportopkald og forbedre sikkerheden.</td>
+                    </tr>
+                </table>
+                
+                <h5>Ting at overveje ved brug af Microsoft Entra Funktioner</h5>
+                <p>Microsoft Entra ID tilbyder mange funktioner og fordele. Overvej, hvilke funktioner der kan bruges bedst til at understøtte dine virksomhedsscenarier.</p>
+                <ul>
+                    <li>Overvej at aktivere single sign-on-adgang. Aktivér SSO-adgang for dine brugere til at oprette forbindelse til skyen eller bruge lokale apps.</li>
+                    <li>Overvej brugeroplevelse og enhedssupport. Byg en konsistent brugeroplevelse, der fungerer for alle enheder og katalogadgangspunkter.</li>
+                    <li>Overvej fordelene ved sikker fjernadgang. Beskyt dine lokale webapps ved at implementere sikker fjernadgang med MFA og adgangspolitikker.</li>
+                    <li>Overvej fordelene ved cloud-udvidelighed. Tilslut Active Directory og andre lokale kataloger i skyen til Microsoft Entra ID på få trin.</li>
+                    <li>Overvej avanceret beskyttelse af følsomme data. Forbedr sikkerheden for dine følsomme data og apps ved at bruge de indbyggede beskyttelsesfunktioner i Microsoft Entra ID.</li>
+                    <li>Overvej reducerede omkostninger og selvbetjeningsmuligheder. Udnyt de selvbetjeningsfunktioner i Microsoft Entra for at hjælpe med at reducere omkostninger for din organisation.</li>
+                </ul>
+
+                <p>For at implementere Microsoft Entra ID i din virksomheds konfiguration skal du forstå de vigtigste komponenter i tjenesten. Følgende tabel beskriver de vigtigste komponenter og koncepter i Microsoft Entra ID og forklarer, hvordan de arbejder sammen for at understøtte tjenestens funktioner.</p>
+
+                <h4>Azure AD Koncept</h4>
+                <ul>
+                    <li><strong>Identitet:</strong> En identitet er et objekt, der kan autentificeres. Identiteten kan være en bruger med et brugernavn og adgangskode. Identiteter kan også være applikationer eller andre servere, der kræver autentificering ved hjælp af hemmelige nøgler eller certifikater. Microsoft Entra ID er det underliggende produkt, der leverer identitetstjenesten.</li>
+                    <li><strong>Konto:</strong> En konto er en identitet, der har data knyttet til den. For at have en konto skal du først have en gyldig identitet. Du kan ikke have en konto uden en identitet.</li>
+                    <li><strong>Microsoft Entra-konto:</strong> En Azure AD-konto er en identitet, der oprettes gennem Microsoft Entra ID eller en anden Microsoft-cloudtjeneste, såsom Microsoft 365. Identiteter lagres i Microsoft Entra ID og er tilgængelige for din organisations skytjenestes abonnementer. Den Microsoft Entra-konto kaldes også en arbejds- eller skolekonto.</li>
+                    <li><strong>Azure-lejer (katalog):</strong> En Azure-lejer er en enkelt, dedikeret og betroet instans af Microsoft Entra ID. Hver lejer (også kaldet et katalog) repræsenterer en enkelt organisation. Når din organisation tilmelder sig et Microsoft-cloudtjenesteabonnement, oprettes der automatisk en ny lejer. Fordi hver lejer er en dedikeret og betroet instans af Microsoft Entra ID, kan du oprette flere lejere eller instanser.</li>
+                    <li><strong>Azure-abonnement:</strong> Et Azure-abonnement bruges til at betale for Azure-skytjenester. Hvert abonnement er tilknyttet en enkelt lejer. Du kan have flere abonnementer.</li>
+                </ul>
+
+                <h4>Sammenligning af Active Directory Domain Services og Microsoft Entra ID</h4>
+
+                <p>Active Directory Domain Services (AD DS) er den traditionelle implementering af Windows Server-baseret Active Directory på en fysisk eller virtuel server. AD DS inkluderer også Active Directory Certificate Services (AD CS), Active Directory Lightweight Directory Services (AD LDS), Active Directory Federation Services (AD FS) og Active Directory Rights Management Services (AD RMS).</p>
+
+                <p><strong>Vigtigt:</strong> Selvom du kan implementere og administrere AD DS i Azure Virtual Machines, anbefaler vi, at du bruger Microsoft Entra ID, medmindre din konfiguration sigter mod IaaS-workloads, der specifikt afhænger af AD DS.</p>
+
+                <h5>Overvejelser ved brug af Microsoft Entra i stedet for AD DS</h5>
+
+                <p>Microsoft Entra ID ligner AD DS, men der er betydelige forskelle. Det er vigtigt at forstå, at brugen af Microsoft Entra ID til din konfiguration er anderledes end at implementere en Active Directory-domænecontroller på en Azure-virtuel maskine og derefter tilføje den til dit lokale domæne.</p>
+
+                <p>Som du planlægger din identitetsstrategi, skal du overveje følgende karakteristika, der adskiller Microsoft Entra ID fra AD DS:</p>
+
+                <ul>
+                    <li><strong>Identitetsløsning:</strong> AD DS er primært en katalogtjeneste, mens Microsoft Entra ID er en fuld identitetsløsning. Microsoft Entra ID er designet til internetbaserede applikationer, der bruger HTTP og HTTPS-kommunikation. Funktionerne og mulighederne for Microsoft Entra ID fokuserer på stærk identitetsstyring.</li>
+                    <li><strong>Kommunikationsprotokoller:</strong> Fordi Microsoft Entra ID er baseret på HTTP og HTTPS, bruger det ikke Kerberos-autentificering. Microsoft Entra ID implementerer HTTP- og HTTPS-protokoller som SAML, WS-Federation og OpenID Connect til godkendelse (og OAuth til autorisation).</li>
+                    <li><strong>Føderationstjenester:</strong> Microsoft Entra ID inkluderer føderationstjenester og mange tredjepartstjenester som Facebook.</li>
+                    <li><strong>Flad struktur:</strong> Microsoft Entra-brugere og grupper oprettes i en flad struktur. Der er ingen organisationsenheder (OUs) eller gruppepolitikobjekter (GPOs).</li>
+                    <li><strong>Administreret service:</strong> Microsoft Entra ID er en administreret service. Du administrerer kun brugere, grupper og politikker. Hvis du implementerer AD DS med virtuelle maskiner ved hjælp af Azure, administrerer du mange andre opgaver, herunder implementering, konfiguration, virtuelle maskiner, patching og andre baggrundshandlinger.</li>
+                </ul>
+
+                <h4>Microsoft Entra Editioner</h4>
+
+                <h5>Microsoft Entra ID</h5>
+                <p>Microsoft Entra ID kommer i fire udgaver: Gratis, Microsoft 365 Apps, Premium P1 og Premium P2. Den Gratis udgave er inkluderet i et Azure-abonnement. De Premium udgaver er tilgængelige gennem en Microsoft Enterprise-aftale, Open Volume License-programmet og Cloud Solution Providers-programmet. Azure- og Microsoft 365-abonnenter kan også købe Microsoft Entra ID P1 og P2 online.</p>
+
+                <h5>Detaljer om Microsoft Entra Editioner</h5>
+                <p>Overvej følgende funktioner, der adskiller de forskellige udgaver af Microsoft Entra ID. Efter du har gennemgået funktionerne og beskrivelserne, skal du tænke over, hvilken udgave der passer bedst til din organisation. Et X indikerer, at funktionen understøttes.</p>
+
+                <table>
+                    <tr>
+                        <th>Funktion</th>
+                        <th>Gratis</th>
+                        <th>Microsoft 365 Apps</th>
+                        <th>Premium P1</th>
+                        <th>Premium P2</th>
+                    </tr>
+                    <tr>
+                        <td>Objekter i katalog</td>
+                        <td>500.000</td>
+                        <td>Ubegrænset</td>
+                        <td>Ubegrænset</td>
+                        <td>Ubegrænset</td>
+                    </tr>
+                    <tr>
+                        <td>Single Sign-on</td>
+                        <td>Ubegrænset</td>
+                        <td>Ubegrænset</td>
+                        <td>Ubegrænset</td>
+                        <td>Ubegrænset</td>
+                    </tr>
+                    <tr>
+                        <td>Kerneidentitet og adgangsstyring</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Forretningssamarbejde på tværs af virksomheder</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Identitets- og adgangsstyring til Microsoft 365-apps</td>
+                        <td></td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Premium Funktioner</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Hybrididentiteter</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Avanceret gruppeadgangsstyring</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Betinget adgang</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Identitetsbeskyttelse</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Identitetsstyring</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                    </tr>
+                </table>
+
+                <h5>Microsoft Entra ID Gratis</h5>
+                <p>Den Gratis udgave giver bruger- og gruppehåndtering, synkronisering af lokale kataloger og grundlæggende rapporter. Single sign-on-adgang understøttes på tværs af Azure, Microsoft 365 og mange populære SaaS-apps.</p>
+
+                <h5>Microsoft Entra Microsoft 365 Apps</h5>
+                <p>Denne udgave er inkluderet med Microsoft 365. Udover de Gratis funktioner giver denne udgave Identitets- og adgangsstyring til Microsoft 365-apps. Den ekstra support inkluderer branding, MFA, gruppeadgangsstyring og selvbetjeningsadgangskodeændring for skybrugere.</p>
+
+                <h5>Microsoft Entra ID P1</h5>
+                <p>Udover de Gratis funktioner giver Premium P1-udgaven dine hybridbrugere adgang til både lokale og skyressourcer. Denne udgave understøtter avanceret administration som dynamiske grupper, selvbetjeningsgruppeadministration og muligheder for skrivning til skyen. P1 inkluderer også Microsoft Identity Manager, en lokal identitets- og adgangsstyringssuite. De ekstra funktioner i P1 tillader selvbetjeningsadgangskodeændring for dine lokale brugere.</p>
+
+                <h5>Microsoft Entra ID P2</h5>
+                <p>Udover de Gratis og P1 funktioner tilbyder Premium P2-udgaven Microsoft Entra ID Protection for at hjælpe med at give risikobaseret betinget adgang til dine apps og kritiske virksomhedsdata. Privilegeret identitetsstyring er inkluderet for at hjælpe med at opdage, begrænse og overvåge administratorer og deres adgang til ressourcer og for at give adgang lige når det er nødvendigt.</p>
+
+                <h4>Implementer Microsoft Entra selvbetjeningsadgang til nulstilling af adgangskode</h4>
+
+                <p>Mange supportopkald er anmodninger om at nulstille adgangskoder for brugere. Microsoft Entra selvbetjeningsadgang til nulstilling af adgangskode (SSPR) giver dig mulighed for at give brugere mulighed for at omgå support og nulstille deres egne adgangskoder.</p>
+
+                <h5>Ting at vide om Microsoft Entra SSPR-funktionen</h5>
+
+                <p>Undersøg følgende karakteristika og krav til SSPR-funktionen:</p>
+
+                <ul>
+                    <li>SSPR kræver en Microsoft Entra-konto med globale administratorrettigheder til at administrere SSPR-indstillinger. Denne konto kan altid nulstille sine egne adgangskoder, uanset hvilke indstillinger der er konfigureret.</li>
+                    <li>SSPR bruger en sikkerhedsgruppe til at begrænse de brugere, der har SSPR-rettigheder.</li>
+                    <li>Alle brugerkonti i din organisation skal have en gyldig licens for at bruge SSPR.</li>
+                </ul>
+
+                <p>Din organisation ønsker at implementere support til SSPR i deres administrationsløsning. Når du planlægger din konfiguration, skal du gennemgå følgende punkter:</p>
+
+                <ul>
+                    <li>Overvej, hvem der kan nulstille deres adgangskoder. Beslut, hvilke brugere i din organisation der skal have mulighed for at bruge funktionen. I Azure-portalen er der tre muligheder for SSPR-funktionen: Ingen, Udvalgte og Alle.</li>
+                    <li>Den Udvalgte mulighed er nyttig til oprettelse af specifikke grupper, der har SSPR aktiveret. Du kan oprette grupper til test eller konceptbevis, før du anvender funktionen på en større gruppe. Når du er klar til at implementere SSPR til alle brugerkonti i din Microsoft Entra-lejer, kan du ændre indstillingen.</li>
+                    <li>Overvej dine godkendelsesmetoder. Bestem, hvor mange godkendelsesmetoder der kræves for at nulstille en adgangskode, og vælg godkendelsesindstillingerne for brugere.</li>
+                    <li>Dit system skal kræve mindst én godkendelsesmetode for at nulstille en adgangskode.</li>
+                    <li>En stærk SSPR-plan tilbyder flere godkendelsesmetoder til brugeren. Muligheder inkluderer e-mailmeddelelse, sms eller en sikkerhedskode sendt til brugerens mobil- eller kontortelefon. Du kan også tilbyde brugeren en række sikkerhedsspørgsmål.</li>
+                    <li>Du kan kræve, at sikkerhedsspørgsmål registreres for brugerne i din Microsoft Entra-lejer.</li>
+                    <li>Du kan konfigurere, hvor mange korrekt besvarede sikkerhedsspørgsmål der kræves for en succesfuld nulstilling af adgangskoden.</li>
+                    <li>Overvej at kombinere metoder til stærkere sikkerhed. Sikkerhedsspørgsmål kan være mindre sikre end andre godkendelsesmetoder. Nogle brugere kan kende svarene på en bestemt brugers spørgsmål, eller spørgsmålene kan være nemme at løse. Hvis du understøtter sikkerhedsspørgsmål, skal du kombinere denne mulighed med andre godkendelsesmetoder.</li>
+                </ul>
+
+            </div>
             </ul>
             <h3>Kilder:</h3>
             <ul class="result">
-                <li></li>
+                <a href="https://learn.microsoft.com/da-dk/training/courses/az-104t00?WT.mc_id=Azure_BoM-wwl"
+                target="_blank">Microsoft Azure Administrator</a></li>
             </ul>
         </section>
         
