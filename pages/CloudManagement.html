@@ -733,8 +733,10 @@
             <ul class="result">
                 <h4>Omkostningsstyring i Azure</h4>
                 <p>
-                    Azure ændrer udviklingsomkostningerne fra kapitaludgifter (Capital expense / CapEx) til at opretholde infrastruktur og
-                    faciliteter til driftsudgifter (Operational expense / OpEx) til leje af infrastruktur, som du har brug for, uanset om det
+                    Azure ændrer udviklingsomkostningerne fra kapitaludgifter (Capital expense / CapEx) til at
+                    opretholde infrastruktur og
+                    faciliteter til driftsudgifter (Operational expense / OpEx) til leje af infrastruktur, som du har
+                    brug for, uanset om det
                     er beregning, lagring, netværk osv.</p>
                 <table>
                     <tr>
@@ -743,8 +745,10 @@
                         </td>
                         <td>Flere faktorer påvirker omkostningerne ved Azure-ressourcer. Typen af ressourcer,
                             indstillingerne for ressourcen og Azure-regionen vil alle have en indflydelse på, hvor meget
-                            en ressource koster. Når du opretter en Azure-ressource, opretter Azure timede forekomster for
-                            den ressource. Målerne sporer ressourcernes brug og genererer en brugsregistrering, der bruges
+                            en ressource koster. Når du opretter en Azure-ressource, opretter Azure timede forekomster
+                            for
+                            den ressource. Målerne sporer ressourcernes brug og genererer en brugsregistrering, der
+                            bruges
                             til at beregne din regning.</td>
                     </tr>
                     <tr>
@@ -801,8 +805,83 @@
                             for ikke kun de Azure-tjenester, du bruger, men også tjenesterne eller ekspertisen fra
                             tredjepartsleverandøren. Faktureringsstrukturerne fastsættes af leverandøren.</td>
                     </tr>
-
                 </table>
+                <h4>Sammenligning af Pris- og Total Cost of Ownership-Lommeregner</h4>
+                <p>På internettet kan du finde både en prisberegner og en lommeregner for total cost of ownership (TCO),
+                    der begge hjælper dig med at forstå potentielle udgifter ved brug af Azure. Begge lommeregnere
+                    tillader dig at opbygge en konfiguration, men de tjener forskellige formål.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <b>Prisberegneren</b>
+                        </td>
+                        <td>Prisberegneren giver dig et overslag over omkostningerne ved at tildele ressourcer i Azure.
+                            Du kan få et overslag for individuelle ressourcer, opbygge en løsning eller bruge et
+                            eksempel-scenarie for at se et estimat af udgifterne. Prisberegnerens fokus ligger på
+                            omkostningerne ved de tildelte ressourcer i Azure.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>TCO-lommeregner</b>
+                        </td>
+                        <td>
+                            <p>TCO-lommeregneren hjælper dig med at sammenligne omkostningerne ved at køre en
+                                infrastruktur på stedet sammenlignet med en Azure Cloud-infrastruktur. Med
+                                TCO-lommeregneren indtaster du din nuværende infrastrukturkonfiguration, herunder
+                                servere, databaser, lagring og udgående netværkstrafik. TCO-kalkulatoren sammenligner
+                                derefter de forventede omkostninger for din nuværende miljø med et Azure-miljø, der
+                                understøtter de samme infrastrukturkrav.</p>
+                            <p>Med TCO-lommeregneren indtaster du din konfiguration, tilføjer antagelser som strøm- og
+                                IT-arbejdsomkostninger og præsenteres med en estimat af omkostningsforskellen for at
+                                køre det samme miljø i din nuværende datacenter eller i Azure.</p>
+                        </td>
+                    </tr>
+                </table>
+                <h4>Microsofts Cost Management-værktøj</h4>
+                <p>
+                    Microsofts Cost Management-værktøj i Azure hjælper med at overvåge skyomkostninger og undgå uventede
+                    udgifter. Det giver mulighed for at analysere omkostninger, oprette budgetter og modtage alarmer ved
+                    overskridelse af grænser.
+                </p>
+                <table>
+                    <tr>
+                        <td>
+                            <b>Cost Management:</b>
+                        </td>
+                        <td>
+                            <p>
+                                Det giver mulighed for at tjekke omkostninger, oprette alarmer og budgetter.
+                            </p>
+                            <p>
+                                Omkostningsanalyse giver hurtig visuel præsentation af omkostninger.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Omkostningsalarmer:</b>
+                        </td>
+                        <td>
+                            <p><b>Budgetalarmer:</b> Underretter om forbrug eller omkostninger.</p>
+                            <p><b>Kreditalarmer:</b> Underretter om forbrug af Azure-kredit.</p>
+                            <p><b>Afdelingsomkostningskvotealarmer:</b> Underretter om afdelingsudgiftsgrænser.</p>
+                        </td>
+                    </tr>
+                </table>
+                <h4>Tags</h4>
+                <p>Formålet med tags er at organisere dine ressourcer i skyen på en overskuelig måde, som hjælper dig med at forstå din brug og styre omkostninger. Tags tilføjer ekstra information eller metadata til dine ressourcer og er nyttige til flere formål:</p>
+            
+                <ul>
+                    <li><strong>Ressourcestyring:</strong> Tags gør det muligt for dig at finde og handle på ressourcer, der er knyttet til specifikke arbejdsbelastninger, miljøer, forretningsenheder og ejere.</li>
+                    <li><strong>Omkostningsstyring og -optimering:</strong> Ved at gruppere ressourcer kan du rapportere om omkostninger, fordele interne omkostningscentre, spore budgetter og estimere omkostninger.</li>
+                    <li><strong>Driftsstyring:</strong> Tags gør det muligt at gruppere ressourcer efter deres betydning for virksomhedens tilgængelighed og hjælper med at formulere servicelevelaftaler (SLA'er).</li>
+                    <li><strong>Sikkerhed:</strong> Tags kan klassificere data efter dets sikkerhedsniveau, f.eks. offentligt eller fortroligt.</li>
+                    <li><strong>Styring og overholdelse af regler:</strong> Tags kan identificere ressourcer, der overholder styrings- eller reguleringskrav, f.eks. ISO 27001.</li>
+                    <li><strong>Optimering af arbejdsbelastning og automatisering:</strong> Tags kan hjælpe med at visualisere alle ressourcer, der deltager i komplekse implementeringer, og automatisere opgaver på disse ressourcer.</li>
+                </ul>
+            
+                <p>Du kan administrere ressource tags ved at tilføje, ændre eller slette dem gennem forskellige værktøjer som Windows PowerShell, Azure CLI, Azure Resource Manager-skabeloner, REST API eller Azure-portalen. Du kan også bruge Azure Policy til at håndhæve taggingregler og konventioner. Et eksempel på en tagging-struktur inkluderer tags som AppNavn, Omkostningscenter, Ejendom, Påvirkning og Miljø. Husk, at du ikke behøver at kræve, at en bestemt tag er til stede på alle dine ressourcer, men kan tilpasse tagging efter behov.</p>
+            </body>
             </ul>
             <h3>Kilder:</h3>
             <ul class="result">
