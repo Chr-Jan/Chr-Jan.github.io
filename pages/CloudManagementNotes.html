@@ -134,10 +134,10 @@
                     <td>Microsoft Entra ID er Microsofts skybaserede directory- og identitetsstyringstjeneste med flere
                         lejere. Den hjælper med at understøtte brugeradgang til ressourcer og applikationer.
                         <ol>
-                        <li>Interne ressourcer og apps placeret på dit firmas netværk</li>
-                        <li>Eksterne ressourcer som Microsoft 365, Azure-portalen og SaaS-applikationer</li>
-                        <li>Cloud-applikationer udviklet til din organisation</li>
-                    </ol>
+                            <li>Interne ressourcer og apps placeret på dit firmas netværk</li>
+                            <li>Eksterne ressourcer som Microsoft 365, Azure-portalen og SaaS-applikationer</li>
+                            <li>Cloud-applikationer udviklet til din organisation</li>
+                        </ol>
                     </td>
                 </tr>
                 <tr>
@@ -145,14 +145,14 @@
                         <h4>Fremtrædende Funktioner:</h4>
                     </td>
                     <td>
-                        <ol>                      
+                        <ol>
                             <li>Single sign-on (SSO) adgang</li>
                             <li>Omnidirektionel enhedssupport</li>
                             <li>Sikker fjernadgang</li>
                             <li>Cloud-udvidelighed</li>
                             <li>Beskyttelse af følsomme data</li>
                             <li>Understøttelse af selvbetjening</li>
-                        </ol>   
+                        </ol>
                     </td>
                 </tr>
                 <tr>
@@ -194,7 +194,8 @@
                     <td>
                         <h4>Implementer Microsoft Entra selvbetjeningsadgang til nulstilling af adgangskode:</h4>
                     </td>
-                    <td>Overvejelser vedrørende SSPR-funktionen, hvem der kan nulstille adgangskoder, godkendelsesmetoder
+                    <td>Overvejelser vedrørende SSPR-funktionen, hvem der kan nulstille adgangskoder,
+                        godkendelsesmetoder
                         og sikkerhedsspørgsmål.</td>
                 </tr>
                 <tr>
@@ -213,11 +214,15 @@
                     </td>
                     <td>
                         <ol>
-                            <li><strong>Cloud-identitet:</strong> En brugerkonto med en cloud-identitet er kun defineret i
-                                Microsoft Entra ID. Denne type brugerkonto inkluderer administratorbrugerkonti og brugere,
+                            <li><strong>Cloud-identitet:</strong> En brugerkonto med en cloud-identitet er kun defineret
+                                i
+                                Microsoft Entra ID. Denne type brugerkonto inkluderer administratorbrugerkonti og
+                                brugere,
                                 der administreres som en del af din organisation. En cloud-identitet kan være for
-                                brugerkonti defineret i din Microsoft Entra-organisation og også for brugerkonti defineret i
-                                en ekstern Microsoft Entra-instans. Når en cloud-identitet fjernes fra den primære mappe,
+                                brugerkonti defineret i din Microsoft Entra-organisation og også for brugerkonti
+                                defineret i
+                                en ekstern Microsoft Entra-instans. Når en cloud-identitet fjernes fra den primære
+                                mappe,
                                 slettes brugerkontoen.</li>
                             <li><strong>Directory-synkroniseret identitet:</strong> Brugerkonti, der har en
                                 directory-synkroniseret identitet, er defineret i en lokal Active Directory. En
@@ -225,8 +230,9 @@
                                 brugerkonti ind i Azure. Kilden til disse konti er Windows Server Active Directory.</li>
                             <li><strong>Gæstbruger:</strong> Gæstbrugerkonti er defineret uden for Azure. Eksempler
                                 inkluderer brugerkonti fra andre skyudbydere og Microsoft-konti som f.eks. en Xbox
-                                LIVE-konto. Kilden til gæstbrugerkonti er Inviteret bruger. Gæstbrugerkonti er nyttige, når
-                                eksterne leverandører eller entreprenører har brug for adgang til dine Azure-ressourcer. 
+                                LIVE-konto. Kilden til gæstbrugerkonti er Inviteret bruger. Gæstbrugerkonti er nyttige,
+                                når
+                                eksterne leverandører eller entreprenører har brug for adgang til dine Azure-ressourcer.
                         </ol>
                     </td>
                 </tr>
@@ -239,15 +245,20 @@
                             <li>Overvej, hvor brugere er defineret. Afgør, hvor dine brugere er defineret. Er alle dine
                                 brugere defineret inden for din Microsoft Entra-organisation, eller er nogle brugere
                                 defineret i eksterne Microsoft Entra-instanser? Har du brugere, der er eksterne for din
-                                organisation? Det er almindeligt for virksomheder at understøtte to eller flere kontotyper i
+                                organisation? Det er almindeligt for virksomheder at understøtte to eller flere
+                                kontotyper i
                                 deres infrastruktur.</li>
                             <li>Overvej support til eksterne bidragydere. Tillad eksterne bidragydere at få adgang til
-                                Azure-ressourcer i din organisation ved at understøtte brugerkontoen af typen Gæstbruger.
-                                Når den eksterne bidragyder ikke længere har brug for adgang, kan du fjerne brugerkontoen og
+                                Azure-ressourcer i din organisation ved at understøtte brugerkontoen af typen
+                                Gæstbruger.
+                                Når den eksterne bidragyder ikke længere har brug for adgang, kan du fjerne
+                                brugerkontoen og
                                 deres adgangsprivilegier.</li>
-                            <li>Overvej en kombination af brugerkonti. Implementer brugerkontotyperne, der gør det muligt
+                            <li>Overvej en kombination af brugerkonti. Implementer brugerkontotyperne, der gør det
+                                muligt
                                 for din organisation at opfylde deres forretningskrav. Understøt brugerkonti med
-                                directory-synkroniseret identitet til brugere defineret i Windows Server Active Directory.
+                                directory-synkroniseret identitet til brugere defineret i Windows Server Active
+                                Directory.
                                 Understøt cloud-identiteter til brugere defineret i din interne Microsoft Entra-struktur
                                 eller for brugere defineret i en ekstern Microsoft Entra-instans.</li>
                         </ol>
@@ -257,7 +268,8 @@
                     <td>
                         <h4>Administrer brugerkonti:</h4>
                     </td>
-                    <td>Der er flere måder at tilføje brugerkonti til cloud-identitet i Microsoft Entra ID. En almindelig
+                    <td>Der er flere måder at tilføje brugerkonti til cloud-identitet i Microsoft Entra ID. En
+                        almindelig
                         tilgang er ved at bruge Azure-portalen. Brugerkonti kan også tilføjes til Microsoft Entra ID
                         gennem Microsoft 365 Admin Center, Microsoft Intune-administrationskonsollen og Azure CLI.</td>
                 </tr>
@@ -266,19 +278,24 @@
                         <h4>Detaljer om cloud-identitetskonti:</h4>
                     </td>
                     <td>
-                        <p>Hvordan cloud-identitetsbrugerkonti er defineret i Microsoft Entra ID: Administrator kan oprette
-                        en bruger inden for organisationen eller invitere en gæst til at give adgang til
-                        organisationsressourcer:</p>
+                        <p>Hvordan cloud-identitetsbrugerkonti er defineret i Microsoft Entra ID: Administrator kan
+                            oprette
+                            en bruger inden for organisationen eller invitere en gæst til at give adgang til
+                            organisationsressourcer:</p>
                         <ol>
-                            <li>Et nyt brugerkonto skal have et visningsnavn og et tilknyttet brugernavn. Et eksempel på et
+                            <li>Et nyt brugerkonto skal have et visningsnavn og et tilknyttet brugernavn. Et eksempel på
+                                et
                                 visningsnavn er Aran Sawyer-Miller, og det tilknyttede brugernavn kunne være
                                 asawmill@contoso.com.</li>
-                            <li>Information og indstillinger, der beskriver en bruger, er gemt i brugerkontoprofilen.</li>
+                            <li>Information og indstillinger, der beskriver en bruger, er gemt i brugerkontoprofilen.
+                            </li>
                             <li>Profilen kan have andre indstillinger som en brugers stillingsbetegnelse og deres
                                 kontaktemailadresse.</li>
-                            <li>En bruger med Global administrator eller Brugeradministrator privilegier kan foruddefinere
+                            <li>En bruger med Global administrator eller Brugeradministrator privilegier kan
+                                foruddefinere
                                 profildata i brugerkonti, såsom hovedtelefonnummeret for virksomheden.</li>
-                            <li>Ikke-administratorbrugere kan angive nogle af deres egne profildata, men de kan ikke ændre
+                            <li>Ikke-administratorbrugere kan angive nogle af deres egne profildata, men de kan ikke
+                                ændre
                                 deres visningsnavn eller kontonavn.</li>
                         </ol>
                     </td>
@@ -289,17 +306,21 @@
                     </td>
                     <td>
                         <ol>
-                            <li>Overvej brugerprofildata. Tillad brugere at angive deres profiloplysninger for deres konti,
+                            <li>Overvej brugerprofildata. Tillad brugere at angive deres profiloplysninger for deres
+                                konti,
                                 efter behov. Brugerprofildata, herunder brugerens billede, job og kontaktoplysninger, er
                                 valgfrie. Du kan også levere visse profilindstillinger for hver bruger baseret på din
                                 organisations behov.</li>
                             <li>Overvej gendannelsesmuligheder for slettede konti. Inkluder gendannelsesscenarier i din
-                                kontohåndteringsplan. Gendannelsesoperationer for en slettet konto er tilgængelige op til 30
-                                dage efter, at en konto er fjernet. Efter 30 dage kan en slettet brugerkonto ikke gendannes.
+                                kontohåndteringsplan. Gendannelsesoperationer for en slettet konto er tilgængelige op
+                                til 30
+                                dage efter, at en konto er fjernet. Efter 30 dage kan en slettet brugerkonto ikke
+                                gendannes.
                             </li>
                             <li>Overvej indsamling af kontodata. Indsaml logindata og revisionslogoplysninger for
-                                brugerkonti. Microsoft Entra ID giver dig mulighed for at indsamle disse data for at hjælpe
-                                dig med at analysere og forbedre din infrastruktur.</li>  
+                                brugerkonti. Microsoft Entra ID giver dig mulighed for at indsamle disse data for at
+                                hjælpe
+                                dig med at analysere og forbedre din infrastruktur.</li>
                         </ol>
                     </td>
                 </tr>
@@ -317,11 +338,13 @@
                     </td>
                     <td>
                         <ol>
-                            <li>Kun globale administratorer eller brugeradministratorer har privilegier til at oprette og
+                            <li>Kun globale administratorer eller brugeradministratorer har privilegier til at oprette
+                                og
                                 slette brugerkonti i Azure-portalen.</li>
                             <li>For at fuldføre bulkopret eller slette operationer udfylder administratoren en
                                 kommasepareret værdier (CSV) skabelon af dataene for brugerkontiene.</li>
-                            <li>Bulk-operationsskabeloner kan downloades fra Microsoft Entra-administrationscenteret.</li>
+                            <li>Bulk-operationsskabeloner kan downloades fra Microsoft Entra-administrationscenteret.
+                            </li>
                             <li>Bulklister over brugerkonti kan downloades.</li>
                         </ol>
                     </td>
@@ -332,20 +355,27 @@
                     </td>
                     <td>
                         <ol>
-                            <li>Her er nogle designovervejelser for oprettelse og sletning af brugerkonti. Tænk over, hvilke
+                            <li>Her er nogle designovervejelser for oprettelse og sletning af brugerkonti. Tænk over,
+                                hvilke
                                 brugerkontokonventioner og -processer der kan være påkrævet af din organisation.</li>
                             <li>Etabler eller implementer en navngivningskonvention for dine brugerkonti. Anvend
-                                konventioner til brugerkontonavne, visningsnavne og brugeraliaser for ensartethed på tværs
-                                af organisationen. Konventioner for navne og aliaser kan forenkle bulkoprettelsesprocessen
-                                ved at reducere områder med unikhed i CSV-filen. En konvention for brugernavne kunne begynde
+                                konventioner til brugerkontonavne, visningsnavne og brugeraliaser for ensartethed på
+                                tværs
+                                af organisationen. Konventioner for navne og aliaser kan forenkle
+                                bulkoprettelsesprocessen
+                                ved at reducere områder med unikhed i CSV-filen. En konvention for brugernavne kunne
+                                begynde
                                 med brugerens efternavn efterfulgt af et punktum og afslutte med brugerens fornavn, som
                                 f.eks. Sawyer-Miller.Aran@contoso.com.</li>
                             <li>Implementer en konvention for det indledende kodeord for en nyoprettet bruger. Design et
-                                system til at meddele nye brugere om deres adgangskoder på en sikker måde. Du kan generere
-                                en tilfældig adgangskode og sende den pr. e-mail til den nye bruger eller deres leder.</li>
+                                system til at meddele nye brugere om deres adgangskoder på en sikker måde. Du kan
+                                generere
+                                en tilfældig adgangskode og sende den pr. e-mail til den nye bruger eller deres leder.
+                            </li>
                             <li>Se og håndter eventuelle fejl ved at downloade resultatfilen på siden Bulkoperationer i
                                 Azure-portalen. Resultatfilen indeholder årsagen til hver fejl. En fejl kan være en
-                                brugerkonto, der allerede er oprettet, eller en konto, der er duplikeret. Generelt er det
+                                brugerkonto, der allerede er oprettet, eller en konto, der er duplikeret. Generelt er
+                                det
                                 nemmere at uploade og fejlfinde mindre grupper af brugerkonti.</li>
                         </ol>
                     </td>
@@ -367,12 +397,14 @@
                     </td>
                     <td>
                         <ol>
-                            <li>Brug sikkerhedsgrupper til at angive tilladelser for alle gruppe medlemmer på samme tid, i
+                            <li>Brug sikkerhedsgrupper til at angive tilladelser for alle gruppe medlemmer på samme tid,
+                                i
                                 stedet for at tilføje tilladelser til hver enkelt medlem individuelt.</li>
                             <li>Tilføj Microsoft 365-grupper for at aktivere gruppeadgang for gæstbrugere uden for din
                                 Microsoft Entra organisation.</li>
                             <li>Sikkerhedsgrupper kan kun implementeres af en Microsoft Entra-administrator.</li>
-                            <li>Normale brugere og Microsoft Entra-administratorer kan begge bruge Microsoft 365-grupper.
+                            <li>Normale brugere og Microsoft Entra-administratorer kan begge bruge Microsoft
+                                365-grupper.
                             </li>
                         </ol>
                     </td>
@@ -392,18 +424,25 @@
                     </td>
                     <td>
                         <ol>
-                            <li><strong>Tildelt:</strong> Tilføj specifikke brugere som medlemmer af en gruppe, hvor hver
+                            <li><strong>Tildelt:</strong> Tilføj specifikke brugere som medlemmer af en gruppe, hvor
+                                hver
                                 bruger kan have unikke tilladelser.</li>
-                            <li><strong>Dynamisk bruger:</strong> Brug dynamiske medlemskabsregler til automatisk at tilføje
+                            <li><strong>Dynamisk bruger:</strong> Brug dynamiske medlemskabsregler til automatisk at
+                                tilføje
                                 og fjerne gruppe medlemmer. Når medlemsattributter ændres, gennemgår Azure de dynamiske
                                 gruppe regler for kataloget. Hvis medlemsattributterne opfylder reglens krav, tilføjes
-                                medlemmet til gruppen. Hvis medlemsattributterne ikke længere opfylder reglens krav, fjernes
+                                medlemmet til gruppen. Hvis medlemsattributterne ikke længere opfylder reglens krav,
+                                fjernes
                                 medlemmet.</li>
-                            <li><strong>Dynamisk enhed:</strong> (Kun sikkerhedsgrupper) Anvend dynamiske gruppe regler til
-                                automatisk at tilføje og fjerne enheder i sikkerhedsgrupper. Når enhedsattributter ændres,
-                                gennemgår Azure de dynamiske gruppe regler for kataloget. Hvis enhedsattributterne opfylder
-                                reglens krav, tilføjes enheden til sikkerhedsgruppen. Hvis enhedsattributterne ikke længere
-                                opfylder reglens krav, fjernes enheden.</li>  
+                            <li><strong>Dynamisk enhed:</strong> (Kun sikkerhedsgrupper) Anvend dynamiske gruppe regler
+                                til
+                                automatisk at tilføje og fjerne enheder i sikkerhedsgrupper. Når enhedsattributter
+                                ændres,
+                                gennemgår Azure de dynamiske gruppe regler for kataloget. Hvis enhedsattributterne
+                                opfylder
+                                reglens krav, tilføjes enheden til sikkerhedsgruppen. Hvis enhedsattributterne ikke
+                                længere
+                                opfylder reglens krav, fjernes enheden.</li>
                         </ol>
                     </td>
                 </tr>
@@ -412,25 +451,31 @@
                         <h4>Opret administrative enheder:</h4>
                     </td>
                     <td>
-                        <p>Når du designer din strategi for styring af identiteter og governance i Azure, er det afgørende
-                            at planlægge omhyggeligt for omfattende styring af din Microsoft Entra-infrastruktur. Det kan
-                            være nyttigt at begrænse det administrative område ved hjælp af administrative enheder for din
-                            organisation. Opdelingen af roller og ansvarsområder er især nyttig for organisationer, der har
+                        <p>Når du designer din strategi for styring af identiteter og governance i Azure, er det
+                            afgørende
+                            at planlægge omhyggeligt for omfattende styring af din Microsoft Entra-infrastruktur. Det
+                            kan
+                            være nyttigt at begrænse det administrative område ved hjælp af administrative enheder for
+                            din
+                            organisation. Opdelingen af roller og ansvarsområder er især nyttig for organisationer, der
+                            har
                             mange uafhængige divisioner.</p>
-    
+
                         <strong>Overvej følgende scenario:</strong>
                         <ol>
                             <li>En stor universitet bestående af flere forskellige skoler som for eksempel Forretning,
                                 Ingeniørvidenskab og Medicin.</li>
                             <li>Universitetet har administrative kontorer, undervisningsbygninger, sociale bygninger og
                                 studenterboliger.</li>
-                            <li>Hver forretningsafdeling har sit eget interne netværk til ressourcer som servere, printere
+                            <li>Hver forretningsafdeling har sit eget interne netværk til ressourcer som servere,
+                                printere
                                 og faxmaskiner.</li>
                             <li>Hver undervisningsbygning er tilsluttet universitetets netværk, så både instruktører og
                                 studerende kan få adgang til deres konti.</li>
                             <li>Netværket er også tilgængeligt for studerende og dekaner i studenterboliger og sociale
                                 bygninger.</li>
-                            <li>Gæstbrugere på universitetet har brug for adgang til internettet via universitetets netværk.
+                            <li>Gæstbrugere på universitetet har brug for adgang til internettet via universitetets
+                                netværk.
                             </li>
                         </ol>
                     </td>
@@ -446,7 +491,7 @@
                             <li>Opret en administrativ enhed for Ingeniørvidenskab.</li>
                             <li>Populér den administrative enhed med kun Ingeniørvidenskabsstuderende, personale og
                                 ressourcer.</li>
-                            <li>Tilføj Ingeniørvidenskabsafdelingens IT-team til rollen sammen med dens omfang.</li>    
+                            <li>Tilføj Ingeniørvidenskabsafdelingens IT-team til rollen sammen med dens omfang.</li>
                         </ol>
                     </td>
                 </tr>
@@ -456,27 +501,30 @@
                     </td>
                     <td>
                         <ol>
-                            <li>Overvej ledelsesværktøjer. Gennemgå dine muligheder for at administrere AUs. Du kan bruge
+                            <li>Overvej ledelsesværktøjer. Gennemgå dine muligheder for at administrere AUs. Du kan
+                                bruge
                                 Azure-portalen, PowerShell-cmdlets og scripts eller Microsoft Graph.</li>
                             <li>Overvej rollekrav i Azure-portalen. Planlæg din strategi for administrative enheder i
                                 henhold til rolleprivilegier. I Azure-portalen kan kun brugere med rollen Global
                                 Administrator eller Privileged Role Administrator administrere AUs.</li>
-                            <li>Overvej omfanget af administrative enheder. Forstå, at omfanget af en administrativ enhed
-                                kun gælder for administrationsrettigheder. Medlemmer og administratorer af en administrativ
-                                enhed kan udøve deres standardbrugerrettigheder til at gennemse andre brugere, grupper eller
-                                ressourcer uden for deres administrative enhed.</li>  
+                            <li>Overvej omfanget af administrative enheder. Forstå, at omfanget af en administrativ
+                                enhed
+                                kun gælder for administrationsrettigheder. Medlemmer og administratorer af en
+                                administrativ
+                                enhed kan udøve deres standardbrugerrettigheder til at gennemse andre brugere, grupper
+                                eller
+                                ressourcer uden for deres administrative enhed.</li>
                         </ol>
                     </td>
                 </tr>
             </table>
         </section>
-        
+
         <section class="bubble">
-            <h2>Azure</h2>
+            <h2>Azure Omkostninger og Faktorer</h2>
             <ul class="result">
             </ul>
-            <h2>Azure Omkostninger og Faktorer</h2>
-            <table>
+            <table tag="AzureOmkostningerogFaktorer">
                 <tr>
                     <td>
                         <h4>Faktor</h4>
@@ -525,14 +573,73 @@
                     <td>
                         <h4>Azure Marketplace:</h4>
                     </td>
-                    <td>Køb løsninger og tjenester fra tredjepartsleverandører; betal for både Azure-tjenester og tredjepartstjenester.</td>
+                    <td>Køb løsninger og tjenester fra tredjepartsleverandører; betal for både Azure-tjenester og
+                        tredjepartstjenester.</td>
                 </tr>
             </table>
-            
+            <h1>Pris- og Total Cost of Ownership-lommeregner</h1>
+
+            <h2>Prisberegneren:</h2>
+            <ul>
+                <li>Estimerer omkostninger ved ressourceallokering i Azure.</li>
+                <li>Tillader estimater for individuelle ressourcer eller fulde løsninger.</li>
+                <li>Fokus på omkostninger ved tildelte ressourcer.</li>
+                <li>Kun til informationsformål, ingen tildeling af ressourcer eller opkrævning af gebyrer.</li>
+            </ul>
+
+            <h2>TCO-lommeregner:</h2>
+            <ul>
+                <li>Sammenligner omkostninger ved on-premises og Azure-infrastrukturer.</li>
+                <li>Indtastning af nuværende infrastrukturkonfiguration.</li>
+                <li>Sammenligner forventede omkostninger mellem miljøer.</li>
+                <li>Indtastning af antagelser som strøm- og IT-arbejdsomkostninger.</li>
+                <li>Estimerer omkostningsforskellen for at køre samme miljø i datacenter eller Azure.</li>
+            </ul>
+
+            <h2>Microsoft Cost Management Tool</h2>
+            <ul>
+                <li><strong>Funktioner:</strong>
+                    <ul>
+                        <li>Løbende omkostningsanalyse med visuelle opdelinger.</li>
+                        <li>Etablering af udgiftsbudgetter.</li>
+                        <li>Omkostningsalarmer for budgettærskler.</li>
+                    </ul>
+                </li>
+                <li><strong>Typer af Omkostningsalarmer:</strong>
+                    <ul>
+                        <li>Budgetalarmer: Udløses baseret på forbrug eller omkostninger.</li>
+                        <li>Kreditalarmer: Overvågning af Azure-kreditforbrug.</li>
+                        <li>Afdelingsomkostningskvotealarmer: Overvågning af afdelingsudgifter.</li>
+                    </ul>
+                </li>
+                <li><strong>Budgetter:</strong>
+                    <ul>
+                        <li>Sætning af Azure-udgiftsgrænser.</li>
+                        <li>Udløsning af automatisering ved overskridelse af budgettærskel.</li>
+                    </ul>
+                </li>
+                <li><strong>Fordele:</strong>
+                    <ul>
+                        <li>Forbedret omkostningskontrol.</li>
+                        <li>Forebyggelse af ubehagelige overraskelser på fakturaer.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Tags</h3>
+            <ul>
+                <li>Formålet med tags er at organisere skyressourcer</li>
+                <li>Tags tilføjer ekstra information eller metadata</li>
+                <li>Anvendelser af tags inkluderer ressourcestyring, omkostningsstyring, driftsstyring, sikkerhed, styring og overholdelse af regler, samt arbejdsbelastningsoptimering og automatisering</li>
+                <li>Tags kan administreres gennem forskellige værktøjer såsom Windows PowerShell, Azure CLI, og Azure-portalen</li>
+                <li>Azure Policy kan bruges til at håndhæve taggingregler</li>
+                <li>Eksempler på tag-strukturer inkluderer AppNavn, Omkostningscenter, Ejendom, Påvirkning, og Miljø</li>
+                <li>Det er ikke nødvendigt at kræve, at alle ressourcer har en bestemt tag, men tagging kan tilpasses efter behov</li>
+              </ul>
         </section>
     </main>
     <footer>
         <p>2024 - Cloud Management Page</p>
     </footer>
 </body>
+
 </html>
