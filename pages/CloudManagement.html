@@ -731,296 +731,459 @@
             </ul>
             <h3>Resultat</h3>
             <ul class="result">
-                <h4>Omkostningsstyring i Azure</h4>
-                <p>
-                    Azure ændrer udviklingsomkostningerne fra kapitaludgifter (Capital expense / CapEx) til at
-                    opretholde infrastruktur og
-                    faciliteter til driftsudgifter (Operational expense / OpEx) til leje af infrastruktur, som du har
-                    brug for, uanset om det
-                    er beregning, lagring, netværk osv.</p>
-                <table>
-                    <tr>
-                        <td>
-                            <b>Ressourcetype:</b>
-                        </td>
-                        <td>Flere faktorer påvirker omkostningerne ved Azure-ressourcer. Typen af ressourcer,
-                            indstillingerne for ressourcen og Azure-regionen vil alle have en indflydelse på, hvor meget
-                            en ressource koster. Når du opretter en Azure-ressource, opretter Azure timede forekomster
-                            for
-                            den ressource. Målerne sporer ressourcernes brug og genererer en brugsregistrering, der
-                            bruges
-                            til at beregne din regning.</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>Forbrug:</b>
-                        </td>
-                        <td>Betaling efter forbrug har været et konsekvent tema, og det er cloud-betalingsmodellen, hvor
-                            du betaler for de ressourcer, du bruger i løbet af en faktureringscyklus. Hvis du bruger
-                            mere beregning i denne cyklus, betaler du mere. Hvis du bruger mindre i den aktuelle cyklus,
-                            betaler du mindre. Det er en ligetil prismekanisme, der giver maksimal fleksibilitet.</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>Vedligeholdelse</b>
-                        </td>
-                        <td>Skyens fleksibilitet gør det muligt at justere ressourcer hurtigt baseret på efterspørgsel.
-                            Brug af ressourcegrupper kan hjælpe med at holde alle dine ressourcer organiseret. For at
-                            kontrollere omkostningerne er det vigtigt at vedligeholde din sky-miljø. For eksempel hver
-                            gang du opretter en VM, bliver der også tildelt yderligere ressourcer såsom lagring og
-                            netværk. Hvis du fjerner VM'en, kan disse yderligere ressourcer måske ikke fjernes på samme
-                            tid, enten med vilje eller utilsigtet. Ved at holde øje med dine ressourcer og sikre dig, at
-                            du ikke beholder ressourcer, der ikke længere er nødvendige, kan du hjælpe med at
-                            kontrollere skyomkostningerne.</td>
-                    </tr>
-                    <tr>
-                        <td><b>Geografi:</b></td>
-                        <td>Når du opretter de fleste ressourcer i Azure, skal du definere en region, hvor ressourcen
-                            skal implementeres. Azure-infrastrukturen er distribueret globalt, hvilket gør det muligt at
-                            implementere dine tjenester centralt eller tættest på dine kunder eller et sted derimellem.
-                            Med denne globale implementering kommer globale prisforskelle. Omkostningerne til strøm,
-                            arbejdskraft, skatter og gebyrer varierer afhængigt af placeringen. På grund af disse
-                            variationer kan Azure-ressourcer adskille sig i omkostninger til implementering afhængigt af
-                            regionen.</td>
-                    </tr>
-                    <tr>
-                        <td><b>Netværkstrafik:</b></td>
-                        <td>Faktureringszoner er en faktor til at bestemme omkostningerne ved visse Azure-tjenester.
-                            Båndbredde refererer til data, der bevæger sig ind og ud af Azure-datacentre. Nogle
-                            indgående dataoverførsler (data, der går ind i Azure-datacentre) er gratis. For udgående
-                            dataoverførsler (data, der forlader Azure-datacentre), er dataoverførselsprisen baseret på
-                            zoner.</td>
-                    </tr>
-                    <tr>
-                        <td><b>Abonnementstype</b></td>
-                        <td>Nogle Azure-abonnementstyper inkluderer også brugsrettigheder, som påvirker omkostningerne.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Azure Marketplace</b></td>
-                        <td>Azure Marketplace giver dig mulighed for at købe Azure-baserede løsninger og tjenester fra
-                            tredjepartsleverandører. Dette kan være en server med forudinstalleret og konfigureret
-                            software eller forvaltede netværksfirewall-apparater eller forbindelser til
-                            tredjepartsbackup-tjenester. Når du køber produkter gennem Azure Marketplace, kan du betale
-                            for ikke kun de Azure-tjenester, du bruger, men også tjenesterne eller ekspertisen fra
-                            tredjepartsleverandøren. Faktureringsstrukturerne fastsættes af leverandøren.</td>
-                    </tr>
-                </table>
-                <h4>Sammenligning af Pris- og Total Cost of Ownership-Lommeregner</h4>
-                <p>På internettet kan du finde både en prisberegner og en lommeregner for total cost of ownership (TCO),
-                    der begge hjælper dig med at forstå potentielle udgifter ved brug af Azure. Begge lommeregnere
-                    tillader dig at opbygge en konfiguration, men de tjener forskellige formål.</p>
-                <table>
-                    <tr>
-                        <td>
-                            <b>Prisberegneren</b>
-                        </td>
-                        <td>Prisberegneren giver dig et overslag over omkostningerne ved at tildele ressourcer i Azure.
-                            Du kan få et overslag for individuelle ressourcer, opbygge en løsning eller bruge et
-                            eksempel-scenarie for at se et estimat af udgifterne. Prisberegnerens fokus ligger på
-                            omkostningerne ved de tildelte ressourcer i Azure.</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>TCO-lommeregner</b>
-                        </td>
-                        <td>
-                            <p>TCO-lommeregneren hjælper dig med at sammenligne omkostningerne ved at køre en
-                                infrastruktur på stedet sammenlignet med en Azure Cloud-infrastruktur. Med
-                                TCO-lommeregneren indtaster du din nuværende infrastrukturkonfiguration, herunder
-                                servere, databaser, lagring og udgående netværkstrafik. TCO-kalkulatoren sammenligner
-                                derefter de forventede omkostninger for din nuværende miljø med et Azure-miljø, der
-                                understøtter de samme infrastrukturkrav.</p>
-                            <p>Med TCO-lommeregneren indtaster du din konfiguration, tilføjer antagelser som strøm- og
-                                IT-arbejdsomkostninger og præsenteres med en estimat af omkostningsforskellen for at
-                                køre det samme miljø i din nuværende datacenter eller i Azure.</p>
-                        </td>
-                    </tr>
-                </table>
-                <h4>Microsofts Cost Management-værktøj</h4>
-                <p>
-                    Microsofts Cost Management-værktøj i Azure hjælper med at overvåge skyomkostninger og undgå uventede
-                    udgifter. Det giver mulighed for at analysere omkostninger, oprette budgetter og modtage alarmer ved
-                    overskridelse af grænser.
-                </p>
-                <table>
-                    <tr>
-                        <td>
-                            <b>Cost Management:</b>
-                        </td>
-                        <td>
-                            <p>
-                                Det giver mulighed for at tjekke omkostninger, oprette alarmer og budgetter.
-                            </p>
-                            <p>
-                                Omkostningsanalyse giver hurtig visuel præsentation af omkostninger.
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>Omkostningsalarmer:</b>
-                        </td>
-                        <td>
-                            <p><b>Budgetalarmer:</b> Underretter om forbrug eller omkostninger.</p>
-                            <p><b>Kreditalarmer:</b> Underretter om forbrug af Azure-kredit.</p>
-                            <p><b>Afdelingsomkostningskvotealarmer:</b> Underretter om afdelingsudgiftsgrænser.</p>
-                        </td>
-                    </tr>
-                </table>
-                <h4>Tags</h4>
-                <p>Formålet med tags er at organisere dine ressourcer i skyen på en overskuelig måde, som hjælper dig med at forstå din brug og styre omkostninger. Tags tilføjer ekstra information eller metadata til dine ressourcer og er nyttige til flere formål:</p>
-            
-                <ul>
-                    <li><strong>Ressourcestyring:</strong> Tags gør det muligt for dig at finde og handle på ressourcer, der er knyttet til specifikke arbejdsbelastninger, miljøer, forretningsenheder og ejere.</li>
-                    <li><strong>Omkostningsstyring og -optimering:</strong> Ved at gruppere ressourcer kan du rapportere om omkostninger, fordele interne omkostningscentre, spore budgetter og estimere omkostninger.</li>
-                    <li><strong>Driftsstyring:</strong> Tags gør det muligt at gruppere ressourcer efter deres betydning for virksomhedens tilgængelighed og hjælper med at formulere servicelevelaftaler (SLA'er).</li>
-                    <li><strong>Sikkerhed:</strong> Tags kan klassificere data efter dets sikkerhedsniveau, f.eks. offentligt eller fortroligt.</li>
-                    <li><strong>Styring og overholdelse af regler:</strong> Tags kan identificere ressourcer, der overholder styrings- eller reguleringskrav, f.eks. ISO 27001.</li>
-                    <li><strong>Optimering af arbejdsbelastning og automatisering:</strong> Tags kan hjælpe med at visualisere alle ressourcer, der deltager i komplekse implementeringer, og automatisere opgaver på disse ressourcer.</li>
-                </ul>
-            
-                <p>Du kan administrere ressource tags ved at tilføje, ændre eller slette dem gennem forskellige værktøjer som Windows PowerShell, Azure CLI, Azure Resource Manager-skabeloner, REST API eller Azure-portalen. Du kan også bruge Azure Policy til at håndhæve taggingregler og konventioner. Et eksempel på en tagging-struktur inkluderer tags som AppNavn, Omkostningscenter, Ejendom, Påvirkning og Miljø. Husk, at du ikke behøver at kræve, at en bestemt tag er til stede på alle dine ressourcer, men kan tilpasse tagging efter behov.</p>
-            </body>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <a href="https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/"
-                    target="_blank">omkostning management i Azure</a>
-            </ul>
-        </section>
+                <h4>Microsoft Purview</h4>
+                <div tag="OmkostningsstyringAzure">
+                    <p>
+                        Azure ændrer udviklingsomkostningerne fra kapitaludgifter (Capital expense / CapEx) til at
+                        opretholde infrastruktur og
+                        faciliteter til driftsudgifter (Operational expense / OpEx) til leje af infrastruktur, som du
+                        har
+                        brug for, uanset om det
+                        er beregning, lagring, netværk osv.</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Ressourcetype:</b>
+                            </td>
+                            <td>Flere faktorer påvirker omkostningerne ved Azure-ressourcer. Typen af ressourcer,
+                                indstillingerne for ressourcen og Azure-regionen vil alle have en indflydelse på, hvor
+                                meget
+                                en ressource koster. Når du opretter en Azure-ressource, opretter Azure timede
+                                forekomster
+                                for
+                                den ressource. Målerne sporer ressourcernes brug og genererer en brugsregistrering, der
+                                bruges
+                                til at beregne din regning.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Forbrug:</b>
+                            </td>
+                            <td>Betaling efter forbrug har været et konsekvent tema, og det er cloud-betalingsmodellen,
+                                hvor
+                                du betaler for de ressourcer, du bruger i løbet af en faktureringscyklus. Hvis du bruger
+                                mere beregning i denne cyklus, betaler du mere. Hvis du bruger mindre i den aktuelle
+                                cyklus,
+                                betaler du mindre. Det er en ligetil prismekanisme, der giver maksimal fleksibilitet.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Vedligeholdelse</b>
+                            </td>
+                            <td>Skyens fleksibilitet gør det muligt at justere ressourcer hurtigt baseret på
+                                efterspørgsel.
+                                Brug af ressourcegrupper kan hjælpe med at holde alle dine ressourcer organiseret. For
+                                at
+                                kontrollere omkostningerne er det vigtigt at vedligeholde din sky-miljø. For eksempel
+                                hver
+                                gang du opretter en VM, bliver der også tildelt yderligere ressourcer såsom lagring og
+                                netværk. Hvis du fjerner VM'en, kan disse yderligere ressourcer måske ikke fjernes på
+                                samme
+                                tid, enten med vilje eller utilsigtet. Ved at holde øje med dine ressourcer og sikre
+                                dig, at
+                                du ikke beholder ressourcer, der ikke længere er nødvendige, kan du hjælpe med at
+                                kontrollere skyomkostningerne.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Geografi:</b></td>
+                            <td>Når du opretter de fleste ressourcer i Azure, skal du definere en region, hvor
+                                ressourcen
+                                skal implementeres. Azure-infrastrukturen er distribueret globalt, hvilket gør det
+                                muligt at
+                                implementere dine tjenester centralt eller tættest på dine kunder eller et sted
+                                derimellem.
+                                Med denne globale implementering kommer globale prisforskelle. Omkostningerne til strøm,
+                                arbejdskraft, skatter og gebyrer varierer afhængigt af placeringen. På grund af disse
+                                variationer kan Azure-ressourcer adskille sig i omkostninger til implementering
+                                afhængigt af
+                                regionen.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Netværkstrafik:</b></td>
+                            <td>Faktureringszoner er en faktor til at bestemme omkostningerne ved visse Azure-tjenester.
+                                Båndbredde refererer til data, der bevæger sig ind og ud af Azure-datacentre. Nogle
+                                indgående dataoverførsler (data, der går ind i Azure-datacentre) er gratis. For udgående
+                                dataoverførsler (data, der forlader Azure-datacentre), er dataoverførselsprisen baseret
+                                på
+                                zoner.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Abonnementstype</b></td>
+                            <td>Nogle Azure-abonnementstyper inkluderer også brugsrettigheder, som påvirker
+                                omkostningerne.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Azure Marketplace</b></td>
+                            <td>Azure Marketplace giver dig mulighed for at købe Azure-baserede løsninger og tjenester
+                                fra
+                                tredjepartsleverandører. Dette kan være en server med forudinstalleret og konfigureret
+                                software eller forvaltede netværksfirewall-apparater eller forbindelser til
+                                tredjepartsbackup-tjenester. Når du køber produkter gennem Azure Marketplace, kan du
+                                betale
+                                for ikke kun de Azure-tjenester, du bruger, men også tjenesterne eller ekspertisen fra
+                                tredjepartsleverandøren. Faktureringsstrukturerne fastsættes af leverandøren.</td>
+                        </tr>
+                    </table>
+                    <h4>Sammenligning af Pris- og Total Cost of Ownership-Lommeregner</h4>
+                    <p>På internettet kan du finde både en prisberegner og en lommeregner for total cost of ownership
+                        (TCO),
+                        der begge hjælper dig med at forstå potentielle udgifter ved brug af Azure. Begge lommeregnere
+                        tillader dig at opbygge en konfiguration, men de tjener forskellige formål.</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Prisberegneren</b>
+                            </td>
+                            <td>Prisberegneren giver dig et overslag over omkostningerne ved at tildele ressourcer i
+                                Azure.
+                                Du kan få et overslag for individuelle ressourcer, opbygge en løsning eller bruge et
+                                eksempel-scenarie for at se et estimat af udgifterne. Prisberegnerens fokus ligger på
+                                omkostningerne ved de tildelte ressourcer i Azure.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>TCO-lommeregner</b>
+                            </td>
+                            <td>
+                                <p>TCO-lommeregneren hjælper dig med at sammenligne omkostningerne ved at køre en
+                                    infrastruktur på stedet sammenlignet med en Azure Cloud-infrastruktur. Med
+                                    TCO-lommeregneren indtaster du din nuværende infrastrukturkonfiguration, herunder
+                                    servere, databaser, lagring og udgående netværkstrafik. TCO-kalkulatoren
+                                    sammenligner
+                                    derefter de forventede omkostninger for din nuværende miljø med et Azure-miljø, der
+                                    understøtter de samme infrastrukturkrav.</p>
+                                <p>Med TCO-lommeregneren indtaster du din konfiguration, tilføjer antagelser som strøm-
+                                    og
+                                    IT-arbejdsomkostninger og præsenteres med en estimat af omkostningsforskellen for at
+                                    køre det samme miljø i din nuværende datacenter eller i Azure.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <h4>Microsofts Cost Management-værktøj</h4>
+                    <p>
+                        Microsofts Cost Management-værktøj i Azure hjælper med at overvåge skyomkostninger og undgå
+                        uventede
+                        udgifter. Det giver mulighed for at analysere omkostninger, oprette budgetter og modtage alarmer
+                        ved
+                        overskridelse af grænser.
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Cost Management:</b>
+                            </td>
+                            <td>
+                                <p>
+                                    Det giver mulighed for at tjekke omkostninger, oprette alarmer og budgetter.
+                                </p>
+                                <p>
+                                    Omkostningsanalyse giver hurtig visuel præsentation af omkostninger.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Omkostningsalarmer:</b>
+                            </td>
+                            <td>
+                                <p><b>Budgetalarmer:</b> Underretter om forbrug eller omkostninger.</p>
+                                <p><b>Kreditalarmer:</b> Underretter om forbrug af Azure-kredit.</p>
+                                <p><b>Afdelingsomkostningskvotealarmer:</b> Underretter om afdelingsudgiftsgrænser.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <h4>Tags</h4>
+                    <p>Formålet med tags er at organisere dine ressourcer i skyen på en overskuelig måde, som hjælper
+                        dig
+                        med at forstå din brug og styre omkostninger. Tags tilføjer ekstra information eller metadata
+                        til
+                        dine ressourcer og er nyttige til flere formål:</p>
 
-        <section class="bubble">
-            <h2>Note #4</h2>
-            <p class="date">Uge 11-12</p>
-            <h3>Forventning</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Forarbejdninger</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Resultat</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-        </section>
+                    <ul>
+                        <li><strong>Ressourcestyring:</strong> Tags gør det muligt for dig at finde og handle på
+                            ressourcer,
+                            der er knyttet til specifikke arbejdsbelastninger, miljøer, forretningsenheder og ejere.
+                        </li>
+                        <li><strong>Omkostningsstyring og -optimering:</strong> Ved at gruppere ressourcer kan du
+                            rapportere
+                            om omkostninger, fordele interne omkostningscentre, spore budgetter og estimere
+                            omkostninger.
+                        </li>
+                        <li><strong>Driftsstyring:</strong> Tags gør det muligt at gruppere ressourcer efter deres
+                            betydning
+                            for virksomhedens tilgængelighed og hjælper med at formulere servicelevelaftaler (SLA'er).
+                        </li>
+                        <li><strong>Sikkerhed:</strong> Tags kan klassificere data efter dets sikkerhedsniveau, f.eks.
+                            offentligt eller fortroligt.</li>
+                        <li><strong>Styring og overholdelse af regler:</strong> Tags kan identificere ressourcer, der
+                            overholder styrings- eller reguleringskrav, f.eks. ISO 27001.</li>
+                        <li><strong>Optimering af arbejdsbelastning og automatisering:</strong> Tags kan hjælpe med at
+                            visualisere alle ressourcer, der deltager i komplekse implementeringer, og automatisere
+                            opgaver
+                            på disse ressourcer.</li>
+                    </ul>
 
-        <section class="bubble">
-            <h2>Note #5</h2>
-            <p class="date">Uge 13-14</p>
-            <h3>Forventning</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Forarbejdninger</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Resultat</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-        </section>
+                    <p>Du kan administrere ressource tags ved at tilføje, ændre eller slette dem gennem forskellige
+                        værktøjer som Windows PowerShell, Azure CLI, Azure Resource Manager-skabeloner, REST API eller
+                        Azure-portalen. Du kan også bruge Azure Policy til at håndhæve taggingregler og konventioner. Et
+                        eksempel på en tagging-struktur inkluderer tags som AppNavn, Omkostningscenter, Ejendom,
+                        Påvirkning
+                        og Miljø. Husk, at du ikke behøver at kræve, at en bestemt tag er til stede på alle dine
+                        ressourcer,
+                        men kan tilpasse tagging efter behov.</p>
+                </div>
+                <div tag="MicrosoftPurview">
+                    <h4>Formålet med Microsoft Purview</h4>
 
-        <section class="bubble">
-            <h2>Note #6</h2>
-            <p class="date">Uge 15-16</p>
-            <h3>Forventning</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Forarbejdninger</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Resultat</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-        </section>
+                    <p>Microsoft Purview tilbyder løsninger inden for datastyring, risiko og overholdelse, der hjælper
+                        med at skabe et enkelt, samlet overblik over dine data. Microsoft Purview samler indsigt om dine
+                        data fra både lokale, multicloud og software som en service-miljøer.</p>
 
-        <section class="bubble">
-            <h2>Note #7</h2>
-            <p class="date">Uge 17-18</p>
-            <h3>Forventning</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Forarbejdninger</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Resultat</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-        </section>
+                    <p>Med Microsoft Purview kan du holde dig opdateret om din data-landskab takket være:</p>
 
-        <section class="bubble">
-            <h2>Note #8</h2>
-            <p class="date">Uge 19-20</p>
-            <h3>Forventning</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Forarbejdninger</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Resultat</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-        </section>
+                    <ul>
+                        <li>Automatisk opdagelse af data</li>
+                        <li>Klassificering af følsomme data</li>
+                        <li>End-to-end-dataforbindelse</li>
+                    </ul>
 
-        <section class="bubble">
-            <h2>Note #9</h2>
-            <p class="date">Uge 21-22</p>
-            <h3>Forventning</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Forarbejdninger</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Resultat</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-        </section>
+                    <p>Microsoft Purview består af to hovedløsningsområder: risiko og overholdelse samt samlet
+                        datastyring.</p>
 
-    </main>
+                    <h4>Risiko og overholdelsesløsninger i Microsoft Purview</h4>
 
-    <footer>
-        <p>2024 - Cloud Management Page</p>
-    </footer>
+                    <p>Risiko og overholdelsesløsninger i Microsoft Purview integrerer Microsoft 365-funktioner som en
+                        kernekomponent. Microsoft Teams, OneDrive og Exchange er blot nogle af de Microsoft
+                        365-tjenester, som Microsoft Purview bruger til at hjælpe med at administrere og overvåge dine
+                        data. Ved at administrere og overvåge dine data kan Microsoft Purview hjælpe din organisation
+                        med at:</p>
+
+                    <ul>
+                        <li>Beskytte følsomme data på tværs af skyer, apps og enheder.</li>
+                        <li>Identificere datarelaterede risici og håndtere overholdelseskrav.</li>
+                        <li>Komme i gang med overholdelse af regulativer.</li>
+                    </ul>
+
+                    <h4>Samlet datastyring i Microsoft Purview</h4>
+
+                    <p>Samlet datastyring i Microsoft Purview omfatter robuste løsninger, der hjælper med at håndtere
+                        dine data på lokale, multicloud og software som en service-miljøer. Microsoft Purviews robuste
+                        datastyringsfunktioner gør det muligt for dig at administrere dine data, der er gemt i Azure,
+                        SQL og Hive-databaser, lokalt og endda i andre skyer som Amazon S3.</p>
+
+                    <p>Microsoft Purviews samlede datastyring hjælper din organisation med at:</p>
+
+                    <ul>
+                        <li>Oprette en opdateret kortlægning af din samlede dataejendom, der inkluderer
+                            dataklassificering og end-to-end-forbindelse.</li>
+                        <li>Identificere, hvor følsomme data er gemt i din ejendom.</li>
+                        <li>Oprette et sikkert miljø for dataforbrugere til at finde værdifulde data.</li>
+                        <li>Generere indsigt i, hvordan dine data er gemt og brugt.</li>
+                        <li>Administrere adgangen til data i din ejendom sikkert og i stor skala.</li>
+                    </ul>
+                </div>
+                <div tag="AzurePolicy">
+                    <h4>Azure Policy</h4>
+                    <p>Azure Policy i Azure er et værktøj til at oprette og administrere politikker for at sikre, at
+                        dine ressourcer overholder virksomhedens standarder og regler. Det tillader oprettelse af
+                        individuelle politikker og initiativer, der grupperer relaterede politikker sammen. Politikker
+                        kan anvendes på forskellige niveauer som ressourcer, ressourcegrupper eller abonnementer. Azure
+                        Policy har indbyggede politik- og initiativdefinitioner og kan automatisere rettelser af
+                        ikke-kompatible ressourcer. Det integrerer også med Azure DevOps for at anvende politikker i
+                        udviklings- og implementeringsprocesser. Initiativer i Azure Policy er grupperinger af
+                        politikker, der hjælper med at opnå større overensstemmelse med specifikke mål.</p>
+                </div>
+                <div tag="ResourceLocks">
+                    <h4>resource locks</h4>
+                    <h4>Formålet med ressource-låse</h4>
+                    <p>En ressource-lås forhindrer ressourcer i at blive slettet eller ændret ved et uheld.</p>
+
+                    <h2>Typer af ressource-låse</h2>
+                    <p>Der er to typer af ressource-låse, en der forhindrer brugere i at slette og en der forhindrer
+                        brugere i at ændre eller slette en ressource.</p>
+                    <ul>
+                        <li><strong>Slet:</strong> Betyder at autoriserede brugere stadig kan læse og ændre en
+                            ressource, men de kan ikke slette den.</li>
+                        <li><strong>Læs-kun:</strong> Betyder at autoriserede brugere kan læse en ressource, men de kan
+                            ikke slette eller opdatere den. Anvendelse af denne lås ligner at begrænse alle autoriserede
+                            brugere til tilladelserne givet af Læser-rollen.</li>
+                    </ul>
+
+                    <h5>Hvordan administrerer jeg ressource-låse?</h5>
+                    <p>Du kan administrere ressource-låse fra Azure-portalen, PowerShell, Azure CLI eller fra en Azure
+                        Resource Manager-skabelon.</p>
+                    <p>For at se, tilføje eller slette låse i Azure-portalen, gå til Indstillinger-sektionen på
+                        indstillingspanelet for enhver ressource i Azure-portalen.</p>
+
+                    <h5>Hvordan sletter eller ændrer jeg en låst ressource?</h5>
+                    <p>Selvom låsning hjælper med at forhindre utilsigtede ændringer, kan du stadig foretage ændringer
+                        ved at følge en totrinsproces.</p>
+                    <p>For at ændre en låst ressource skal du først fjerne låsen. Efter du har fjernet låsen, kan du
+                        anvende enhver handling, du har tilladelser til at udføre. Ressource-låse gælder uanset
+                        RBAC-tilladelser. Selvom du er ejer af ressourcen, skal du stadig fjerne låsen, før du kan
+                        udføre den blokerede aktivitet.</p>
+                </div>
+
+                <div tag="ServiceTrustPortal">
+                    <h4>Formål med Service Trust Portalen</h4>
+
+                    <p>Microsoft Service Trust Portalen er en portal, der giver adgang til forskellige indhold, værktøjer og andre ressourcer om Microsofts sikkerhed, privatliv og overholdelse af regler.</p>
+                    
+                    <p>På Service Trust Portalen finder du detaljer om Microsofts implementering af kontrol og processer, der beskytter vores skytjenester og de kundedata, der er indeholdt deri. For at få adgang til nogle af ressourcerne på Service Trust Portalen skal du logge ind som en autentificeret bruger med din Microsoft skytjeneste-konto (Microsoft Entra organisationskonto). Du skal gennemgå og acceptere Microsofts fortrolighedsaftale for overholdelsesmaterialer.</p>
+                    
+                    <h5>Adgang til Service Trust Portalen</h5>
+                    <p>Du kan få adgang til Service Trust Portalen på <a href="https://servicetrust.microsoft.com/">https://servicetrust.microsoft.com/</a>.</p>
+
+                    <h5>Service Trust Portalens funktioner og indhold</h5>
+                    <p>Service Trust Portalens funktioner og indhold er tilgængelige fra hovedmenuen. Kategorierne på hovedmenuen er:</p>
+                    <ul>
+                      <li><strong>Service Trust Portal:</strong> Giver et hurtigt adgangslink til at vende tilbage til Service Trust Portalens hjemmeside.</li>
+                      <li><strong>Min Bibliotek:</strong> Lader dig gemme (eller fastgøre) dokumenter for at få hurtig adgang til dem på din Min Biblioteksside. Du kan også indstille det til at modtage notifikationer, når dokumenter i din Min Bibliotek bliver opdateret.</li>
+                      <li><strong>Alle Dokumenter:</strong> Er et enkelt landingsted for dokumenter på Service Trust Portalen. Fra Alle Dokumenter kan du fastgøre dokumenter for at få dem vist i din Min Bibliotek.</li>
+                    </ul>
+                </div>
+</body>
+</ul>
+<h3>Kilder:</h3>
+<ul class="result">
+    <a href="https://learn.microsoft.com/da-dk/training/modules/describe-features-tools-azure-for-governance-compliance/"
+        target="_blank">Describe features and tools in Azure for governance and compliance</a>
+</ul>
+</section>
+
+<section class="bubble">
+    <h2>Note #4</h2>
+    <p class="date">Uge 11-12</p>
+    <h3>Forventning</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Forarbejdninger</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Resultat</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Kilder:</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+</section>
+
+<section class="bubble">
+    <h2>Note #5</h2>
+    <p class="date">Uge 13-14</p>
+    <h3>Forventning</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Forarbejdninger</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Resultat</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Kilder:</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+</section>
+
+<section class="bubble">
+    <h2>Note #6</h2>
+    <p class="date">Uge 15-16</p>
+    <h3>Forventning</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Forarbejdninger</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Resultat</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Kilder:</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+</section>
+
+<section class="bubble">
+    <h2>Note #7</h2>
+    <p class="date">Uge 17-18</p>
+    <h3>Forventning</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Forarbejdninger</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Resultat</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Kilder:</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+</section>
+
+<section class="bubble">
+    <h2>Note #8</h2>
+    <p class="date">Uge 19-20</p>
+    <h3>Forventning</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Forarbejdninger</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Resultat</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Kilder:</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+</section>
+
+<section class="bubble">
+    <h2>Note #9</h2>
+    <p class="date">Uge 21-22</p>
+    <h3>Forventning</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Forarbejdninger</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Resultat</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+    <h3>Kilder:</h3>
+    <ul class="result">
+        <li></li>
+    </ul>
+</section>
+
+</main>
+
+<footer>
+    <p>2024 - Cloud Management Page</p>
+</footer>
 </body>
 
 </html>
