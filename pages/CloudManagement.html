@@ -485,222 +485,275 @@
                             sikkerhedsspørgsmål, skal du kombinere denne mulighed med andre godkendelsesmetoder.</li>
                     </ul>
 
+
+
+                    <div tag="Users">
+                        <h4>Opret brugerkonti</h4>
+                        <p>Hver bruger, der ønsker adgang til Azure-ressourcer, har brug for en Azure-brugerkonto. En
+                            brugerkonto har alle de oplysninger, der kræves for at godkende brugeren under
+                            tilmeldingsprocessen. Microsoft Entra ID understøtter tre typer af brugerkonti. Typerne
+                            angiver,
+                            hvor brugeren er defineret (i skyen eller lokalt) og om brugeren er intern eller ekstern for
+                            din
+                            Microsoft Entra-organisation.</p>
+
+                        <h4>Ting at vide om brugerkonti</h4>
+                        <table>
+                            <tr>
+                                <th>Brugerkonto</th>
+                                <th>Beskrivelse</th>
+                            </tr>
+                            <tr>
+                                <td>Cloud-identitet</td>
+                                <td>En brugerkonto med en cloud-identitet er kun defineret i Microsoft Entra ID. Denne
+                                    type
+                                    brugerkonto inkluderer administratorbrugerkonti og brugere, der administreres som en
+                                    del
+                                    af din organisation. En cloud-identitet kan være for brugerkonti defineret i din
+                                    Microsoft Entra-organisation og også for brugerkonti defineret i en ekstern
+                                    Microsoft
+                                    Entra-instans. Når en cloud-identitet fjernes fra den primære mappe, slettes
+                                    brugerkontoen.</td>
+                            </tr>
+                            <tr>
+                                <td>Directory-synkroniseret identitet</td>
+                                <td>Brugerkonti, der har en directory-synkroniseret identitet, er defineret i en lokal
+                                    Active Directory. En synkroniseringsaktivitet finder sted via Microsoft Entra
+                                    Connect
+                                    for at bringe disse brugerkonti ind i Azure. Kilden til disse konti er Windows
+                                    Server
+                                    Active Directory.</td>
+                            </tr>
+                            <tr>
+                                <td>Gæstbruger</td>
+                                <td>Gæstbrugerkonti er defineret uden for Azure. Eksempler inkluderer brugerkonti fra
+                                    andre
+                                    skyudbydere og Microsoft-konti som f.eks. en Xbox LIVE-konto. Kilden til
+                                    gæstbrugerkonti
+                                    er Inviteret bruger. Gæstbrugerkonti er nyttige, når eksterne leverandører eller
+                                    entreprenører har brug for adgang til dine Azure-ressourcer.</td>
+                            </tr>
+                        </table>
+
+                        <h5>Ting at overveje ved valg af brugerkonti</h5>
+                        <ul>
+                            <li>Overvej, hvor brugere er defineret. Afgør, hvor dine brugere er defineret. Er alle dine
+                                brugere defineret inden for din Microsoft Entra-organisation, eller er nogle brugere
+                                defineret i eksterne Microsoft Entra-instanser? Har du brugere, der er eksterne for din
+                                organisation? Det er almindeligt for virksomheder at understøtte to eller flere
+                                kontotyper i
+                                deres infrastruktur.</li>
+                            <li>Overvej support til eksterne bidragydere. Tillad eksterne bidragydere at få adgang til
+                                Azure-ressourcer i din organisation ved at understøtte brugerkontoen af typen
+                                Gæstbruger.
+                                Når den eksterne bidragyder ikke længere har brug for adgang, kan du fjerne
+                                brugerkontoen og
+                                deres adgangsprivilegier.</li>
+                            <li>Overvej en kombination af brugerkonti. Implementer brugerkontotyperne, der gør det
+                                muligt
+                                for din organisation at opfylde deres forretningskrav. Understøt brugerkonti med
+                                directory-synkroniseret identitet til brugere defineret i Windows Server Active
+                                Directory.
+                                Understøt cloud-identiteter til brugere defineret i din interne Microsoft Entra-struktur
+                                eller for brugere defineret i en ekstern Microsoft Entra-instans.</li>
+                        </ul>
+
+                        <h4>Administrer brugerkonti</h4>
+
+                        <p>Der er flere måder at tilføje brugerkonti til cloud-identitet i Microsoft Entra ID. En
+                            almindelig
+                            tilgang er ved at bruge Azure-portalen. Brugerkonti kan også tilføjes til Microsoft Entra ID
+                            gennem Microsoft 365 Admin Center, Microsoft Intune-administrationskonsollen og Azure CLI.
+                        </p>
+
+                        <h4>Detaljer om cloud-identitetskonti</h4>
+                        <p>Hvordan cloud-identitetsbrugerkonti er defineret i Microsoft Entra ID:
+                            Administrator kan oprette en bruger inden for organisationen eller invitere en gæst til at
+                            give
+                            adgang til organisationsressourcer:</p>
+                        <p>Et nyt brugerkonto skal have et visningsnavn og et tilknyttet brugernavn. Et eksempel på et
+                            visningsnavn er Aran Sawyer-Miller, og det tilknyttede brugernavn kunne være
+                            asawmill@contoso.com.</p>
+                        <p>Information og indstillinger, der beskriver en bruger, er gemt i brugerkontoprofilen.</p>
+                        <p>Profilen kan have andre indstillinger som en brugers stillingsbetegnelse og deres
+                            kontaktemailadresse.</p>
+                        <p>En bruger med Global administrator eller Brugeradministrator privilegier kan foruddefinere
+                            profildata i brugerkonti, såsom hovedtelefonnummeret for virksomheden.</p>
+                        <p>Ikke-administratorbrugere kan angive nogle af deres egne profildata, men de kan ikke ændre
+                            deres
+                            visningsnavn eller kontonavn.</p>
+
+                        <h5>Ting at overveje ved håndtering af cloud-identitetskonti</h5>
+                        <ul>
+                            <li>Overvej brugerprofildata. Tillad brugere at angive deres profiloplysninger for deres
+                                konti,
+                                efter behov. Brugerprofildata, herunder brugerens billede, job og kontaktoplysninger, er
+                                valgfrie. Du kan også levere visse profilindstillinger for hver bruger baseret på din
+                                organisations behov.</li>
+                            <li>Overvej gendannelsesmuligheder for slettede konti. Inkluder gendannelsesscenarier i din
+                                kontohåndteringsplan. Gendannelsesoperationer for en slettet konto er tilgængelige op
+                                til 30
+                                dage efter, at en konto er fjernet. Efter 30 dage kan en slettet brugerkonto ikke
+                                gendannes.
+                            </li>
+                            <li>Overvej indsamling af kontodata. Indsaml logindata og revisionslogoplysninger for
+                                brugerkonti. Microsoft Entra ID giver dig mulighed for at indsamle disse data for at
+                                hjælpe
+                                dig med at analysere og forbedre din infrastruktur.</li>
+                        </ul>
+                        <h4>Opret brugerkonti i bulk</h4>
+                        <p>Microsoft Entra ID understøtter flere bulk-operationer, herunder bulkoprettelse og -sletning
+                            af
+                            brugerkonti. Den mest almindelige tilgang til disse operationer er at bruge Azure-portalen.
+                            Azure PowerShell kan bruges til bulk-upload af brugerkonti.</p>
+
+                        <h5>Ting at vide om bulk-kontooperationer</h5>
+                        <ul>
+                            <li>Kun globale administratorer eller brugeradministratorer har privilegier til at oprette
+                                og
+                                slette brugerkonti i Azure-portalen.</li>
+                            <li>For at fuldføre bulkopret eller slette operationer udfylder administratoren en
+                                kommasepareret
+                                værdier (CSV) skabelon af dataene for brugerkontiene.</li>
+                            <li>Bulk-operationsskabeloner kan downloades fra Microsoft Entra-administrationscenteret.
+                            </li>
+                            <li>Bulklister over brugerkonti kan downloades.</li>
+                        </ul>
+                        <h5>Ting at overveje ved oprettelse af brugerkonti</h5>
+                        <ul>
+                            <li>Her er nogle designovervejelser for oprettelse og sletning af brugerkonti. Tænk over,
+                                hvilke
+                                brugerkontokonventioner og -processer der kan være påkrævet af din organisation.</li>
+                            <li>Etabler eller implementer en navngivningskonvention for dine brugerkonti. Anvend
+                                konventioner til brugerkontonavne, visningsnavne og brugeraliaser for ensartethed på
+                                tværs
+                                af organisationen. Konventioner for navne og aliaser kan forenkle
+                                bulkoprettelsesprocessen
+                                ved at reducere områder med unikhed i CSV-filen. En konvention for brugernavne kunne
+                                begynde
+                                med brugerens efternavn efterfulgt af et punktum og afslutte med brugerens fornavn, som
+                                f.eks. Sawyer-Miller.Aran@contoso.com.</li>
+                            <li>Implementer en konvention for det indledende kodeord for en nyoprettet bruger. Design et
+                                system til at meddele nye brugere om deres adgangskoder på en sikker måde. Du kan
+                                generere
+                                en tilfældig adgangskode og sende den pr. e-mail til den nye bruger eller deres leder.
+                            </li>
+                            <li>Se og håndter eventuelle fejl ved at downloade resultatfilen på siden Bulkoperationer i
+                                Azure-portalen. Resultatfilen indeholder årsagen til hver fejl. En fejl kan være en
+                                brugerkonto, der allerede er oprettet, eller en konto, der er duplikeret. Generelt er
+                                det
+                                nemmere at uploade og fejlfinde mindre grupper af brugerkonti.</li>
+                        </ul>
+
+                        <h4>Opret gruppekonti</h4>
+                        <p>Microsoft Entra ID giver din organisation mulighed for at definere to forskellige typer af
+                            gruppekonti. Sikkerhedsgrupper bruges til at administrere medlems- og computeradgang til
+                            fælles
+                            ressourcer for en gruppe brugere. Du kan oprette en sikkerhedsgruppe til en specifik
+                            sikkerhedspolitik og anvende de samme tilladelser til alle medlemmer af en gruppe. Microsoft
+                            365-grupper giver samarbejdsmuligheder. Gruppemedlemmer har adgang til en fælles mailbox,
+                            kalender, filer, SharePoint-websted og mere.</p>
+
+                        <h4>Ting at vide om oprettelse af gruppekonti</h4>
+                        <ul>
+                            <li>Brug sikkerhedsgrupper til at angive tilladelser for alle gruppe medlemmer på samme tid,
+                                i
+                                stedet for at tilføje tilladelser til hver enkelt medlem individuelt.</li>
+                            <li>Tilføj Microsoft 365-grupper for at aktivere gruppeadgang for gæstbrugere uden for din
+                                Microsoft Entra organisation.</li>
+                            <li>Sikkerhedsgrupper kan kun implementeres af en Microsoft Entra-administrator.</li>
+                            <li>Normale brugere og Microsoft Entra-administratorer kan begge bruge Microsoft
+                                365-grupper.
+                            </li>
+                        </ul>
+
+                        <h4>Ting at overveje ved tilføjelse af gruppe medlemmer</h4>
+                        <p>Når du tilføjer medlemmer til en gruppe, er der forskellige måder, du kan tildele
+                            medlemsadgangsrettigheder på. Når du gennemgår disse muligheder, skal du overveje, hvilke
+                            grupper der er nødvendige for at understøtte din organisation, og hvilke adgangsrettigheder
+                            der
+                            skal tildeles til gruppe medlemmer.</p>
+
+                        <h4>Adgangsrettigheder</h4>
+                        <ul>
+                            <li><strong>Tildelt:</strong> Tilføj specifikke brugere som medlemmer af en gruppe, hvor
+                                hver
+                                bruger kan have unikke tilladelser.</li>
+                            <li><strong>Dynamisk bruger:</strong> Brug dynamiske medlemskabsregler til automatisk at
+                                tilføje
+                                og fjerne gruppe medlemmer. Når medlemsattributter ændres, gennemgår Azure de dynamiske
+                                gruppe regler for kataloget. Hvis medlemsattributterne opfylder reglens krav, tilføjes
+                                medlemmet til gruppen. Hvis medlemsattributterne ikke længere opfylder reglens krav,
+                                fjernes
+                                medlemmet.</li>
+                            <li><strong>Dynamisk enhed:</strong> (Kun sikkerhedsgrupper) Anvend dynamiske gruppe regler
+                                til
+                                automatisk at tilføje og fjerne enheder i sikkerhedsgrupper. Når enhedsattributter
+                                ændres,
+                                gennemgår Azure de dynamiske gruppe regler for kataloget. Hvis enhedsattributterne
+                                opfylder
+                                reglens krav, tilføjes enheden til sikkerhedsgruppen. Hvis enhedsattributterne ikke
+                                længere
+                                opfylder reglens krav, fjernes enheden.</li>
+                        </ul>
+
+                        <h4>Opret administrative enheder</h4>
+                        <p>Når du designer din strategi for styring af identiteter og governance i Azure, er det
+                            afgørende
+                            at planlægge omhyggeligt for omfattende styring af din Microsoft Entra-infrastruktur. Det
+                            kan
+                            være nyttigt at begrænse det administrative område ved hjælp af administrative enheder for
+                            din
+                            organisation. Opdelingen af roller og ansvarsområder er især nyttig for organisationer, der
+                            har
+                            mange uafhængige divisioner.</p>
+
+                        <p>Overvej følgende scenario:</p>
+                        <ul>
+                            <li>En stor universitet bestående af flere forskellige skoler som for eksempel Forretning,
+                                Ingeniørvidenskab og Medicin.</li>
+                            <li>Universitetet har administrative kontorer, undervisningsbygninger, sociale bygninger og
+                                studenterboliger.</li>
+                            <li>Hver forretningsafdeling har sit eget interne netværk til ressourcer som servere,
+                                printere
+                                og faxmaskiner.</li>
+                            <li>Hver undervisningsbygning er tilsluttet universitetets netværk, så både instruktører og
+                                studerende kan få adgang til deres konti.</li>
+                            <li>Netværket er også tilgængeligt for studerende og dekaner i studenterboliger og sociale
+                                bygninger.</li>
+                            <li>Gæstbrugere på universitetet har brug for adgang til internettet via universitetets
+                                netværk.
+                            </li>
+                        </ul>
+
+                        <h5>Ting at tænke på vedrørende administrative enheder</h5>
+                        <ul>
+                            <li>Skab en rolle, der har administrative tilladelser kun til Microsoft Entra-brugere i den
+                                administrative enhed for Ingeniørvidenskab.</li>
+                            <li>Opret en administrativ enhed for Ingeniørvidenskab.</li>
+                            <li>Populér den administrative enhed med kun Ingeniørvidenskabsstuderende, personale og
+                                ressourcer.</li>
+                            <li>Tilføj Ingeniørvidenskabsafdelingens IT-team til rollen sammen med dens omfang.</li>
+                        </ul>
+
+                        <h5>Ting at overveje ved arbejde med administrative enheder</h5>
+                        <ul>
+                            <li>Overvej ledelsesværktøjer. Gennemgå dine muligheder for at administrere AUs. Du kan
+                                bruge
+                                Azure-portalen, PowerShell-cmdlets og scripts eller Microsoft Graph.</li>
+                            <li>Overvej rollekrav i Azure-portalen. Planlæg din strategi for administrative enheder i
+                                henhold til rolleprivilegier. I Azure-portalen kan kun brugere med rollen Global
+                                Administrator eller Privileged Role Administrator administrere AUs.</li>
+                            <li>Overvej omfanget af administrative enheder. Forstå, at omfanget af en administrativ
+                                enhed
+                                kun gælder for administrationsrettigheder. Medlemmer og administratorer af en
+                                administrativ
+                                enhed kan udøve deres standardbrugerrettigheder til at gennemse andre brugere, grupper
+                                eller
+                                ressourcer uden for deres administrative enhed.</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div tag="Users">
-                    <h4>Opret brugerkonti</h4>
-                    <p>Hver bruger, der ønsker adgang til Azure-ressourcer, har brug for en Azure-brugerkonto. En
-                        brugerkonto har alle de oplysninger, der kræves for at godkende brugeren under
-                        tilmeldingsprocessen. Microsoft Entra ID understøtter tre typer af brugerkonti. Typerne angiver,
-                        hvor brugeren er defineret (i skyen eller lokalt) og om brugeren er intern eller ekstern for din
-                        Microsoft Entra-organisation.</p>
-
-                    <h4>Ting at vide om brugerkonti</h4>
-                    <table>
-                        <tr>
-                            <th>Brugerkonto</th>
-                            <th>Beskrivelse</th>
-                        </tr>
-                        <tr>
-                            <td>Cloud-identitet</td>
-                            <td>En brugerkonto med en cloud-identitet er kun defineret i Microsoft Entra ID. Denne type
-                                brugerkonto inkluderer administratorbrugerkonti og brugere, der administreres som en del
-                                af din organisation. En cloud-identitet kan være for brugerkonti defineret i din
-                                Microsoft Entra-organisation og også for brugerkonti defineret i en ekstern Microsoft
-                                Entra-instans. Når en cloud-identitet fjernes fra den primære mappe, slettes
-                                brugerkontoen.</td>
-                        </tr>
-                        <tr>
-                            <td>Directory-synkroniseret identitet</td>
-                            <td>Brugerkonti, der har en directory-synkroniseret identitet, er defineret i en lokal
-                                Active Directory. En synkroniseringsaktivitet finder sted via Microsoft Entra Connect
-                                for at bringe disse brugerkonti ind i Azure. Kilden til disse konti er Windows Server
-                                Active Directory.</td>
-                        </tr>
-                        <tr>
-                            <td>Gæstbruger</td>
-                            <td>Gæstbrugerkonti er defineret uden for Azure. Eksempler inkluderer brugerkonti fra andre
-                                skyudbydere og Microsoft-konti som f.eks. en Xbox LIVE-konto. Kilden til gæstbrugerkonti
-                                er Inviteret bruger. Gæstbrugerkonti er nyttige, når eksterne leverandører eller
-                                entreprenører har brug for adgang til dine Azure-ressourcer.</td>
-                        </tr>
-                    </table>
-
-                    <h5>Ting at overveje ved valg af brugerkonti</h5>
-                    <ul>
-                        <li>Overvej, hvor brugere er defineret. Afgør, hvor dine brugere er defineret. Er alle dine
-                            brugere defineret inden for din Microsoft Entra-organisation, eller er nogle brugere
-                            defineret i eksterne Microsoft Entra-instanser? Har du brugere, der er eksterne for din
-                            organisation? Det er almindeligt for virksomheder at understøtte to eller flere kontotyper i
-                            deres infrastruktur.</li>
-                        <li>Overvej support til eksterne bidragydere. Tillad eksterne bidragydere at få adgang til
-                            Azure-ressourcer i din organisation ved at understøtte brugerkontoen af typen Gæstbruger.
-                            Når den eksterne bidragyder ikke længere har brug for adgang, kan du fjerne brugerkontoen og
-                            deres adgangsprivilegier.</li>
-                        <li>Overvej en kombination af brugerkonti. Implementer brugerkontotyperne, der gør det muligt
-                            for din organisation at opfylde deres forretningskrav. Understøt brugerkonti med
-                            directory-synkroniseret identitet til brugere defineret i Windows Server Active Directory.
-                            Understøt cloud-identiteter til brugere defineret i din interne Microsoft Entra-struktur
-                            eller for brugere defineret i en ekstern Microsoft Entra-instans.</li>
-                    </ul>
-
-                    <h4>Administrer brugerkonti</h4>
-
-                    <p>Der er flere måder at tilføje brugerkonti til cloud-identitet i Microsoft Entra ID. En almindelig
-                        tilgang er ved at bruge Azure-portalen. Brugerkonti kan også tilføjes til Microsoft Entra ID
-                        gennem Microsoft 365 Admin Center, Microsoft Intune-administrationskonsollen og Azure CLI.</p>
-
-                    <h4>Detaljer om cloud-identitetskonti</h4>
-                    <p>Hvordan cloud-identitetsbrugerkonti er defineret i Microsoft Entra ID:
-                        Administrator kan oprette en bruger inden for organisationen eller invitere en gæst til at give
-                        adgang til organisationsressourcer:</p>
-                    <p>Et nyt brugerkonto skal have et visningsnavn og et tilknyttet brugernavn. Et eksempel på et
-                        visningsnavn er Aran Sawyer-Miller, og det tilknyttede brugernavn kunne være
-                        asawmill@contoso.com.</p>
-                    <p>Information og indstillinger, der beskriver en bruger, er gemt i brugerkontoprofilen.</p>
-                    <p>Profilen kan have andre indstillinger som en brugers stillingsbetegnelse og deres
-                        kontaktemailadresse.</p>
-                    <p>En bruger med Global administrator eller Brugeradministrator privilegier kan foruddefinere
-                        profildata i brugerkonti, såsom hovedtelefonnummeret for virksomheden.</p>
-                    <p>Ikke-administratorbrugere kan angive nogle af deres egne profildata, men de kan ikke ændre deres
-                        visningsnavn eller kontonavn.</p>
-
-                    <h5>Ting at overveje ved håndtering af cloud-identitetskonti</h5>
-                    <ul>
-                        <li>Overvej brugerprofildata. Tillad brugere at angive deres profiloplysninger for deres konti,
-                            efter behov. Brugerprofildata, herunder brugerens billede, job og kontaktoplysninger, er
-                            valgfrie. Du kan også levere visse profilindstillinger for hver bruger baseret på din
-                            organisations behov.</li>
-                        <li>Overvej gendannelsesmuligheder for slettede konti. Inkluder gendannelsesscenarier i din
-                            kontohåndteringsplan. Gendannelsesoperationer for en slettet konto er tilgængelige op til 30
-                            dage efter, at en konto er fjernet. Efter 30 dage kan en slettet brugerkonto ikke gendannes.
-                        </li>
-                        <li>Overvej indsamling af kontodata. Indsaml logindata og revisionslogoplysninger for
-                            brugerkonti. Microsoft Entra ID giver dig mulighed for at indsamle disse data for at hjælpe
-                            dig med at analysere og forbedre din infrastruktur.</li>
-                    </ul>
-                    <h4>Opret brugerkonti i bulk</h4>
-                    <p>Microsoft Entra ID understøtter flere bulk-operationer, herunder bulkoprettelse og -sletning af
-                        brugerkonti. Den mest almindelige tilgang til disse operationer er at bruge Azure-portalen.
-                        Azure PowerShell kan bruges til bulk-upload af brugerkonti.</p>
-
-                    <h5>Ting at vide om bulk-kontooperationer</h5>
-                    <ul>
-                        <li>Kun globale administratorer eller brugeradministratorer har privilegier til at oprette og
-                            slette brugerkonti i Azure-portalen.</li>
-                        <li>For at fuldføre bulkopret eller slette operationer udfylder administratoren en
-                            kommasepareret
-                            værdier (CSV) skabelon af dataene for brugerkontiene.</li>
-                        <li>Bulk-operationsskabeloner kan downloades fra Microsoft Entra-administrationscenteret.</li>
-                        <li>Bulklister over brugerkonti kan downloades.</li>
-                    </ul>
-                    <h5>Ting at overveje ved oprettelse af brugerkonti</h5>
-                    <ul>
-                        <li>Her er nogle designovervejelser for oprettelse og sletning af brugerkonti. Tænk over, hvilke
-                            brugerkontokonventioner og -processer der kan være påkrævet af din organisation.</li>
-                        <li>Etabler eller implementer en navngivningskonvention for dine brugerkonti. Anvend
-                            konventioner til brugerkontonavne, visningsnavne og brugeraliaser for ensartethed på tværs
-                            af organisationen. Konventioner for navne og aliaser kan forenkle bulkoprettelsesprocessen
-                            ved at reducere områder med unikhed i CSV-filen. En konvention for brugernavne kunne begynde
-                            med brugerens efternavn efterfulgt af et punktum og afslutte med brugerens fornavn, som
-                            f.eks. Sawyer-Miller.Aran@contoso.com.</li>
-                        <li>Implementer en konvention for det indledende kodeord for en nyoprettet bruger. Design et
-                            system til at meddele nye brugere om deres adgangskoder på en sikker måde. Du kan generere
-                            en tilfældig adgangskode og sende den pr. e-mail til den nye bruger eller deres leder.</li>
-                        <li>Se og håndter eventuelle fejl ved at downloade resultatfilen på siden Bulkoperationer i
-                            Azure-portalen. Resultatfilen indeholder årsagen til hver fejl. En fejl kan være en
-                            brugerkonto, der allerede er oprettet, eller en konto, der er duplikeret. Generelt er det
-                            nemmere at uploade og fejlfinde mindre grupper af brugerkonti.</li>
-                    </ul>
-
-                    <h4>Opret gruppekonti</h4>
-                    <p>Microsoft Entra ID giver din organisation mulighed for at definere to forskellige typer af
-                        gruppekonti. Sikkerhedsgrupper bruges til at administrere medlems- og computeradgang til fælles
-                        ressourcer for en gruppe brugere. Du kan oprette en sikkerhedsgruppe til en specifik
-                        sikkerhedspolitik og anvende de samme tilladelser til alle medlemmer af en gruppe. Microsoft
-                        365-grupper giver samarbejdsmuligheder. Gruppemedlemmer har adgang til en fælles mailbox,
-                        kalender, filer, SharePoint-websted og mere.</p>
-
-                    <h4>Ting at vide om oprettelse af gruppekonti</h4>
-                    <ul>
-                        <li>Brug sikkerhedsgrupper til at angive tilladelser for alle gruppe medlemmer på samme tid, i
-                            stedet for at tilføje tilladelser til hver enkelt medlem individuelt.</li>
-                        <li>Tilføj Microsoft 365-grupper for at aktivere gruppeadgang for gæstbrugere uden for din
-                            Microsoft Entra organisation.</li>
-                        <li>Sikkerhedsgrupper kan kun implementeres af en Microsoft Entra-administrator.</li>
-                        <li>Normale brugere og Microsoft Entra-administratorer kan begge bruge Microsoft 365-grupper.
-                        </li>
-                    </ul>
-
-                    <h4>Ting at overveje ved tilføjelse af gruppe medlemmer</h4>
-                    <p>Når du tilføjer medlemmer til en gruppe, er der forskellige måder, du kan tildele
-                        medlemsadgangsrettigheder på. Når du gennemgår disse muligheder, skal du overveje, hvilke
-                        grupper der er nødvendige for at understøtte din organisation, og hvilke adgangsrettigheder der
-                        skal tildeles til gruppe medlemmer.</p>
-
-                    <h4>Adgangsrettigheder</h4>
-                    <ul>
-                        <li><strong>Tildelt:</strong> Tilføj specifikke brugere som medlemmer af en gruppe, hvor hver
-                            bruger kan have unikke tilladelser.</li>
-                        <li><strong>Dynamisk bruger:</strong> Brug dynamiske medlemskabsregler til automatisk at tilføje
-                            og fjerne gruppe medlemmer. Når medlemsattributter ændres, gennemgår Azure de dynamiske
-                            gruppe regler for kataloget. Hvis medlemsattributterne opfylder reglens krav, tilføjes
-                            medlemmet til gruppen. Hvis medlemsattributterne ikke længere opfylder reglens krav, fjernes
-                            medlemmet.</li>
-                        <li><strong>Dynamisk enhed:</strong> (Kun sikkerhedsgrupper) Anvend dynamiske gruppe regler til
-                            automatisk at tilføje og fjerne enheder i sikkerhedsgrupper. Når enhedsattributter ændres,
-                            gennemgår Azure de dynamiske gruppe regler for kataloget. Hvis enhedsattributterne opfylder
-                            reglens krav, tilføjes enheden til sikkerhedsgruppen. Hvis enhedsattributterne ikke længere
-                            opfylder reglens krav, fjernes enheden.</li>
-                    </ul>
-
-                    <h4>Opret administrative enheder</h4>
-                    <p>Når du designer din strategi for styring af identiteter og governance i Azure, er det afgørende
-                        at planlægge omhyggeligt for omfattende styring af din Microsoft Entra-infrastruktur. Det kan
-                        være nyttigt at begrænse det administrative område ved hjælp af administrative enheder for din
-                        organisation. Opdelingen af roller og ansvarsområder er især nyttig for organisationer, der har
-                        mange uafhængige divisioner.</p>
-
-                    <p>Overvej følgende scenario:</p>
-                    <ul>
-                        <li>En stor universitet bestående af flere forskellige skoler som for eksempel Forretning,
-                            Ingeniørvidenskab og Medicin.</li>
-                        <li>Universitetet har administrative kontorer, undervisningsbygninger, sociale bygninger og
-                            studenterboliger.</li>
-                        <li>Hver forretningsafdeling har sit eget interne netværk til ressourcer som servere, printere
-                            og faxmaskiner.</li>
-                        <li>Hver undervisningsbygning er tilsluttet universitetets netværk, så både instruktører og
-                            studerende kan få adgang til deres konti.</li>
-                        <li>Netværket er også tilgængeligt for studerende og dekaner i studenterboliger og sociale
-                            bygninger.</li>
-                        <li>Gæstbrugere på universitetet har brug for adgang til internettet via universitetets netværk.
-                        </li>
-                    </ul>
-
-                    <h5>Ting at tænke på vedrørende administrative enheder</h5>
-                    <ul>
-                        <li>Skab en rolle, der har administrative tilladelser kun til Microsoft Entra-brugere i den
-                            administrative enhed for Ingeniørvidenskab.</li>
-                        <li>Opret en administrativ enhed for Ingeniørvidenskab.</li>
-                        <li>Populér den administrative enhed med kun Ingeniørvidenskabsstuderende, personale og
-                            ressourcer.</li>
-                        <li>Tilføj Ingeniørvidenskabsafdelingens IT-team til rollen sammen med dens omfang.</li>
-                    </ul>
-
-                    <h5>Ting at overveje ved arbejde med administrative enheder</h5>
-                    <ul>
-                        <li>Overvej ledelsesværktøjer. Gennemgå dine muligheder for at administrere AUs. Du kan bruge
-                            Azure-portalen, PowerShell-cmdlets og scripts eller Microsoft Graph.</li>
-                        <li>Overvej rollekrav i Azure-portalen. Planlæg din strategi for administrative enheder i
-                            henhold til rolleprivilegier. I Azure-portalen kan kun brugere med rollen Global
-                            Administrator eller Privileged Role Administrator administrere AUs.</li>
-                        <li>Overvej omfanget af administrative enheder. Forstå, at omfanget af en administrativ enhed
-                            kun gælder for administrationsrettigheder. Medlemmer og administratorer af en administrativ
-                            enhed kan udøve deres standardbrugerrettigheder til at gennemse andre brugere, grupper eller
-                            ressourcer uden for deres administrative enhed.</li>
-                    </ul>
-                </div>
-
             </ul>
             <h3>Kilder:</h3>
             <ul class="result">
@@ -983,50 +1036,56 @@
                         <li>Generere indsigt i, hvordan dine data er gemt og brugt.</li>
                         <li>Administrere adgangen til data i din ejendom sikkert og i stor skala.</li>
                     </ul>
-                </div>
-                <div tag="AzurePolicy">
-                    <h4>Azure Policy</h4>
-                    <p>Azure Policy i Azure er et værktøj til at oprette og administrere politikker for at sikre, at
-                        dine ressourcer overholder virksomhedens standarder og regler. Det tillader oprettelse af
-                        individuelle politikker og initiativer, der grupperer relaterede politikker sammen. Politikker
-                        kan anvendes på forskellige niveauer som ressourcer, ressourcegrupper eller abonnementer. Azure
-                        Policy har indbyggede politik- og initiativdefinitioner og kan automatisere rettelser af
-                        ikke-kompatible ressourcer. Det integrerer også med Azure DevOps for at anvende politikker i
-                        udviklings- og implementeringsprocesser. Initiativer i Azure Policy er grupperinger af
-                        politikker, der hjælper med at opnå større overensstemmelse med specifikke mål.</p>
-                </div>
-                <div tag="ResourceLocks">
-                    <h4>resource locks</h4>
-                    <h4>Formålet med ressource-låse</h4>
-                    <p>En ressource-lås forhindrer ressourcer i at blive slettet eller ændret ved et uheld.</p>
+                    <div tag="AzurePolicy">
+                        <h4>Azure Policy</h4>
+                        <p>Azure Policy i Azure er et værktøj til at oprette og administrere politikker for at sikre, at
+                            dine ressourcer overholder virksomhedens standarder og regler. Det tillader oprettelse af
+                            individuelle politikker og initiativer, der grupperer relaterede politikker sammen.
+                            Politikker
+                            kan anvendes på forskellige niveauer som ressourcer, ressourcegrupper eller abonnementer.
+                            Azure
+                            Policy har indbyggede politik- og initiativdefinitioner og kan automatisere rettelser af
+                            ikke-kompatible ressourcer. Det integrerer også med Azure DevOps for at anvende politikker i
+                            udviklings- og implementeringsprocesser. Initiativer i Azure Policy er grupperinger af
+                            politikker, der hjælper med at opnå større overensstemmelse med specifikke mål.</p>
+                    </div>
+                    <div tag="ResourceLocks">
+                        <h4>resource locks</h4>
+                        <h4>Formålet med ressource-låse</h4>
+                        <p>En ressource-lås forhindrer ressourcer i at blive slettet eller ændret ved et uheld.</p>
 
-                    <h2>Typer af ressource-låse</h2>
-                    <p>Der er to typer af ressource-låse, en der forhindrer brugere i at slette og en der forhindrer
-                        brugere i at ændre eller slette en ressource.</p>
-                    <ul>
-                        <li><strong>Slet:</strong> Betyder at autoriserede brugere stadig kan læse og ændre en
-                            ressource, men de kan ikke slette den.</li>
-                        <li><strong>Læs-kun:</strong> Betyder at autoriserede brugere kan læse en ressource, men de kan
-                            ikke slette eller opdatere den. Anvendelse af denne lås ligner at begrænse alle autoriserede
-                            brugere til tilladelserne givet af Læser-rollen.</li>
-                    </ul>
+                        <h2>Typer af ressource-låse</h2>
+                        <p>Der er to typer af ressource-låse, en der forhindrer brugere i at slette og en der forhindrer
+                            brugere i at ændre eller slette en ressource.</p>
+                        <ul>
+                            <li><strong>Slet:</strong> Betyder at autoriserede brugere stadig kan læse og ændre en
+                                ressource, men de kan ikke slette den.</li>
+                            <li><strong>Læs-kun:</strong> Betyder at autoriserede brugere kan læse en ressource, men de
+                                kan
+                                ikke slette eller opdatere den. Anvendelse af denne lås ligner at begrænse alle
+                                autoriserede
+                                brugere til tilladelserne givet af Læser-rollen.</li>
+                        </ul>
 
-                    <h5>Hvordan administrerer jeg ressource-låse?</h5>
-                    <p>Du kan administrere ressource-låse fra Azure-portalen, PowerShell, Azure CLI eller fra en Azure
-                        Resource Manager-skabelon.</p>
-                    <p>For at se, tilføje eller slette låse i Azure-portalen, gå til Indstillinger-sektionen på
-                        indstillingspanelet for enhver ressource i Azure-portalen.</p>
+                        <h5>Hvordan administrerer jeg ressource-låse?</h5>
+                        <p>Du kan administrere ressource-låse fra Azure-portalen, PowerShell, Azure CLI eller fra en
+                            Azure
+                            Resource Manager-skabelon.</p>
+                        <p>For at se, tilføje eller slette låse i Azure-portalen, gå til Indstillinger-sektionen på
+                            indstillingspanelet for enhver ressource i Azure-portalen.</p>
 
-                    <h5>Hvordan sletter eller ændrer jeg en låst ressource?</h5>
-                    <p>Selvom låsning hjælper med at forhindre utilsigtede ændringer, kan du stadig foretage ændringer
-                        ved at følge en totrinsproces.</p>
-                    <p>For at ændre en låst ressource skal du først fjerne låsen. Efter du har fjernet låsen, kan du
-                        anvende enhver handling, du har tilladelser til at udføre. Ressource-låse gælder uanset
-                        RBAC-tilladelser. Selvom du er ejer af ressourcen, skal du stadig fjerne låsen, før du kan
-                        udføre den blokerede aktivitet.</p>
-                </div>
+                        <h5>Hvordan sletter eller ændrer jeg en låst ressource?</h5>
+                        <p>Selvom låsning hjælper med at forhindre utilsigtede ændringer, kan du stadig foretage
+                            ændringer
+                            ved at følge en totrinsproces.</p>
+                        <p>For at ændre en låst ressource skal du først fjerne låsen. Efter du har fjernet låsen, kan du
+                            anvende enhver handling, du har tilladelser til at udføre. Ressource-låse gælder uanset
+                            RBAC-tilladelser. Selvom du er ejer af ressourcen, skal du stadig fjerne låsen, før du kan
+                            udføre den blokerede aktivitet.</p>
+                    </div>
 
-                <div tag="ServiceTrustPortal">
+                    <div tag="ServiceTrustPortal">
+                    </div>
                     <h4>Formål med Service Trust Portalen</h4>
 
                     <p>Microsoft Service Trust Portalen er en portal, der giver adgang til forskellige indhold,
@@ -1056,155 +1115,318 @@
                             Bibliotek.</li>
                     </ul>
                 </div>
-</body>
-</ul>
-<h3>Kilder:</h3>
-<ul class="result">
-    <ul>
-        <li>
-            <a href="https://learn.microsoft.com/da-dk/training/modules/describe-features-tools-azure-for-governance-compliance/"
-                target="_blank">Describe features and tools in Azure for governance and compliance</a>
-        </li>
-        <li>
-            <a href="https://learn.microsoft.com/da-dk/training/modules/describe-cost-management-azure/"
-                target="_blank">Describe cost management in Azure</a>
-        </li>
-    </ul>
+                <div tag="toolsAzure">
+                    <h3>Værktøjer til interaktion med Azure</h3>
+                    <p>Azure er en platform, hvor du kan opbygge og administrere din skybaserede infrastruktur. For at
+                        få mest muligt ud af Azure skal du bruge værktøjer til at interagere med miljøet. Azure tilbyder
+                        flere værktøjer til at håndtere din infrastruktur, herunder:</p>
+                    <ol>
+                        <li>
+                            <strong>Azure Portal:</strong>
+                            <ul>
+                                <li>Det er en webbaseret, samlet konsol, der giver dig mulighed for at administrere din
+                                    Azure-subscription ved hjælp af et grafisk brugergrænseflade.</li>
+                                <li>Her kan du opbygge, administrere og overvåge alt fra simple webapps til komplekse
+                                    skyimplementeringer.</li>
+                                <li>Du kan også skræddersy dine egne instrumentbrætter for at organisere dine ressourcer
+                                    og tilpasse tilgængelighedsindstillingerne for en optimal oplevelse.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Azure PowerShell:</strong>
+                            <ul>
+                                <li>Det er et værktøj, der giver udviklere og IT-fagfolk mulighed for at køre kommandoer
+                                    kaldet cmdlets til at administrere Azure-ressourcer.</li>
+                                <li>Cmdlets kan udføres enkeltvis eller kombineres til mere komplekse handlinger, som
+                                    f.eks. at opbygge hele infrastrukturer fra kode.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Azure Command Line Interface (CLI):</strong>
+                            <ul>
+                                <li>Det er et værktøj, der ligner Azure PowerShell, men bruger Bash-kommandoer i stedet.
+                                </li>
+                                <li>Ligegyldigt om du bruger PowerShell eller Bash, kan begge værktøjer udføre de samme
+                                    opgaver, men det kommer hovedsageligt an på, hvilket sprog du er mest fortrolig med.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Azure Cloud Shell</strong> er et andet værdifuldt værktøj, der giver dig mulighed for at
+                        administrere Azure-ressourcer via en browserbaseret shell. Det understøtter både Azure
+                        PowerShell og Azure CLI, og det kræver ingen lokal installation eller konfiguration.</p>
+                    <p>Så uanset om du foretrækker at klikke rundt i Azure Portal, skrive PowerShell-kommandoer eller
+                        bruge Bash, er der værktøjer til rådighed til at hjælpe dig med at administrere din
+                        Azure-infrastruktur.</p>
+                    <div tag="purposeAzureArc">
+                        <h4>Beskrivelse af Formålet med Azure Arc</h4>
 
-</ul>
-</section>
+                        <p>Formålet med Azure Arc er at gøre det nemmere at styre både hybrid- og multi-cloud-miljøer.
+                            Når man arbejder med Azure, har man masser af værktøjer til at oprette, konfigurere og
+                            overvåge Azure-ressourcer. Men hvad med de ressourcer, der er på stedet i en
+                            hybridkonfiguration, eller dem i skyen i en multi-cloud-konfiguration?</p>
 
-<section class="bubble">
-    <h2>Note #4</h2>
-    <p class="date">Uge 11-12</p>
-    <h3>Forventning</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Forarbejdninger</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Resultat</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Kilder:</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-</section>
+                        <p>Ved hjælp af Azure Resource Manager (ARM) lader Arc dig udvide din Azure-overholdelse og
+                            overvågning til dine hybrid- og multi-cloud-konfigurationer. Azure Arc forenkler styring og
+                            administration ved at levere en sammenhængende multi-cloud- og on-premises-styringsplatform.
+                        </p>
 
-<section class="bubble">
-    <h2>Note #5</h2>
-    <p class="date">Uge 13-14</p>
-    <h3>Forventning</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Forarbejdninger</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Resultat</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Kilder:</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-</section>
+                        <p>Azure Arc giver en centraliseret, forenet måde at:</p>
 
-<section class="bubble">
-    <h2>Note #6</h2>
-    <p class="date">Uge 15-16</p>
-    <h3>Forventning</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Forarbejdninger</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Resultat</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Kilder:</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-</section>
+                        <ul>
+                            <li>Administrere hele dit miljø samlet ved at projicere dine eksisterende
+                                ikke-Azure-ressourcer ind i ARM.</li>
+                            <li>Administrere multi-cloud- og hybrid-virtuelle maskiner, Kubernetes-klynger og databaser,
+                                som om de kører i Azure.</li>
+                            <li>Bruge velkendte Azure-tjenester og administrationsfunktioner, uanset hvor de befinder
+                                sig.</li>
+                            <li>Fortsætte med at bruge traditionelle IT-operationer samtidig med at man introducerer
+                                DevOps-praksis for at understøtte nye sky- og native-mønstre i dit miljø.</li>
+                            <li>Konfigurere brugerdefinerede placeringer som et abstraktionslag oven på Azure
+                                Arc-aktiverede Kubernetes-klynger og klyngens udvidelser.</li>
+                        </ul>
 
-<section class="bubble">
-    <h2>Note #7</h2>
-    <p class="date">Uge 17-18</p>
-    <h3>Forventning</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Forarbejdninger</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Resultat</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Kilder:</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-</section>
+                        <h3>Hvad kan Azure Arc gøre uden for Azure?</h3>
 
-<section class="bubble">
-    <h2>Note #8</h2>
-    <p class="date">Uge 19-20</p>
-    <h3>Forventning</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Forarbejdninger</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Resultat</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Kilder:</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-</section>
+                        <p>I øjeblikket giver Azure Arc dig mulighed for at administrere følgende ressource typer, der
+                            er hostet uden for Azure:</p>
 
-<section class="bubble">
-    <h2>Note #9</h2>
-    <p class="date">Uge 21-22</p>
-    <h3>Forventning</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Forarbejdninger</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Resultat</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-    <h3>Kilder:</h3>
-    <ul class="result">
-        <li></li>
-    </ul>
-</section>
+                        <ul>
+                            <li>Servere</li>
+                            <li>Kubernetes-klynger</li>
+                            <li>Azure-data-tjenester</li>
+                            <li>SQL Server</li>
+                            <li>Virtuelle maskiner (forhåndsvisning)</li>
+                        </ul>
+                    </div>
+                    <div tag="AzureResourceManager">
+                        <h4>Beskrivelse af Azure Resource Manager og Azure ARM-skabeloner</h4>
+                        <p>Azure Resource Manager (ARM) er Azure's service til implementering og styring. Den giver et
+                            styringslag, der gør det muligt at oprette, opdatere og slette ressourcer i din Azure-konto.
+                            Hver gang du foretager handlinger med dine Azure-ressourcer, er ARM involveret.</p>
 
-</main>
+                        <p>Når en bruger sender en anmodning fra en af Azure-værktøjerne, API'er eller SDK'er, modtager
+                            ARM anmodningen. ARM godkender og autoriserer anmodningen. Derefter sender ARM anmodningen
+                            til Azure-tjenesten, som udfører den ønskede handling. Du ser konsekvente resultater og
+                            muligheder i alle de forskellige værktøjer, fordi alle anmodninger håndteres gennem den
+                            samme API.</p>
 
-<footer>
-    <p>2024 - Cloud Management Page</p>
-</footer>
+                        <h5>Fordele ved Azure Resource Manager</h5>
+                        <ul>
+                            <li>Administrer din infrastruktur gennem deklarative skabeloner i stedet for scripts. En
+                                Resource Manager-skabelon er en JSON-fil, der definerer, hvad du vil implementere i
+                                Azure.</li>
+                            <li>Implementer, administrer og overvåg alle ressourcerne til din løsning som en gruppe i
+                                stedet for at håndtere disse ressourcer individuelt.</li>
+                            <li>Implementer din løsning igen i udviklingslivscyklussen og vær sikker på, at dine
+                                ressourcer implementeres i en konsistent tilstand.</li>
+                            <li>Definér afhængighederne mellem ressourcerne, så de implementeres i den korrekte
+                                rækkefølge.</li>
+                            <li>Anvend adgangskontrol til alle tjenester, fordi RBAC er integreret direkte i
+                                administrationsplatformen.</li>
+                            <li>Anvend tags til ressourcer for at organisere alle ressourcerne i din abonnement logisk.
+                            </li>
+                            <li>Klarlæg din organisations fakturering ved at se omkostninger for en gruppe ressourcer,
+                                der deler den samme tag.</li>
+                        </ul>
+
+                        <h5>Infrastruktur som kode</h5>
+                        <p>Infrastruktur som kode er et koncept, hvor du administrerer din infrastruktur som linjer af
+                            kode. På et introducerende niveau er det ting som at bruge Azure Cloud Shell, Azure
+                            PowerShell eller Azure CLI til at administrere og konfigurere dine ressourcer. Når du bliver
+                            mere fortrolig med skyen, kan du bruge infrastruktur som kode-konceptet til at administrere
+                            hele implementeringer ved hjælp af gentagne skabeloner og konfigurationer. ARM-skabeloner og
+                            Bicep er to eksempler på brug af infrastruktur som kode med Azure Resource Manager til at
+                            vedligeholde din miljø.</p>
+
+                        <h5>ARM-skabeloner</h5>
+                        <p>Ved hjælp af ARM-skabeloner kan du beskrive de ressourcer, du vil bruge, i et deklarativt
+                            JSON-format. Med en ARM-skabelon verificeres deploymentskoden, inden nogen kode køres. Dette
+                            sikrer, at ressourcerne oprettes og tilsluttes korrekt. Skabelonen orkestrerer derefter
+                            oprettelsen af disse ressourcer parallelt. Det vil sige, hvis du har brug for 50 forekomster
+                            af den samme ressource, oprettes alle 50 forekomster samtidigt.</p>
+
+                        <h6>Fordele ved at bruge ARM-skabeloner</h6>
+                        <ul>
+                            <li>Deklarativ syntaks: ARM-skabeloner tillader dig at oprette og implementere en hel
+                                Azure-infrastruktur deklarativt. Deklarativ syntaks betyder, at du erklærer, hvad du vil
+                                implementere, men behøver ikke at skrive de faktiske programmeringskommandoer og sekvens
+                                for at implementere ressourcerne.</li>
+                            <li>Gentagne resultater: Implementer gentagne gange din infrastruktur i hele
+                                udviklingslivscyklussen og vær sikker på, at dine ressourcer implementeres på en
+                                konsistent måde. Du kan bruge den samme ARM-skabelon til at implementere flere
+                                udviklings-/testmiljøer og vide, at alle miljøer er ens.</li>
+                            <li>Orkestrering: Du behøver ikke at bekymre dig om kompleksiteten i at bestille
+                                operationer. Azure Resource Manager orkestrerer implementeringen af ​​afhængige
+                                ressourcer, så de oprettes i den korrekte rækkefølge. Når det er muligt, udfører Azure
+                                Resource Manager implementeringer parallelt, så dine implementeringer afsluttes
+                                hurtigere end serielle implementeringer. Du implementerer skabelonen gennem en kommando
+                                i stedet for gennem flere imperativ kommandoer.</li>
+                            <li>Modulære filer: Du kan opdele dine skabeloner i mindre, genanvendelige komponenter og
+                                linke dem sammen ved implementeringstidspunktet. Du kan også indlejre en skabelon inde i
+                                en anden skabelon. For eksempel kan du oprette en skabelon til en VM-stak og derefter
+                                indlejre den skabelon i skabeloner, der implementerer hele miljøer, og den VM-stak vil
+                                konsekvent blive implementeret i hver af miljøskabelonerne.</li>
+                        </ul>
+
+                        <h5>Bicep</h5>
+                        <p>Bicep er et sprog, der bruger deklarativ syntaks til at implementere Azure-ressourcer. En
+                            Bicep-fil definerer infrastrukturen og konfigurationen. Derefter implementerer ARM det miljø
+                            baseret på din Bicep-fil. Mens det ligner en ARM
+                    </div>
+                </div>
+            </ul>
+            <h3>Kilder:</h3>
+            <ul class="result">
+                <ul>
+                    <li>
+                        <a href="https://learn.microsoft.com/da-dk/training/modules/describe-features-tools-azure-for-governance-compliance/"
+                            target="_blank">Describe features and tools in Azure for governance and compliance</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/da-dk/training/modules/describe-cost-management-azure/"
+                            target="_blank">Describe cost management in Azure</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/da-dk/training/modules/describe-features-tools-manage-deploy-azure-resources/"
+                            target="_blank">Describe features and tools for managing and deploying Azure resources</a>
+                    </li>
+                </ul>
+
+            </ul>
+        </section>
+
+        <section class="bubble">
+            <h2>Note #4</h2>
+            <p class="date">Uge 11-12</p>
+            <h3>Forventning</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Forarbejdninger</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Resultat</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Kilder:</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+        </section>
+
+        <section class="bubble">
+            <h2>Note #5</h2>
+            <p class="date">Uge 13-14</p>
+            <h3>Forventning</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Forarbejdninger</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Resultat</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Kilder:</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+        </section>
+
+        <section class="bubble">
+            <h2>Note #6</h2>
+            <p class="date">Uge 15-16</p>
+            <h3>Forventning</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Forarbejdninger</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Resultat</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Kilder:</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+        </section>
+
+        <section class="bubble">
+            <h2>Note #7</h2>
+            <p class="date">Uge 17-18</p>
+            <h3>Forventning</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Forarbejdninger</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Resultat</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Kilder:</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+        </section>
+
+        <section class="bubble">
+            <h2>Note #8</h2>
+            <p class="date">Uge 19-20</p>
+            <h3>Forventning</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Forarbejdninger</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Resultat</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Kilder:</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+        </section>
+
+        <section class="bubble">
+            <h2>Note #9</h2>
+            <p class="date">Uge 21-22</p>
+            <h3>Forventning</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Forarbejdninger</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Resultat</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+            <h3>Kilder:</h3>
+            <ul class="result">
+                <li></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>2024 - Cloud Management Page</p>
+    </footer>
 </body>
 
 </html>
