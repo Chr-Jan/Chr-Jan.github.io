@@ -35,7 +35,7 @@
     </header>
 
     <main>
-        <section class="bubble">
+        <section class="bubble" tag="week5-6">
             <h2>Note #1</h2>
             <p class="date">Uge 5-6</p>
             <h3>Forventning</h3>
@@ -154,7 +154,7 @@
             </ul>
         </section>
 
-        <section class="bubble">
+        <section class="bubble" tag="week7-8">
             <h2>Note #2</h2>
             <p class="date">Uge 7-8</p>
             <h3>Forventning</h3>
@@ -768,7 +768,7 @@
 
         </section>
 
-        <section class="bubble">
+        <section class="bubble" tag="week9-10">
             <h2>Note #3</h2>
             <p class="date">Uge 9-10</p>
             <h3>Forventning</h3>
@@ -1343,19 +1343,217 @@
             <p class="date">Uge 11-12</p>
             <h3>Forventning</h3>
             <ul class="result">
-                <li></li>
+                <li>Jeg forventer at færdiggøre Microsofts læringssti for en basal forståelse af Azures funktionaliteter
+                    samt benyttelsesgrundlag.</li>
+                <li>Efterfølgende vil jeg prøve at vælge en mere specifik sti, som Microsoft foreslår. Emnet vil jeg
+                    tænke over.</li>
             </ul>
             <h3>Forarbejdninger</h3>
             <ul class="result">
-                <li></li>
+                <li>Jeg kiggede på, om jeg manglede nogle af de grundlæggende kurser for Azure, hvilket jeg gjorde, så
+                    dem agter jeg at færdiggøre.</li>
             </ul>
             <h3>Resultat</h3>
             <ul class="result">
-                <li></li>
+                <div>
+                    <h4>Azure Virtuelle Maskiner</h4>
+                    <p>Med Azure Virtual Machines kan du oprette og bruge virtuelle maskiner i skyen. En VM fungerer som
+                        en
+                        virtuel server og giver dig mulighed for total kontrol over styresystemet, kørsel af
+                        specialtilpasset software og brug af tilpassede hostingkonfigurationer.</p>
+                    <p>Du kan oprette eller bruge allerede eksisterende skabeloner til hurtigt at oprette VM'er. Disse
+                        skabeloner indeholder det nødvendige software, inklusive et styresystem.</p>
+                    <p>Du kan køre enkeltstående VM'er til mindre opgaver eller gruppere dem for at opnå høj
+                        tilgængelighed,
+                        skalering og redundans (øge sikkerheden af systemet). Azure tilbyder værktøjer som skalaenheder
+                        og
+                        tilgængelighedssæt til at
+                        administrere disse grupper.</p>
+                    <p>VM'er er nyttige til test og udvikling, kørsel af applikationer i skyen, udvidelse af dit
+                        datacenter
+                        til skyen og katastrofeberedskab.</p>
+                </div>
+                <div>
+                    <h4>Azure Virtual Desktop</h4>
+                    <p>Azure Virtual Desktop er en tjeneste til desktop- og applikationsvirtualisering, der kører i
+                        skyen. Med denne tjeneste kan du bruge en version af Windows, der er hostet i skyen, fra enhver
+                        placering. Det virker på tværs af enheder og operativsystemer og kan tilgås via apps eller
+                        moderne browsere.</p>
+                    <p>Med Azure Virtual Desktop kan du centralt administrere sikkerheden for brugernes desktops ved
+                        hjælp af Microsoft Entra ID. Du kan aktivere multifaktorautentificering for at sikre brugernes
+                        logins, samt tildele granulære rollebaserede adgangskontroller til brugerne for at sikre
+                        adgangen til data. Tjenesten adskiller data og applikationer fra den lokale hardware, hvilket
+                        reducerer risikoen for, at fortrolige data forbliver på personlige enheder. Desuden isoleres
+                        brugersessioner i både enkelt- og flersessionmiljøer.</p>
+                    <p>Azure Virtual Desktop muliggør også deployment af Windows 10 eller Windows 11 Enterprise
+                        multi-session, hvilket giver mulighed for flere samtidige brugere på en enkelt virtuel maskine.
+                        Den giver en mere konsistent oplevelse og bredere applikationsunderstøttelse sammenlignet med
+                        Windows Server-baserede operativsystemer.</p>
+                </div>
+                <div>
+                    <h4>Azure-containere</h4>
+                    <p>Azure-containere er en effektiv måde at køre flere instanser af en applikation på én
+                        værtsmaskine. Azure tilbyder forskellige tjenester til containerstyring. Container Instances er
+                        hurtige og enkle, hvor du uploader dine containere, og tjenesten kører dem for dig uden at
+                        skulle håndtere virtuelle maskiner. Container Apps ligner Container Instances, men tilbyder
+                        ekstra fordele som lastafbalancering og skalering. Azure Kubernetes Service er en
+                        styringstjeneste, der gør flådehåndtering af containere enklere og mere effektiv. Containere
+                        bruges ofte i mikroservicearkitektur, hvor løsninger opdeles i mindre, uafhængige stykker, der
+                        kan vedligeholdes og opdateres individuelt. Dette tillader fleksibel skalering og opdatering af
+                        forskellige dele af en løsning uden at påvirke andre komponenter.</p>
+                </div>
+                <div>
+                    <h4>Azure App Service - Oversigt</h4>
+
+                    <p>Azure App Service er en kraftfuld platform i Azure, som gør det muligt for dig at bygge og hoste
+                        forskellige typer af applikationer uden at skulle bekymre dig om infrastrukturen. Du kan vælge
+                        mellem forskellige programmeringssprog og operativsystemer og opnå automatiseret skalerbarhed og
+                        høj tilgængelighed. Med Azure App Service kan du nemt deploye dine apps fra GitHub, Azure DevOps
+                        eller andre Git-repositorier, hvilket understøtter en kontinuerlig deployment-model.</p>
+
+                    <p>Der er fire hovedtyper af app-services, som App Service understøtter:</p>
+
+                    <ol>
+                        <li><strong>Web apps:</strong> Hosting af webapplikationer med støtte til en række
+                            programmeringssprog og operativsystemer.</li>
+                        <li><strong>API apps:</strong> Bygning af REST-baserede web-API'er, med Swagger-support og
+                            mulighed for at pakke og publicere API'en i Azure Marketplace.</li>
+                        <li><strong>WebJobs:</strong> Kørsel af programmer eller scripts i samme sammenhæng som en
+                            webapp, API eller mobilapp, hvilket typisk anvendes til baggrundsopgaver.</li>
+                        <li><strong>Mobile apps:</strong> Hurtig oprettelse af en backend til iOS og Android-apps med
+                            støtte til databaser, autentifikation, push-notifikationer og tilpasset backend-logik.</li>
+                    </ol>
+
+                    <p>Azure App Service håndterer de fleste af de infrastrukturelle beslutninger, så du kan fokusere på
+                        at udvikle og vedligeholde din app, mens Azure sørger for at holde miljøet kørende og
+                        tilgængeligt. Med støtte til forskellige app-typer, programmeringssprog og operativsystemer er
+                        Azure App Service et ideelt valg til at hoste forskellige former for webbaserede applikationer.
+                    </p>
+
+                </div>
+                <div>
+                    <h4>Azure Virtuel Netværk</h4>
+                    <p>Azure virtuelt netværk giver dig mulighed for at oprette isolerede virtuelle netværk i skyen. Du
+                        kan tænke på det som en udvidelse af dit lokale netværk med ressourcer, der forbinder andre
+                        Azure ressourcer.</p>
+
+                    <p>Det tillader kommunikation mellem Azure ressourcer, brugere på internettet og dine lokale
+                        klientcomputere. Du kan oprette både offentlige og private slutpunkter for at muliggøre
+                        kommunikation mellem eksterne og interne ressourcer.</p>
+
+                    <ul>
+                        <li>Isolere og segmentere netværket.</li>
+                        <li>Muliggøre internetkommunikation.</li>
+                        <li>Facilitere kommunikation mellem Azure ressourcer.</li>
+                        <li>Opnå forbindelse til lokale ressourcer.</li>
+                        <li>Styre netværkstrafikken ved at oprette regler og filtrere trafikken.</li>
+                        <li>Forbinde virtuelle netværk sammen ved hjælp af peering.</li>
+                        <li>Kontrollere ruteafgørelse mellem forskellige undernet og virtuelle netværk.</li>
+                    </ul>
+
+                    <p>Dette giver dig mulighed for at oprette og administrere fleksible og sikre netværksarkitekturer i
+                        Azure-miljøet, der passer til dine behov.</p>
+
+                </div>
+                <div>
+                    <h4>Azure Virtual Private Networks (VPN)</h4>
+                    <p>Azure Virtual Private Networks (VPN) giver en sikker måde at forbinde forskellige netværk på,
+                        selvom de befinder sig på forskellige steder og bruger en usikker forbindelse som internettet.
+                    </p>
+                    <p>Med Azure VPN Gateway kan du oprette forbindelse mellem din virksomheds datacentre og
+                        Azure-netværk ved hjælp af enten en site-to-site- eller point-to-site-forbindelse. Alt data, der
+                        sendes gennem disse forbindelser, er krypteret for at beskytte det mod uautoriseret adgang.</p>
+                    <h5>Typer af VPN-Gateways</h5>
+                    <p>Der findes to typer af VPN-gateways i Azure: policy-baserede og route-baserede.</p>
+                    <ul>
+                        <li>Policy-baserede gateways bruger fastsatte IP-adresser til at bestemme, hvilken trafik der
+                            skal krypteres.</li>
+                        <li>Route-baserede gateways bruger IP-routing til at afgøre, hvilken tunnel der skal bruges til
+                            hver pakke, hvilket gør dem mere fleksible og robuste.</li>
+                    </ul>
+                    <h5>Høj Tilgængelighed</h5>
+                    <p>For at sikre høj tilgængelighed kan VPN-gateways konfigureres i enten en aktiv/standby- eller
+                        aktiv/aktiv-konfiguration. Der er også mulighed for at oprette en sikker failover-forbindelse
+                        til Azure ExpressRoute ved hjælp af VPN-gateways. Desuden kan VPN-gateways i regioner med
+                        tilgængelighedszoner implementeres i en zoneredundant konfiguration for ekstra robusthed.</p>
+                    <h5>Samlet Set:</h5>
+                    <p>Azure Virtual Private Networks giver en pålidelig og sikker måde at forbinde dine netværk på,
+                        uanset hvor de befinder sig, samtidig med at de beskytter dine data mod uautoriseret adgang.</p>
+                </div>
+                <div>
+                    <h4>Azure ExpressRoute</h4>
+                    <p>Azure ExpressRoute giver dig mulighed for at udvide dine lokale netværk til Microsofts sky over
+                        en privat forbindelse med hjælp fra en tilslutningsudbyder. Denne forbindelse kaldes en
+                        ExpressRoute Circuit. Med ExpressRoute kan du oprette forbindelse til Microsofts skytjenester
+                        såsom Microsoft Azure og Microsoft 365. Dette gør det muligt at forbinde kontorer, datacentre
+                        eller andre faciliteter til Microsofts sky. Hver placering ville have sin egen
+                        ExpressRoute-kreds.</p>
+                    <p>Forbindelsen kan være fra et hvilket som helst-til-hvilket som helst (IP VPN) netværk, et
+                        punkt-til-punkt Ethernet-netværk eller en virtuel tværforbindelse via en tilslutningsudbyder på
+                        et samlokalisationsfacilitet. ExpressRoute-forbindelser går ikke over det offentlige internet.
+                        Dette giver ExpressRoute-forbindelser mulighed for at tilbyde mere pålidelighed, hurtigere
+                        hastigheder, konsekvente latenser og højere sikkerhed end typiske forbindelser over internettet.
+                    </p>
+                    <h5>Funktioner og fordele ved ExpressRoute</h5>
+                    <ul>
+                        <li>Forbindelse til Microsofts skytjenester på tværs af alle regioner i den geopolitiske region.
+                        </li>
+                        <li>Global forbindelse til Microsoft-tjenester på tværs af alle regioner med ExpressRoute Global
+                            Reach.</li>
+                        <li>Dynamisk routing mellem dit netværk og Microsoft via Border Gateway Protocol (BGP).</li>
+                        <li>Indbygget redundans på hver peering-placering for højere pålidelighed.</li>
+                    </ul>
+                    <h5>Forbindelse til Microsofts skytjenester</h5>
+                    <p>ExpressRoute muliggør direkte adgang til følgende tjenester i alle regioner:</p>
+                    <ul>
+                        <li>Microsoft Office 365</li>
+                        <li>Microsoft Dynamics 365</li>
+                        <li>Azure compute-tjenester, såsom Azure Virtual Machines</li>
+                        <li>Azure cloud-tjenester, såsom Azure Cosmos DB og Azure Storage</li>
+                    </ul>
+                    <h5>Global forbindelse</h5>
+                    <p>Du kan aktivere ExpressRoute Global Reach for at udveksle data på tværs af dine lokale steder ved
+                        at forbinde dine ExpressRoute-kredse. For eksempel, hvis du havde et kontor i Asien og et
+                        datacenter i Europa, begge med ExpressRoute-kredse, der forbinder dem til Microsoft-netværket.
+                        Du kunne bruge ExpressRoute Global Reach til at forbinde disse to faciliteter, så de kan
+                        kommunikere uden at overføre data over det offentlige internet.</p>
+                    <h5>Dynamisk routing</h5>
+                    <p>ExpressRoute bruger BGP. BGP bruges til at udveksle ruter mellem lokale netværk og ressourcer,
+                        der kører i Azure. Denne protokol muliggør dynamisk routing mellem dit lokale netværk og
+                        tjenester, der kører i Microsofts sky.</p>
+                    <h5>Indbygget redundans</h5>
+                    <p>Hver tilslutningsudbyder bruger redundante enheder for at sikre, at forbindelser, der etableres
+                        med Microsoft, er meget tilgængelige. Du kan konfigurere flere kredsløb til at supplere denne
+                        funktion.</p>
+                </div>
+                <div>
+                    <h4>Azure DNS</h4>
+                    <p>Azure DNS er en hostingtjeneste til DNS-domæner, som giver navneopløsning ved hjælp af Microsoft
+                        Azures infrastruktur. Ved at hoste dine domæner i Azure kan du administrere dine DNS-poster ved
+                        hjælp af de samme legitimationsoplysninger, API'er, værktøjer og fakturering som dine andre
+                        Azure-tjenester.</p>
+                    <h5>Fordele ved Azure DNS</h5>
+                    <ul>
+                        <li>Pålidelighed og ydeevne</li>
+                        <li>Sikkerhed</li>
+                        <li>Brugervenlighed</li>
+                        <li>Tilpasselige virtuelle netværk</li>
+                        <li>Alias-poster</li>
+                    </ul>
+                    <p>Domæner i Azure DNS hostes på Azures globale netværk af DNS-navneservere, hvilket sikrer
+                        robusthed og høj tilgængelighed. Tjenesten understøtter også sikkerhedsfunktioner som
+                        adgangskontrol baseret på roller, aktivitetslogs og ressourcelåsning. Azure DNS kan
+                        administreres gennem Azure Portalen, PowerShell cmdlets og Azure CLI, og den understøtter også
+                        private DNS-domæner og alias-poster, som gør det muligt at henvise til Azure-ressourcer på en
+                        enkel og pålidelig måde.</p>
+                </div>
             </ul>
             <h3>Kilder:</h3>
             <ul class="result">
-                <li></li>
+                <li>
+                    <a href="https://learn.microsoft.com/da-dk/training/modules/describe-azure-compute-networking-services/"
+                        target="_blank">Describe Azure compute and networking services.</a>
+                </li>
             </ul>
         </section>
 
