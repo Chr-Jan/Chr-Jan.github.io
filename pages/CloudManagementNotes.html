@@ -1125,8 +1125,438 @@
                         <li>Alias-poster til Azure-ressourcer</li>
                     </ul>
 
-                    <p>Domæner
+                    <p>
+                        Azure DNS hostes på Azures globale netværk af DNS-navneservere, hvilket sikrer robusthed og høj
+                        tilgængelighed. Tjenesten understøtter også sikkerhedsfunktioner som adgangskontrol baseret på
+                        roller, aktivitetslogs og ressourcelåsning. Administreres gennem Azure Portalen, PowerShell
+                        cmdlets og Azure CLI. Understøtter private DNS-domæner og alias-poster, hvilket gør det muligt
+                        at henvise til Azure-ressourcer på en enkel og pålidelig måde.
+                    </p>
                 </div>
+            </ul>
+        </section>
+
+
+        <section class="bubble">
+            <ul class="result">
+                <div tag="Configure subscriptions">
+                    <div>
+                        <h2>Identificer Azure regioner</h2>
+
+                        <h3>Regioner</h3>
+                        <ul>
+                            <li>Microsoft Azure består af datacentre globalt</li>
+                            <li>Datacentre er organiseret i regioner</li>
+                            <li>Regioner er geografiske områder med datacentre</li>
+                            <li>Eksempler inkluderer West US, Canada Central, og andre</li>
+                        </ul>
+                        <h3>Regionale Par</h3>
+                        <ul>
+                            <li>Fleste Azure-regioner er parret med en anden</li>
+                            <li>Parrede regioner understøtter altid-tilgængelighed</li>
+                            <li>Karakteristika inkluderer fysisk isolation og replikation</li>
+                            <li>Sekventielle opdateringer og dataresidens er vigtige</li>
+                        </ul>
+                        <h3>Overvejelser</h3>
+                        <ul>
+                            <li>Planlæg ressource- og regionsimplementering</li>
+                            <li>Undersøg service support pr. region</li>
+                            <li>Identificér tjenester der ikke kræver regioner</li>
+                            <li>Tjek undtagelser for regionpar</li>
+                            <li>Udnyt fordelene ved dataresidens</li>
+                        </ul>
+                        <h3>Find regioner</h3>
+                        <ul>Besøg Azure's globale infrastrukturs hjemmeside for at finde understøttede regioner til din
+                            forretningsgeografi.</ul>
+                    </div>
+
+                    <div>
+                        <h2>Implementering af Azure-abonnementer</h2>
+                        <p>Et Azure-abonnement er en logisk enhed af Azure-tjenester knyttet til en Azure-konto.
+                            Abonnementer hjælper med at organisere adgangen til cloudtjenester og styrer fakturering og
+                            betaling.</p>
+
+                        <ul>
+                            <li>Hver Azure-tjeneste tilhører et abonnement.</li>
+                            <li>Abonnementer har forskellige fakturerings- og betalingskonfigurationer.</li>
+                            <li>Mere end én Azure-konto kan knyttes til et abonnement.</li>
+                            <li>Fakturering sker per abonnement.</li>
+                            <li>Brugere kan have flere abonnementer knyttet til deres Azure-konto.</li>
+                        </ul>
+
+                        <p>Overvej behovet for abonnementer, typer af Azure-konti, flere abonnementer og adgang til
+                            ressourcer for at effektivt implementere Azure-abonnementer.</p>
+
+                    </div>
+
+                    <div>
+                        <h2>Få en Azure-abonnement</h2>
+                        <p>For at bruge Azure skal du have en Azure-abonnement. Dette kan opnås gennem en
+                            Enterprise-aftale, en Microsoft-forhandler, en Microsoft-partner eller ved at åbne en
+                            personlig gratis konto til en prøveperiode.</p>
+                    </div>
+
+                    <div>
+                        <h2>Identificer Azure abonnementsbrug</h2>
+                        <p>Vi gennemgik måder, hvorpå du kan opnå et Azure-abonnement. Lad os nu se på de typer af
+                            Azure-abonnementer, der er tilgængelige.</p>
+
+                        <h3>Azure tilbyder gratis og betalte abonnementsmuligheder</h3>
+                        <p>Azure tilbyder gratis og betalte abonnementsmuligheder for at imødekomme forskellige behov og
+                            krav. De mest almindelige abonnementer er Gratis, Betal-som-du-går, Enterprise-aftale og
+                            Studerende. For din organisation kan du vælge en kombination af indkøbsmuligheder og
+                            abonnementsvalg for at imødekomme dine forretningsbehov.</p>
+
+                        <h3>Overvejelser ved valg af Azure-abonnementer</h3>
+                        <p>Når du tænker over, hvilke typer Azure-abonnementer der ville fungere for din organisation,
+                            skal du overveje følgende scenarier:</p>
+
+                        <ul>
+                            <li><strong>Azure gratis:</strong> Et Azure gratis abonnement inkluderer en monetær kredit
+                                til at bruge på enhver service i de første 30 dage. Du får gratis adgang til de mest
+                                populære Azure-produkter i 12 måneder og adgang til mere end 25 produkter, der altid er
+                                gratis. Et Azure gratis abonnement er en fremragende måde for nye brugere at komme i
+                                gang på.</li>
+
+                            <li><strong>Betal månedligt for brugte tjenester:</strong> Et Betal-som-du-går (PAYG)
+                                abonnement opkræver dig månedligt for de tjenester, du brugte i den pågældende
+                                faktureringsperiode. Denne abonnementstype er passende for et bredt spektrum af brugere,
+                                fra enkeltpersoner til små virksomheder og mange store organisationer.</li>
+
+                            <li><strong>Azure Enterprise-aftale:</strong> En Enterprise-aftale giver fleksibilitet til
+                                at købe skytjenester og softwarelicenser under én aftale. Aftalen kommer med rabatter
+                                til nye licenser og Software Assurance. Denne type abonnement henvender sig til
+                                organisations med virksomhedsskala.</li>
+
+                            <li><strong>Støtte til Azure for studerende:</strong> Et Azure for studerende abonnement
+                                inkluderer en monetær kredit, der kan bruges inden for de første 12 måneder.</li>
+                        </ul>
+
+                        <p>Studerende kan vælge gratis tjenester uden at angive et kreditkort under
+                            tilmeldingsprocessen. Du skal verificere din studenterstatus gennem din organisations
+                            e-mailadresse.</p>
+                    </div>
+
+                    <div>
+                        <h2>Implementer Microsoft Cost Management</h2>
+
+                        <p>Med Microsoft Cost Management kan du overvåge og styre omkostninger forbundet med
+                            Azure-tjenester. Produktet tilbyder avanceret analyse, budgetstyring og anbefalinger til
+                            omkostningsoptimering.</p>
+
+                    </div>
+
+                    <div>
+                        <h2>Apply cost savings</h2>
+
+                        <p>Her er en oversigt over nogle af de måder, Azure kan hjælpe dig med at spare omkostninger:
+                        </p>
+
+                        <ul>
+                            <li><strong>Reservationer:</strong> Spar penge ved at betale på forhånd og få rabat på
+                                virtuelle maskiner, SQL-databaser og andre ressourcer.</li>
+                            <li><strong>Azure Hybrid Benefits:</strong> Få prisfordele ved at migrere eksisterende
+                                licenser til Azure.</li>
+                            <li><strong>Azure Credits:</strong> Brug månedlige kreditgodtgørelser til udvikling og test
+                                uden ekstra omkostninger.</li>
+                            <li><strong>Azure-regioner:</strong> Sammenlign priser mellem forskellige regioner for at
+                                finde de bedste tilbud.</li>
+                            <li><strong>Budgetter:</strong> Planlæg og overvåg omkostninger ved hjælp af
+                                budgetfunktioner i Microsoft Cost Management.</li>
+                            <li><strong>Pricing Calculator:</strong> Estimer omkostninger på tværs af forskellige
+                                Azure-tjenester.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+
+                        <h2>Azure Management Groups</h2>
+                        <ul>
+                            <li>Effektiv administrering af adgang, politikker og overensstemmelse.</li>
+                            <li>Management groups tilbyder omfang og kontrol over abonnementer.</li>
+                        </ul>
+
+                        <h2>Nøglepunkter ved Management Groups:</h2>
+                        <ul>
+                            <li>Standardplacering af nye abonnementer.</li>
+                            <li>Automatisk arv af betingelser.</li>
+                            <li>Dybde af management group-træ.</li>
+                            <li>Standardautorisation for adgangskontrol.</li>
+                        </ul>
+
+                        <h2>Overvejelser ved Brug:</h2>
+                        <ul>
+                            <li>Tilpasning af hierarkier og grupper efter organisationsstruktur og scenarier.</li>
+                            <li>Kontrol af hierarkisk arv i politikdefinitioner.</li>
+                            <li>Organisering af abonnementer for at opfylde overholdelsesregler.</li>
+                            <li>Omkostningsrapportering efter afdeling eller specifikke scenarier.</li>
+                        </ul>
+
+                        <h2>Oprettelse af Management Groups:</h2>
+                        <ul>
+                            <li>Metoder til oprettelse: Azure Portal, PowerShell, Azure CLI.</li>
+                            <li>Unik identifikator (ID) og valgfrit visningsnavn.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Implementer Azure-politikker</h2>
+
+                        <ul>
+                            <li>Azure Policy: Oprettelse, tildeling og styring af politikker.</li>
+                            <li>Formål: Håndhævelse af regler for ressourcer til at opfylde overholdelsesstandarder og
+                                serviceaftaler.</li>
+                            <li>Fordele: Håndhævelse og overholdelse, skalerbarhed, afhjælpning.</li>
+                            <li>Håndhævelse og overholdelse:
+                                <ul>
+                                    <li>Indbyggede eller brugerdefinerede politikker.</li>
+                                    <li>Realtids- eller periodisk evaluering.</li>
+                                </ul>
+                            </li>
+                            <li>Skalerbarhed:
+                                <ul>
+                                    <li>Politikker på tværs af organisationen.</li>
+                                    <li>Aggregering af politiktilstande.</li>
+                                </ul>
+                            </li>
+                            <li>Afhjælpning:
+                                <ul>
+                                    <li>Realtids- eller eksisterende ressourceafhjælpning.</li>
+                                </ul>
+                            </li>
+                            <li>Styring:
+                                <ul>
+                                    <li>Styringsopgaver for miljøet.</li>
+                                    <li>Understøttelse af flere ingeniørteams og abonnementer.</li>
+                                    <li>Standardisering og håndhævelse af konfigurationer.</li>
+                                    <li>Overholdelse af lovgivning og sikkerhed.</li>
+                                </ul>
+                            </li>
+                            <li>Overvejelser:
+                                <ul>
+                                    <li>Deployable ressourcer.</li>
+                                    <li>Lokationsrestriktioner.</li>
+                                    <li>Regelhåndhævelse.</li>
+                                    <li>Inventarrevideringer.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Opret Azure-politikker</h2>
+                        <ul>
+                            <li>Azure Policy: Definerer konventioner for ressourcer.</li>
+                            <li>Politikdefinition: Beskriver betingelser og handlinger.</li>
+                            <li>Initiativdefinition: Gruppe af politikdefinitioner.</li>
+                            <li>Trin 1: Opret politikdefinitioner.</li>
+                            <li>Trin 2: Opret initiativdefinition.</li>
+                            <li>Trin 3: Afgræns initiativdefinitionen.</li>
+                            <li>Trin 4: Bestem overensstemmelse.</li>
+                            <li>Handlinger: Foretag evalueringer og undtagelser.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Azure Policy: Opret politikdefinitioner</h2>
+                        <ul>
+                            <li><strong>Adgang til indbyggede politikdefinitioner:</strong>
+                                <ul>
+                                    <li>Sorter efter kategori for at opfylde forretningsbehov.</li>
+                                    <li>Eksempel: Skærmbillede af indbyggede politikdefinitioner.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Eksempler på indbyggede politikdefinitioner:</strong>
+                                <ul>
+                                    <li>Tilladte virtuelle maskinstørrelses-SKU'er (Compute).</li>
+                                    <li>Tilladte placeringer (Generelt).</li>
+                                    <li>Konfigurér Azure Device Update for IoT Hub-konti for at deaktivere offentlig
+                                        netværksadgang (Internet of Things).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Til føjelse af nye politikdefinitioner:</strong>
+                                <ul>
+                                    <li>Tilføj eller opret nye definitioner efter behov.</li>
+                                    <li>Importer fra GitHub.</li>
+                                    <li>Nye definitioner tilføjes ofte til prøvearkivet.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Initiativdefinition</h2>
+
+                        <ul>
+                            <li>Bestemmelse af politikdefinitioner</li>
+                            <li>Oprettelse af initiativdefinition</li>
+                            <ul>
+                                <li>Indeholder en eller flere politikdefinitioner</li>
+                                <li>Formål: Sikre ressourcer overholder sikkerhedsregler</li>
+                            </ul>
+                            <li>Anbefales selv ved få politikdefinitioner</li>
+                            <li>Tilføjelse af ny initiativdefinition</li>
+                            <ul>
+                                <li>Vigtigt at bruge det specifikke JSON-format krævet af Azure</li>
+                                <li>Se Azure Policy-initiativdefinitionens struktur for detaljer</li>
+                                <li>Eksempel: Oprettelse af initiativdefinition i Azure-portalen</li>
+                            </ul>
+                            <li>Brug af indbyggede initiativdefinitioner</li>
+                            <ul>
+                                <li>Kan oprette egne eller bruge indbyggede definitioner i Azure Policy</li>
+                                <li>Sorter liste efter kategori for at finde relevante definitioner</li>
+                                <li>Eksempler på indbyggede initiativdefinitioner:</li>
+                                <ul>
+                                    <li>Audit af maskiner med usikre adgangskodeindstillinger</li>
+                                    <li>Konfiguration af Windows-maskiner til at køre Azure Monitor Agent og tilknytte
+                                        dem til en Data Collection Rule</li>
+                                    <li>Konfiguration af Azure Defender til aktivering på SQL-servere</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Definering af Initiativets Omfang</h2>
+
+                        <ul>
+                            <li>Oprettelse af initiativdefinition</li>
+                            <li>Tildeling af initiativ for at etablere omfang for politikkerne</li>
+                            <li>Bestemmelse af, hvilke ressourcer eller ressourcegrupper der påvirkes</li>
+                            <li>Vælg berørte abonnementer</li>
+                            <li>Valgfrihed for at vælge berørte ressourcegrupper</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Determiner overensstemmelse</h2>
+
+                        <ul>
+                            <li>Politikker defineret</li>
+                            <li>Initiativdefinition oprettet</li>
+                            <li>Politikker tildelt ressourcer</li>
+                            <li>Evaluering af overensstemmelsestilstand</li>
+                            <li>Brug af Overensstemmelsesfunktion</li>
+                            <li>Søgning efter ikke-overensstemmende initiativer, politikker og ressourcer</li>
+                            <li>Evalueringslogik ikke synlig i Azure-portalen</li>
+                            <li>Visning af overensstemmelsestilstandsresultater: overensstemmende eller
+                                ikke-overensstemmende</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Azure Storage-konti</h2>
+
+                        <ul>
+                            <li>En Azure Storage-konto giver et unikt navnerum til data, tilgængelig via HTTP/HTTPS fra
+                                overalt.</li>
+                            <li>Data er sikre, tilgængelige, holdbare og skalerbare.</li>
+                            <li>Lagringskontotypen bestemmer tjenester og redundansmuligheder.</li>
+                            <li>Redundansmuligheder inkluderer LRS, GRS, RA-GRS, ZRS, GZRS, og RA-GZRS.</li>
+                            <li>Forskellige kontotyper som Standard generel formål v2, Premium blokblobber, og Premium
+                                fildele dækker forskellige behov.</li>
+                            <li>Unikke slutpunkter dannes af kontonavnet og Azure Storage-tjenesteslutpunktet.</li>
+                            <li>Regler for navngivning inkluderer længdekrav og unikhed inden for Azure.</li>
+                        </ul>
+
+                        <h3>Slutpunkter for Azure Storage-tjenester:</h3>
+
+                        <ul>
+                            <li>Blob Storage: https://<storage-account-name>.blob.core.windows.net</li>
+                            <li>Data Lake Storage Gen2: https://<storage-account-name>.dfs.core.windows.net</li>
+                            <li>Azure Files: https://<storage-account-name>.file.core.windows.net</li>
+                            <li>Kø-lagring: https://<storage-account-name>.queue.core.windows.net</li>
+                            <li>Tabel Storage: https://<storage-account-name>.table.core.windows.net</li>
+                        </ul>
+                    </div>
+
+                    <div>
+
+                        <h2>Azure Storage Redundans</h2>
+
+                        <ul>
+                            <li>Azure Storage gemmer flere kopier af data for at beskytte mod fejl og katastrofer.</li>
+                            <li>Der er to hovedtyper af redundans: i den primære region og i en sekundær region.</li>
+                            <li>I den primære region tilbydes lokalt redundant storage (LRS) og zone-redundant storage
+                                (ZRS).</li>
+                            <li>LRS replikerer data tre gange i samme datacenter, mens ZRS replikerer synkront på tværs
+                                af tre tilgængelighedszoner.</li>
+                            <li>I en sekundær region kan data kopieres for at sikre høj holdbarhed.</li>
+                            <li>Geo-redundant storage (GRS) og geo-zone-redundant storage (GZRS) er muligheder for
+                                redundans i sekundære regioner.</li>
+                            <li>GRS replikerer data synkront og asynkront mellem regioner, mens GZRS tilbyder endnu
+                                højere holdbarhed og tilgængelighed.</li>
+                            <li>Læsetilgang til sekundære regioner kræver aktivering af read-access geo-redundant
+                                storage (RA-GRS) eller read-access geo-zone-redundant storage (RA-GZRS).</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Azure Storage Services</h2>
+
+                        <ul>
+                            <li><strong>Azure Blobs:</strong> Massivt objektlager til tekst og binære data,
+                                unstruktureret, tilgængeligt via HTTP/HTTPS.</li>
+                            <li><strong>Azure Files:</strong> Administrerede fildele i skyen via SMB/NFS protokoller,
+                                fuldt administreret, scripts og værktøjer til administration.</li>
+                            <li><strong>Azure Queues:</strong> Opbevaring af store beskedmængder, tilgængelig via
+                                HTTP/HTTPS, anvendes til asynkron bearbejdning.</li>
+                            <li><strong>Azure Disks:</strong> Blokniveau-lager til Azure VM'er, virtuelle diske
+                                administreret af Azure.</li>
+                            <li><strong>Azure Tables:</strong> Opbevaring af strukturerede data, NoSQL datastore,
+                                tilgængelig fra og udenfor Azure clouden.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Identificer Azure data migrationsmuligheder</h2>
+
+                        <ul>
+                            <li>Azure Migrate: Hjælper med at migrere fra on-premises til cloud.</li>
+                            <li>Unified migration platform: En enkelt portal til at administrere migration til Azure.
+                            </li>
+                            <li>Assessment og migration: Værktøjer til vurdering og migrering af infrastruktur.</li>
+                            <li>Azure Data Box: Fysisk migrationservice til store datamængder.</li>
+                            <li>Brugssager for Data Box: Engangsmigration, periodiske uploads, katastrofeberedskab osv.
+                            </li>
+                            <li>Engangsmigration: Flytning af store datamængder fra on-premises til Azure.</li>
+                            <li>Periodisk upload: Overførsel af store datamængder til Azure med jævne mellemrum.</li>
+                            <li>Katastrofeberedskab: Gendannelse af data fra Azure til on-premises netværk.</li>
+                            <li>Sikkerhedskrav: Eksport af data fra Azure i overensstemmelse med regerings- eller
+                                sikkerhedskrav.</li>
+                            <li>Disksletning: Efter upload af data slettes diskene i henhold til standarder.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>Identificer Azure-filbevægelsesmuligheder</h2>
+                        <ul>
+                            <li>AzCopy:
+                                <ul>
+                                    <li>Kommandolinjeværktøj til kopiering af blobs eller filer.</li>
+                                    <li>Udfører upload, download, kopiering og synkronisering mellem lagringskonti.</li>
+                                    <li>Kan konfigureres til at arbejde med andre skyudbydere.</li>
+                                    <li>Envejssynkronisering uden tovejsfunktion baseret på metadata.</li>
+                                </ul>
+                            </li>
+                            <li>Azure Storage Explorer:
+                                <ul>
+                                    <li>Standalone app med grafisk brugergrænseflade.</li>
+                                    <li>Administrerer filer og blobs i Azure Storage-konto.</li>
+                                    <li>Fungerer på Windows, macOS og Linux.</li>
+                                    <li>Bruger AzCopy til fil- og blobhåndtering.</li>
+                                </ul>
+                            </li>
+                            <li>Azure File Sync:
+                                <ul>
+                                    <li>Værktøj til centralisering af filmapper i Azure Files.</li>
+                                    <li>Giver fleksibilitet, ydeevne og kompatibilitet af Windows-filserver.</li>
+                                    <li>Tovejs-synkronisering mellem lokal Windows-server og filer i Azure.</li>
+                                    <li>Bruger forskellige protokoller inklusive SMB, NFS og FTPS.</li>
+                                    <li>Konfigurer cloud tiering til optimering af lagerplads.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
             </ul>
         </section>
 
