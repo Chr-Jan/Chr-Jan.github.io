@@ -1570,12 +1570,1321 @@
             </ul>
             <h3>Resultat</h3>
             <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Kilder:</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
+                <div>
+                    <div tag="AzureConfigureSubscriptions">
+                        <h1>Identificer Azure regioner</h1>
+                        <p>
+                            Microsoft Azure består af datacentre placeret rundt omkring i verden. Disse datacentre er
+                            organiseret og gjort tilgængelige for slutbrugere efter region. En region er et geografisk
+                            område på
+                            planeten, der indeholder mindst ét, men potentielt flere datacentre. Datacentrene er tæt på
+                            hinanden
+                            og netværksforbundet med et netværk med lav latenstid. Nogle eksempler på regioner er Vest
+                            USA,
+                            Canada Central, Vest Europa, Australien Øst og Japan Vest.
+                        </p>
+                        <h2>Ting at vide om regioner</h2>
+                        <ul>
+                            <li>Azure er generelt tilgængeligt i mere end 60 regioner i 140 lande.</li>
+                            <li>Azure har flere globale regioner end nogen anden cloud-udbyder.</li>
+                            <li>Regioner giver dig fleksibilitet og skalerbarhed til at bringe applikationer tættere på
+                                dine
+                                brugere.</li>
+                            <li>Regioner bevarer dataresidens og tilbyder omfattende overholdelses- og
+                                robusthedsmuligheder
+                                for
+                                kunder.</li>
+                        </ul>
+                        <h2>Ting at vide om regionale par</h2>
+                        <p>Fleste Azure-regioner er parret med en anden region inden for samme geografi for at danne et
+                            regionalt par (eller parrede regioner). Regionale par hjælper med at understøtte altid
+                            tilgængeligheden af Azure-ressourcer, som din infrastruktur bruger. Følgende tabel beskriver
+                            nogle
+                            prominente karakteristika ved parrede regioner:</p>
+                        <table>
+                            <tr>
+                                <th>Karakteristika</th>
+                                <th>Beskrivelse</th>
+                            </tr>
+                            <tr>
+                                <td>Fysisk isolation</td>
+                                <td>Azure foretrækker mindst 300 miles af adskillelse mellem datacentre i et regionalt
+                                    par.
+                                    Denne princip er ikke praktisk eller mulig i alle geografier.</td>
+                            </tr>
+                            <tr>
+                                <td>Platform-leveret replikation</td>
+                                <td>Nogle tjenester som Geo-Redundant Storage giver automatisk replikation til den
+                                    parrede
+                                    region.</td>
+                            </tr>
+                            <tr>
+                                <td>Region recovery order</td>
+                                <td>Under en bred nedetid prioriteres opsving af en region ud af hvert par.
+                                    Applikationer,
+                                    der
+                                    er implementeret på tværs af parrede regioner, er garanteret at have en af
+                                    ​​regionerne
+                                    genoprettet med prioritet.</td>
+                            </tr>
+                            <tr>
+                                <td>Sekventielle opdateringer</td>
+                                <td>Planlagte Azure-systemopdateringer udrulles til parrede regioner sekventielt (ikke
+                                    samtidigt). Rullende opdateringer minimerer nedetid, reducerer fejl og logiske fejl
+                                    i
+                                    tilfælde af en dårlig opdatering.</td>
+                            </tr>
+                            <tr>
+                                <td>Dataresidens</td>
+                                <td>Regioner befinder sig inden for samme geografi som deres aktiverede sæt (undtagen
+                                    for
+                                    Brasilien Syd og Singapore regioner).</td>
+                            </tr>
+                        </table>
+                        <h2>Ting at overveje ved brug af regioner og regionale par</h2>
+                        <p>Du har gennemgået de vigtige overvejelser om regioner og regionale par. Tænk nu over, hvordan
+                            du
+                            kunne implementere regioner i din organisation.</p>
+                        <ul>
+                            <li>Overvej ressource- og regionsimplementering. Planlæg de regioner, hvor du vil
+                                implementere
+                                dine
+                                ressourcer.</li>
+                            <li>Overvej servicesupport pr. region. Forskning region- og tjeneste tilgængelighed.</li>
+                            <li>Overvej tjenester, der ikke kræver regioner.</li>
+                            <li>Overvej undtagelser for regionpar.</li>
+                            <li>Overvej fordelene ved dataresidens.</li>
+                        </ul>
+                        <h2>Find regioner til din forretningsgeografi</h2>
+                        <p>Besøg Azure's globale infrastrukturs hjemmeside for at finde understøttede regioner til din
+                            forretningsgeografi.</p>
+
+
+                        <div tag="ImplementAzureSubscriptions">
+                            <h2>Implementering af Azure-abonnementer</h2>
+                            <p>Et Azure-abonnement er en logisk enhed af Azure-tjenester, der er knyttet til en
+                                Azure-konto.
+                                En
+                                Azure-konto er en identitet i Microsoft Entra ID eller en mappe, der er betroet af
+                                Microsoft
+                                Entra ID, såsom en arbejds- eller skolekonto. Abonnementer hjælper dig med at organisere
+                                adgangen til Azure-cloudtjenester og kontrollere, hvordan ressourceforbruget
+                                rapporteres,
+                                faktureres og betales.</p>
+
+                            <h3>Ting at vide om abonnementer</h3>
+                            <ul>
+                                <li>Hver Azure-cloudtjeneste tilhører et abonnement.</li>
+                                <li>Hvert abonnement kan have en forskellig fakturerings- og betalingskonfiguration.
+                                </li>
+                                <li>Flere abonnementer kan knyttes til samme Azure-konto.</li>
+                                <li>Mere end én Azure-konto kan knyttes til det samme abonnement.</li>
+                                <li>Fakturering for Azure-tjenester udføres på abonnementsbasis.</li>
+                                <li>Hvis din Azure-konto er den eneste konto, der er knyttet til et abonnement, er du
+                                    ansvarlig
+                                    for faktureringskravene.</li>
+                                <li>Programmatiske operationer for en cloudtjeneste kan kræve et abonnements-ID.</li>
+                            </ul>
+
+                            <h3>Ting at overveje ved brug af abonnementer</h3>
+                            <li>Antal abonnementer tilpasset virksomhedens behov og organisering af ressourcer.</li>
+                            <li>Overvej de typer af Azure-konti, der kræves, f.eks. Microsoft Entra ID eller andre
+                                betroede
+                                mapper.</li>
+                            <li>Opsæt forskellige abonnementer og betalingsmuligheder til forskellige formål, f.eks.
+                                afdelinger,
+                                projekter, regionale kontorer.</li>
+                            <li>Planlæg et dedikeret fælles tjenesteabonnement for at dele ressourcer effektivt.</li>
+                            <li>Sørg for, at brugere og tjenester autentificerer med en Microsoft Entra ID for at få
+                                adgang
+                                til
+                                ressourcer.</li>
+                        </div>
+
+                        <div tag="AzureAbonnement">
+                            <h2>Få en Azure-abonnement</h2>
+                            <p>For at bruge Azure skal du have en Azure-abonnement. Der er flere måder at skaffe en
+                                Azure-abonnement på. Du kan få en Azure-abonnement som en del af en Enterprise-aftale
+                                eller
+                                gennem en Microsoft-forhandler eller Microsoft-partner. Brugere kan også åbne en
+                                personlig
+                                gratis konto til en prøveabonnement.</p>
+                            <h2>Ting at vide om at skaffe en Azure-abonnement</h2>
+                            <p>Gennemgå følgende måder at få en Azure-abonnement på, og overvej hvilke muligheder der
+                                ville
+                                fungere for din organisation.</p>
+                            <table>
+                                <tr>
+                                    <th>Indkøbsmulighed</th>
+                                    <th>Beskrivelse</th>
+                                </tr>
+                                <tr>
+                                    <td>Enterprise-aftale</td>
+                                    <td>Enhver Enterprise-aftalekunde kan tilføje Azure til deres aftale ved at foretage
+                                        en
+                                        forudgående økonomisk forpligtelse til Azure. Forpligtelsen forbruges i løbet af
+                                        året ved at bruge enhver kombination af de mange cloud-tjenester, Azure
+                                        tilbyder.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft-forhandler</td>
+                                    <td>Køb Azure gennem Open Licensing-programmet, der giver en enkel, fleksibel måde
+                                        at
+                                        købe cloud-tjenester fra din Microsoft-forhandler. Hvis du allerede har købt en
+                                        Azure i Open licensnøgle, aktiver en ny abonnement eller tilføj flere kreditter
+                                        nu.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft-partner</td>
+                                    <td>Find en Microsoft-partner, der kan designe og implementere din
+                                        Azure-cloudløsning.
+                                        Disse partnere har forretnings- og teknologiekspertisen til at anbefale
+                                        løsninger,
+                                        der opfylder din virksomheds unikke behov.</td>
+                                </tr>
+                                <tr>
+                                    <td>Personlig gratis konto</td>
+                                    <td>Enhver bruger kan tilmelde sig en gratis prøvekonto. Du kan komme i gang med at
+                                        bruge Azure med det samme, og du vil ikke blive opkrævet, før du vælger at
+                                        opgradere.</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div tag="IdentifyAzureSubscription">
+                            <h2>Identificer Azure-abonnementsbrug</h2>
+                            <p>Vi har gennemgået de måder, du kan få en Azure-abonnement. Lad os nu se på de typer af
+                                Azure-abonnementer, der er tilgængelige.</p>
+                            <p>Azure tilbyder gratis og betalte abonnementer for at imødekomme forskellige behov og
+                                krav. De
+                                mest almindelige abonnementer er Gratis, Betal pr. brug, Enterprise Agreement og
+                                Student.
+                                For
+                                din organisation kan du vælge en kombination af indkøbsmuligheder og abonnementsvalg for
+                                at
+                                imødekomme dine forretningscenarier.</p>
+
+                            <h3>Overvejelser ved valg af Azure-abonnementer</h3>
+                            <p>Som du tænker over, hvilke typer af Azure-abonnementer der ville fungere for din
+                                organisation,
+                                skal du overveje disse scenarier:</p>
+
+                            <h4>Azure gratis:</h4>
+                            <p>Et Azure gratis abonnement inkluderer en økonomisk kredit til at bruge på enhver tjeneste
+                                i
+                                de
+                                første 30 dage. Du får gratis adgang til de mest populære Azure-produkter i 12 måneder
+                                og
+                                adgang
+                                til mere end 25 produkter, der altid er gratis. Et Azure gratis abonnement er en
+                                glimrende
+                                måde
+                                for nye brugere at komme i gang.</p>
+                            <p>For at oprette et gratis abonnement skal du bruge et telefonnummer, et kreditkort og en
+                                Microsoft-konto. Kreditkortoplysningerne bruges kun til identifikationsverifikation. Du
+                                bliver
+                                ikke opkrævet for nogen tjenester, før du opgraderer til et betalt abonnement.</p>
+
+                            <h4>Overvej at betale månedligt for brugte tjenester:</h4>
+                            <p>Et Betal pr. brug (PAYG) abonnement opkræver dig månedligt for de tjenester, du har brugt
+                                i
+                                den
+                                faktureringsperiode. Denne abonnementstype er passende for et bredt udvalg af brugere,
+                                lige
+                                fra
+                                enkeltpersoner til små virksomheder og mange store organisationer også.</p>
+
+                            <h4>Azure Enterprise Agreement:</h4>
+                            <p>En Enterprise Agreement giver fleksibilitet til at købe skytjenester og softwarelicenser
+                                under én
+                                aftale. Aftalen leveres med rabatter til nye licenser og Software Assurance. Denne type
+                                abonnement henvender sig til organisationer i virksomhedsstørrelse.</p>
+
+                            <h4>Understøttelse af Azure for studerende:</h4>
+                            <p>Et Azure for Studerende abonnement inkluderer en økonomisk kredit, der kan bruges inden
+                                for
+                                de
+                                første 12 måneder.</p>
+                            <p>Studerende kan vælge gratis tjenester uden at give et kreditkort under
+                                tilmeldingsprocessen.
+                                Du
+                                skal verificere din studerendestatus gennem din organisations e-mail-adresse.</p>
+                        </div>
+
+                        <div>
+                            <h2>Implementer Microsoft Cost Management</h2>
+
+                            <p>Med Azure-produkter og -services betaler du kun for det, du bruger. Når du opretter og
+                                bruger
+                                Azure-ressourcer, opkræves du for ressourcerne.</p>
+
+                            <p>Microsoft Cost Management understøtter administrative faktureringsopgaver og hjælper dig
+                                med
+                                at
+                                administrere faktureringsadgang til omkostninger. Du kan bruge produktet til at overvåge
+                                og
+                                styre Azure-forbrug og optimere din brug af Azure-ressourcer.</p>
+
+                            <p>Skærmbillede af Microsoft Cost Management-dashboard, der viser omkostninger for
+                                tjenestenavne
+                                og
+                                placeringer samt faktureringsprognoser.</p>
+
+                            <h3>Detaljer om Microsoft Cost Management</h3>
+
+                            <p>Din organisation er interesseret i fordelene ved at bruge Microsoft Cost Management til
+                                at
+                                overvåge deres abonnementsfakturering og ressourceforbrug. Når du planlægger din
+                                implementering,
+                                skal du gennemgå følgende produktkarakteristika og funktioner:</p>
+
+                            <ul>
+                                <li>Microsoft Cost Management viser organisatoriske omkostnings- og brugsmønstre med
+                                    avanceret
+                                    analyse. Omkostninger er baseret på forhandlede priser og tager højde for rabatter
+                                    ved
+                                    reservationer og Azure Hybrid Benefit. Forudsigende analyse er også tilgængelig.
+                                </li>
+                                <li>Rapporter i Microsoft Cost Management viser de forbrugsbaserede omkostninger, der
+                                    forbruges
+                                    af Azure-tjenester og tredjeparts-Marketplace-tilbud. Samlet set viser rapporterne
+                                    dine
+                                    interne og eksterne omkostninger for brug og Azure Marketplace-afgifter. Rapporterne
+                                    hjælper
+                                    dig med at forstå dit forbrug og ressourcebrug og kan hjælpe med at finde
+                                    omkostningsanomalier. Omkostninger som f.eks. reservationskøb, support og skatter er
+                                    måske
+                                    ikke synlige i rapporter.</li>
+                                <li>Produktet bruger Azure-managementgrupper, budgetter og anbefalinger til tydeligt at
+                                    vise,
+                                    hvordan dine udgifter er organiseret, og hvordan du måske kan reducere omkostninger.
+                                </li>
+                                <li>Du kan bruge Azure-portalen eller forskellige API'er til eksportautomatisering for
+                                    at
+                                    integrere omkostningsdata med eksterne systemer og processer. Automatisk
+                                    faktureringseksport
+                                    og planlagte rapporter er også tilgængelige.</li>
+                            </ul>
+
+                            <h3>Overvejelser ved brug af Microsoft Cost Management</h3>
+
+                            <p>Microsoft Cost Management kan hjælpe dig med at planlægge og styre dine
+                                organisationsomkostninger. Overvej, hvordan produktfunktionerne kan implementeres til at
+                                understøtte dine forretningsmæssige scenarier:</p>
+
+                            <ul>
+                                <li>Overvej omkostningsanalyse. Udnyt Microsoft Cost Management's
+                                    omkostningsanalysefunktioner
+                                    til at udforske og analysere dine organisatoriske omkostninger. Du kan se
+                                    aggregaterede
+                                    omkostninger pr. organisation for at forstå, hvor omkostningerne akkumuleres, og for
+                                    at
+                                    identificere forbrugstendenser. Overvåg akkumulerede omkostninger over tid for at
+                                    estimere
+                                    månedlige, kvartalsvise eller endda årlige omkostningstendenser mod et budget.</li>
+                                <li>Overvej budgetmuligheder. Brug Microsoft Cost Management-funktioner til at etablere
+                                    og
+                                    opretholde budgetter. Produktet hjælper dig med at planlægge og opfylde økonomisk
+                                    ansvarlighed i din organisation. Budgetter hjælper med at forhindre, at
+                                    omkostningstærskler
+                                    eller grænser overskrides. Du kan bruge analysedata til at informere andre om deres
+                                    forbrug
+                                    for proaktivt at styre omkostninger. Budgetfunktionerne hjælper dig med at se,
+                                    hvordan
+                                    virksomhedens forbrug udvikler sig over tid.</li>
+                                <li>Overvej anbefalinger. Gennemgå Microsoft Cost Management-anbefalinger for at lære,
+                                    hvordan
+                                    du kan optimere og forbedre effektiviteten ved at identificere ubrugte og
+                                    underudnyttede
+                                    ressourcer. Anbefalinger kan afsløre mindre dyre ressourcemuligheder. Når du handler
+                                    på
+                                    anbefalingerne, ændrer du måden, du bruger dine ressourcer på for at spare penge. At
+                                    bruge
+                                    anbefalinger er en enkel proces:
+                                    <ol>
+                                        <li>Se omkostningsoptimeringsanbefalinger for at se potentielle
+                                            brugsineffektiviteter.
+                                        </li>
+                                        <li>Handle på en anbefaling for at ændre din Azure-ressourcebrug og implementere
+                                            en
+                                            mere
+                                            omkostningseffektiv mulighed.</li>
+                                        <li>Bekræft den nye handling for at sikre, at ændringen har den ønskede effekt.
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Overvej eksportering af omkostningsstyringsdata. Microsoft Cost Management hjælper
+                                    dig
+                                    med
+                                    at arbejde med dine faktureringsoplysninger. Hvis du bruger eksterne systemer til at
+                                    få
+                                    adgang til eller gennemgå omkostningsstyringsdata, kan du nemt eksportere dataene
+                                    fra
+                                    Azure:
+                                    <ul>
+                                        <li>Opret en daglig planlagt eksport i kommasepareret værdi (CSV) -format og gem
+                                            datafilerne i Azure-lager.</li>
+                                        <li>Få adgang til dine eksporterede data fra dit eksterne system.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Apply resource tagging</h2>
+
+                            <p>Du kan tilføje tags til dine Azure-ressourcer for at organisere dem logisk efter
+                                kategorier.
+                                Tags
+                                er nyttige til sortering, søgning, styring og analyse af dine ressourcer.</p>
+
+                            <p>Hver ressource-tag består af et navn og en værdi. Du kan for eksempel have tag-navnet
+                                "Server" og
+                                værdien "Produktion" eller "Udvikling" og derefter anvende tag/værdi-parret på dine
+                                ingeniør-computerressourcer.</p>
+
+                            <h3>Resource tags</h3>
+
+                            <p>Som du planlægger dine Azure-abonnementer, ressourcer og tjenester, skal du gennemgå
+                                disse
+                                karakteristika ved Azure-ressourcetags:</p>
+
+                            <ul>
+                                <li>Hver ressource-tag har et navn og en værdi.</li>
+                                <li>Tag-navnet forbliver konstant for alle ressourcer, der har tagget anvendt.</li>
+                                <li>Tag-værdien kan vælges fra en defineret sæt af værdier, eller være unik for en
+                                    specifik
+                                    ressourceinstans.</li>
+                                <li>En ressource eller ressourcegruppe kan have højst 50 tag-navn/værdi-par.</li>
+                                <li>Tags, der anvendes på en ressourcegruppe, nedarves ikke af ressourcerne i
+                                    ressourcegruppen.
+                                </li>
+                            </ul>
+
+                            <h3>Brug af resource tags</h3>
+
+                            <p>Her er nogle ting, du kan gøre med ressourcetags:</p>
+
+                            <ul>
+                                <li>Overvej at søge på tag-data. Søg efter ressourcer i dit abonnement ved at søge på
+                                    tag-navn
+                                    og værdi.</li>
+                                <li>Overvej at finde relaterede ressourcer. Hent relaterede ressourcer fra andre
+                                    ressourcegrupper ved at søge på tag-navnet eller værdien.</li>
+                                <li>Overvej at gruppere faktureringsdata. Gruppér ressourcer som virtuelle maskiner
+                                    efter
+                                    omkostningscenter og produktionsmiljø. Når du downloader CSV-filen med
+                                    ressourceforbruget
+                                    for dine tjenester, vises tags i kolonnen Tags.</li>
+                                <li>Overvej at oprette tags med PowerShell eller Azure CLI. Opret mange ressource-tags
+                                    programmatiske ved hjælp af Azure PowerShell eller Azure CLI.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Apply cost savings</h2>
+
+                            <p>Azure har flere muligheder, der kan hjælpe dig med at opnå betydelige
+                                omkostningsbesparelser
+                                for
+                                din organisation. Når du forbereder din implementeringsplan for Azure-abonnementer,
+                                -tjenester
+                                og -ressourcer, bør du overveje følgende fordele ved omkostningsbesparelse.</p>
+
+                            <table>
+                                <tr>
+                                    <th>Omkostningsbesparelse</th>
+                                    <th>Beskrivelse</th>
+                                </tr>
+                                <tr>
+                                    <td>Reservationer</td>
+                                    <td>Gør brug af forudbetaling for at spare penge. Du kan betale for et eller tre års
+                                        virtuel
+                                        maskine, SQL Database beregningskapacitet, Azure Cosmos DB gennemløb eller andre
+                                        Azure-ressourcer. Forudbetaling giver dig mulighed for at opnå rabat på de
+                                        ressourcer,
+                                        du bruger. Reservationer kan reducere dine omkostninger til virtuelle maskiner,
+                                        SQL-databaseberegning, Azure Cosmos DB eller andre ressourcer med op til 72% i
+                                        forhold
+                                        til betal-som-du-går priserne. Reservationer giver en faktureringsrabat og
+                                        påvirker
+                                        ikke
+                                        kørselstilstanden for dine ressourcer.</td>
+                                </tr>
+                                <tr>
+                                    <td>Azure Hybrid Benefits</td>
+                                    <td>Få adgang til prismæssige fordele, hvis du har en licens, der inkluderer
+                                        Software
+                                        Assurance. Azure Hybrid Benefits hjælper med at maksimere værdien af
+                                        eksisterende
+                                        licensinvesteringer i lokale Windows Server- eller SQL Server, når du migrerer
+                                        til
+                                        Azure. Der er en Azure Hybrid Benefit Savings Calculator for at hjælpe dig med
+                                        at
+                                        bestemme dine besparelser.</td>
+                                </tr>
+                                <tr>
+                                    <td>Azure Credits</td>
+                                    <td>Brug månedligt kreditgodtgørelse til at udvikle, teste og eksperimentere med nye
+                                        løsninger på Azure. Som abonnent på Visual Studio kan du bruge Microsoft Azure
+                                        uden
+                                        ekstra omkostninger. Med din månedlige Azure-kredit er Azure din personlige
+                                        sandkasse
+                                        til udvikling og test.</td>
+                                </tr>
+                                <tr>
+                                    <td>Azure-regioner</td>
+                                    <td>Sammenlign priser på tværs af regioner. Priser kan variere fra en region til en
+                                        anden,
+                                        selv i USA. Dobbelttjek priserne i forskellige regioner for at se, om du kan
+                                        spare
+                                        ved
+                                        at vælge en anden region til dit abonnement.</td>
+                                </tr>
+                                <tr>
+                                    <td>Budgetter</td>
+                                    <td>Anvend budgetfunktionerne i Microsoft Cost Management for at hjælpe med at
+                                        planlægge
+                                        og
+                                        sikre organisationsansvarlighed. Med budgetter kan du regne med de
+                                        Azure-tjenester,
+                                        du
+                                        forbruger eller abonnerer på i en bestemt periode. Overvåg udgifter over tid og
+                                        informer
+                                        andre om deres udgifter for proaktivt at styre omkostninger. Brug budgetter til
+                                        at
+                                        sammenligne og spore udgifter, mens du analyserer omkostninger.</td>
+                                </tr>
+                                <tr>
+                                    <td>Pricing Calculator</td>
+                                    <td>Pricing Calculator giver skøn i alle områder af Azure, herunder beregning,
+                                        netværk,
+                                        lagring, web og databaser.</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h2>Apply resource tagging</h2>
+
+                            <p>Du kan tilføje tags til dine Azure-ressourcer for at organisere dem logisk efter
+                                kategorier.
+                            </p>
+
+                            <h3>Resource tags</h3>
+
+                            <ul>
+                                <li>Hver ressource-tag har et navn og en værdi.</li>
+                                <li>Tag-navnet forbliver konstant for alle ressourcer, der har tagget anvendt.</li>
+                                <li>Tag-værdien kan vælges fra en defineret sæt af værdier, eller være unik for en
+                                    specifik
+                                    ressourceinstans.</li>
+                                <li>En ressource eller ressourcegruppe kan have højst 50 tag-navn/værdi-par.</li>
+                                <li>Tags, der anvendes på en ressourcegruppe, nedarves ikke af ressourcerne i
+                                    ressourcegruppen.</li>
+                            </ul>
+
+                            <h3>Brug af resource tags</h3>
+
+                            <ul>
+                                <li>Overvej at søge på tag-data.</li>
+                                <li>Overvej at finde relaterede ressourcer.</li>
+                                <li>Overvej at gruppere faktureringsdata.</li>
+                                <li>Overvej at oprette tags med PowerShell eller Azure CLI.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Azure Management Groups</h2>
+
+                            <p>Organisationer, der bruger flere abonnementer, har brug for en effektiv måde at
+                                administrere
+                                adgang, politikker og overensstemmelse på. Azure management groups giver et niveau af
+                                omfang
+                                og
+                                kontrol over dine abonnementer. Du kan bruge management groups som containere til at
+                                administrere adgang, politikker og overensstemmelse på tværs af dine abonnementer.</p>
+
+                            <h3>Nogle ting at vide om management groups:</h3>
+                            <ul>
+                                <li>Som standard placeres alle nye abonnementer under det øverste management group eller
+                                    rodfællesskabet.</li>
+                                <li>Alle abonnementer inden for et management group arver automatisk de betingelser, der
+                                    er
+                                    anvendt på det management group.</li>
+                                <li>Et management group-træ kan understøtte op til seks niveauer af dybde.</li>
+                                <li>Autorisation for Azure rollebaseret adgangskontrol til management group-operationer
+                                    er
+                                    ikke
+                                    aktiveret som standard.</li>
+                            </ul>
+
+                            <h3>Overvejelser ved brug af management groups:</h3>
+                            <ul>
+                                <li>Overvej brugerdefinerede hierarkier og grupper for at tilpasse dine
+                                    Azure-abonnementer
+                                    efter
+                                    din virksomheds organisationsstruktur og forretningsmæssige scenarier.</li>
+                                <li>Kontroller den hierarkiske arv af adgang og privilegier i politikdefinitioner.</li>
+                                <li>Organiser dine abonnementer i management groups for at opfylde overholdelsesregler
+                                    for
+                                    individuelle afdelinger og teams.</li>
+                                <li>Brug management groups til omkostningsrapportering efter afdeling eller for
+                                    specifikke
+                                    forretningsmæssige scenarier.</li>
+                            </ul>
+
+                            <h3>Oprettelse af management groups:</h3>
+                            <ul>
+                                <li>Du kan oprette et management group med Azure Policy ved hjælp af Azure-portalen,
+                                    PowerShell
+                                    eller Azure CLI.</li>
+                                <li>Et management group har en unik identifikator (ID) og et visningsnavn. ID'en bruges
+                                    til
+                                    at
+                                    sende kommandoer til management group. Visningsnavnet er valgfrit og kan ændres når
+                                    som
+                                    helst.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Implementer Azure-politikker</h2>
+
+                            <p>Azure Policy er en tjeneste i Azure, som du kan bruge til at oprette, tildele og
+                                administrere
+                                politikker. Du kan bruge politikker til at håndhæve regler for dine ressourcer for at
+                                opfylde
+                                virksomhedens overholdelsesstandarder og serviceniveauaftaler. Azure Policy kører
+                                evalueringer
+                                og scanninger af dine ressourcer for at sikre, at de er i overensstemmelse.</p>
+
+                            <h3>Detaljer om Azure Policy</h3>
+
+                            <p>De vigtigste fordele ved Azure Policy ligger inden for områderne håndhævelse og
+                                overholdelse,
+                                skalerbarhed og afhjælpning. Azure Policy er også vigtig for teams, der kører et miljø,
+                                der
+                                kræver forskellige former for styring.</p>
+
+                            <table>
+                                <tr>
+                                    <th>Fordele</th>
+                                    <th>Beskrivelse</th>
+                                </tr>
+                                <tr>
+                                    <td>Håndhæv regler og overholdelse</td>
+                                    <td>Aktivér indbyggede politikker eller opret brugerdefinerede politikker for alle
+                                        ressourcetyper. Understøt evaluering og håndhævelse af politikker i realtid samt
+                                        periodisk eller påkrævet overholdelse.</td>
+                                </tr>
+                                <tr>
+                                    <td>Anvend politikker på skala</td>
+                                    <td>Anvend politikker på en forvaltningsgruppe med kontrol over hele din
+                                        organisation.
+                                        Anvend flere politikker og aggreger politiktilstande med politikinitiativ.
+                                        Definer
+                                        et
+                                        udelukkelsesområde.</td>
+                                </tr>
+                                <tr>
+                                    <td>Udfør afhjælpning</td>
+                                    <td>Udfør afhjælpning i realtid og afhjælpning på dine eksisterende ressourcer.</td>
+                                </tr>
+                                <tr>
+                                    <td>Udfør styring</td>
+                                    <td>Implementer styringsopgaver for dit miljø. Understøt flere ingeniørteams (der
+                                        udruller
+                                        og opererer i miljøet), håndter flere abonnementer, standardiser og håndhæv,
+                                        hvordan
+                                        cloud-ressourcer er konfigureret, håndter overholdelse af lovgivning,
+                                        omkostningskontrol, sikkerhed og designkonsistens.</td>
+                                </tr>
+                            </table>
+
+                            <h3>Ting at overveje ved brug af Azure Policy</h3>
+
+                            <p>Gennemgå følgende scenarier for brug af Azure Policy. Overvej hvordan du kan implementere
+                                tjenesten i din organisation.</p>
+
+                            <ul>
+                                <li>Overvej deploybare ressourcer. Specificer de ressourcetyper, som din organisation
+                                    kan
+                                    udrulle ved hjælp af Azure Policy. Du kan specificere sættet af virtuelle
+                                    maskine-SKU'er,
+                                    som din organisation kan udrulle.</li>
+                                <li>Overvej lokationsrestriktioner. Begræns de steder dine brugere kan specificere ved
+                                    udrulning
+                                    af ressourcer. Du kan vælge de geografiske steder eller regioner, der er
+                                    tilgængelige
+                                    for
+                                    din organisation.</li>
+                                <li>Overvej regelhåndhævelse. Håndhæv overholdelsesregler og konfigurationsmuligheder
+                                    for at
+                                    hjælpe med at administrere dine ressourcer og brugerindstillinger. Du kan kræve en
+                                    påkrævet
+                                    tag på ressourcer og definere de tilladte værdier.</li>
+                                <li>Overvej inventarrevideringer. Brug Azure Policy med Azure Backup-tjenesten på dine
+                                    VM'er
+                                    og
+                                    kør inventarrevideringer.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Opret Azure-politikker</h2>
+                            <p>Azure-administratorer bruger Azure Policy til at oprette politikker, der definerer
+                                konventioner
+                                for ressourcer. En politikdefinition beskriver overholdelsesbetingelserne for en
+                                ressource
+                                og
+                                handlingerne, der skal udføres, når betingelserne er opfyldt. En eller flere
+                                politikdefinitioner
+                                grupperes i en initiativdefinition for at kontrollere omfanget af dine politikker og
+                                evaluere
+                                overholdelsen af dine ressourcer.</p>
+                            <h3>Fire grundlæggende trin til oprettelse og arbejde med politikdefinitioner i Azure
+                                Policy:
+                            </h3>
+                            <ol>
+                                <li><strong>Trin 1: Opret politikdefinitioner</strong><br>
+                                    En politikdefinition udtrykker en betingelse, der skal evalueres, og de handlinger,
+                                    der
+                                    skal udføres, når betingelsen er opfyldt. Du kan oprette dine egne
+                                    politikdefinitioner
+                                    eller vælge fra indbyggede definitioner i Azure Policy. Du kan oprette en
+                                    politikdefinition for at forhindre, at VM'er i din organisation bliver
+                                    implementeret,
+                                    hvis de er eksponeret for en offentlig IP-adresse.</li>
+                                <li><strong>Trin 2: Opret en initiativdefinition</strong><br>
+                                    En initiativdefinition er en række politikdefinitioner, der hjælper dig med at spore
+                                    din
+                                    ressourceoverensstemmelse for at opfylde et større mål. Du kan oprette dine egne
+                                    initiativdefinitioner eller bruge indbyggede definitioner i Azure Policy. Du kan
+                                    bruge
+                                    en initiativdefinition til at sikre, at ressourcer overholder
+                                    sikkerhedsbestemmelserne.
+                                </li>
+                                <li><strong>Trin 3: Afgræns initiativdefinitionen</strong><br>
+                                    Azure Policy giver dig mulighed for at kontrollere, hvordan dine
+                                    initiativdefinitioner
+                                    anvendes på ressourcer i din organisation. Du kan begrænse omfanget af en
+                                    initiativdefinition til bestemte administrationsgrupper, abonnementer eller
+                                    ressourcegrupper.</li>
+                                <li><strong>Trin 4: Bestem overensstemmelse</strong><br>
+                                    Når du tildeler en initiativdefinition, kan du evaluere tilstanden af overholdelse
+                                    for
+                                    alle dine ressourcer. Enkelte ressourcer, ressourcegrupper og abonnementer inden for
+                                    et
+                                    omfang kan undtages fra at have politikreglerne påvirke dem. Undtagelser behandles
+                                    individuelt for hver tildeling.</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <h2>Opret politikdefinitioner</h2>
+                            <p>Azure Policy tilbyder indbyggede politikdefinitioner for at hjælpe dig med hurtigt at
+                                konfigurere
+                                kontrolbetingelser for dine ressourcer. Ud over de indbyggede politikker kan du også
+                                oprette
+                                dine egne definitioner eller importere definitioner fra andre kilder.</p>
+
+                            <h2>Få adgang til indbyggede politikdefinitioner</h2>
+                            <p>Du kan sortere listen over indbyggede definitioner efter kategori for at søge efter
+                                politikker,
+                                der opfylder dine forretningsbehov.</p>
+
+                            <h2>Eksempler på indbyggede politikdefinitioner:</h2>
+                            <ul>
+                                <li><strong>Tilladte virtuelle maskinstørrelses-SKU'er:</strong> Specificér en række
+                                    VM-størrelses-SKU'er, som din organisation kan implementere. Denne politik er
+                                    placeret
+                                    under
+                                    kategorien Compute.</li>
+                                <li><strong>Tilladte placeringer:</strong> Begræns de placeringer, brugere kan
+                                    specificere
+                                    ved
+                                    implementering af ressourcer. Brug denne politik til at håndhæve dine
+                                    geo-kompatibilitetskrav. Denne politik er placeret under kategorien Generelt.</li>
+                                <li><strong>Konfigurér Azure Device Update for IoT Hub-konti for at deaktivere offentlig
+                                        netværksadgang:</strong> Deaktiver offentlig netværksadgang for dine Device
+                                    Update
+                                    for
+                                    IoT Hub-ressourcer. Denne politik er placeret under kategorien Internet of Things.
+                                </li>
+                            </ul>
+
+                            <h3>Tilføj nye politikdefinitioner</h3>
+                            <p>Hvis du ikke finder en indbygget politik, der opfylder dine forretningsbehov, kan du
+                                tilføje
+                                eller oprette en ny definition. Politikdefinitioner kan også importeres til Azure Policy
+                                fra
+                                GitHub. Nye politikdefinitioner tilføjes næsten dagligt til prøvearkivet.</p>
+
+                        </div>
+
+                        <div>
+
+                            <h2>Opret en initiativdefinition</h2>
+
+                            <p>Efter du har fastlagt dine politikdefinitioner, er det næste skridt at oprette en
+                                initiativdefinition for dine politikker. En initiativdefinition har en eller flere
+                                politikdefinitioner. Et eksempel på brug af initiativdefinitioner er at sikre, at dine
+                                ressourcer er i overensstemmelse med sikkerhedsregler.</p>
+
+                            <p><strong>Tips:</strong></p>
+                            <p>Selvom du kun har få politikdefinitioner i din organisation, anbefaler vi at oprette og
+                                anvende
+                                en initiativdefinition.</p>
+
+                            <h3>Tilføj en ny initiativdefinition</h3>
+
+                            <p>Når du opretter en initiativdefinition, skal du sikre, at definitionen bruger det
+                                specifikke
+                                JSON-format, der kræves af Azure. For mere information, se Azure
+                                Policy-initiativdefinitionens
+                                struktur.</p>
+
+                            <h3>Brug en indbygget initiativdefinition</h3>
+
+                            <p>Du kan oprette dine egne initiativdefinitioner eller bruge indbyggede definitioner i
+                                Azure
+                                Policy. Du kan sortere listen over indbyggede initiativer efter kategori for at søge
+                                efter
+                                definitioner til din organisation.</p>
+
+                            <p>Her er nogle eksempler på indbyggede initiativdefinitioner:</p>
+
+                            <ul>
+                                <li>Audit machines with insecure password security settings: Brug dette initiativ til at
+                                    implementere en revisionspolitik på angivne ressourcer i din organisation.
+                                    Definitionen
+                                    evaluerer ressourcerne for at kontrollere usikre adgangskodeindstillinger. Dette
+                                    initiativ
+                                    er placeret i kategorien Guest Configuration.</li>
+                                <li>Configure Windows machines to run Azure Monitor Agent and associate them to a Data
+                                    Collection Rule: Brug dette initiativ til at overvåge og sikre dine Windows-VM'er,
+                                    virtuelle
+                                    maskinsæt og Arc-maskiner. Definitionen implementerer Azure Monitor Agent-udvidelsen
+                                    og
+                                    tilknytter ressourcerne til en angivet Data Collection Rule. Dette initiativ er
+                                    placeret
+                                    i
+                                    kategorien Monitoring.</li>
+                                <li>Configure Azure Defender to be enabled on SQL servers: Aktivér Azure Defender på
+                                    dine
+                                    Azure
+                                    SQL Servere for at registrere unormale aktiviteter, der indikerer usædvanlige og
+                                    potentielt
+                                    skadelige forsøg på at få adgang til eller udnytte databaser. Dette initiativ er
+                                    placeret i
+                                    kategorien SQL.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Definering af initiativets omfang</h2>
+
+                            <p>Efter at du har oprettet din initiativdefinition, er det næste skridt at tildele
+                                initiativet
+                                for
+                                at etablere omfanget for politikkerne. Omfanget bestemmer, hvilke ressourcer eller
+                                gruppering af
+                                ressourcer der påvirkes af betingelserne for politikkerne.</p>
+
+                            <p>For at etablere omfanget vælger du de berørte abonnementer. Som en mulighed kan du også
+                                vælge
+                                de
+                                berørte ressourcegrupper.</p>
+
+                        </div>
+
+                        <div>
+                            <h2>Determiner overensstemmelse</h2>
+
+                            <p>Du har defineret dine politikker, oprettet din initiativdefinition, og dine politikker er
+                                tildelt
+                                de berørte ressourcer. Det sidste skridt er at evaluere overensstemmelsestilstanden for
+                                dine
+                                afgrænsede ressourcer.</p>
+
+                            <p>Følgende eksempel viser, hvordan du kan bruge Overensstemmelsesfunktionen til at søge
+                                efter
+                                ikke-overensstemmende initiativer, politikker og ressourcer.</p>
+
+                            <p>Dine politikbetingelser evalueres mod dine eksisterende afgrænsede ressourcer. Selvom
+                                Azure-portalen ikke viser evalueringslogikken, vises resultaterne for
+                                overensstemmelsestilstanden. Overensstemmelsestilstandsresultatet er enten
+                                overensstemmende
+                                eller ikke-overensstemmende.</p>
+
+                        </div>
+                    </div>
+                    <div tag="describe-azure-storage-services">
+                        <div>
+                            <h2>Beskrivelse af Azure Storage-konti</h2>
+
+                            <p>Følgende video introducerer de forskellige tjenester, der bør være tilgængelige med Azure
+                                Storage.</p>
+
+                            <p>En lagringskonto giver et unikt navnerum til dine Azure Storage-data, der er tilgængelige
+                                fra hvor som helst i verden via HTTP eller HTTPS. Data i denne konto er sikre, meget
+                                tilgængelige, holdbare og enormt skalerbare.</p>
+
+                            <p>Når du opretter din lagringskonto, starter du med at vælge typen af lagringskonto. Typen
+                                af konto bestemmer lagringstjenesterne og redundansmulighederne og har indflydelse på
+                                brugssagerne. Nedenfor er en liste over redundansmuligheder, der vil blive dækket senere
+                                i dette modul:</p>
+
+                            <table>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Understøttede tjenester</th>
+                                    <th>Redundansmuligheder</th>
+                                    <th>Brug</th>
+                                </tr>
+                                <tr>
+                                    <td>Standard generel formål v2</td>
+                                    <td>Blob Storage (inklusive Data Lake Storage), Queue Storage, Table Storage og
+                                        Azure Files</td>
+                                    <td>LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS</td>
+                                    <td>Standard lagringskonto type for blobber, filer, køer og tabeller. Anbefales til
+                                        de fleste scenarier ved brug af Azure Storage. Hvis du vil have support til
+                                        netværksfilsystem (NFS) i Azure Files, skal du bruge typen af premium fildele
+                                        konto.</td>
+                                </tr>
+                                <tr>
+                                    <td>Premium blokblobber</td>
+                                    <td>Blob Storage (inklusive Data Lake Storage)</td>
+                                    <td>LRS, ZRS</td>
+                                    <td>Premium lagringskonto type for blokblobber og tilføjelsesblobber. Anbefales til
+                                        scenarier med høje transaktionsrater eller der bruger mindre objekter eller
+                                        kræver konsekvent lav lagringstid.</td>
+                                </tr>
+                                <tr>
+                                    <td>Premium fildele</td>
+                                    <td>Azure Files</td>
+                                    <td>LRS, ZRS</td>
+                                    <td>Premium lagringskonto type kun for fildele. Anbefales til enterprise- eller
+                                        højtydende skalaapplikationer. Brug denne konto type, hvis du vil have en
+                                        lagringskonto, der understøtter både Server Message Block (SMB) og NFS fildele.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Premium sideblobber</td>
+                                    <td>Kun sideblobber</td>
+                                    <td>LRS</td>
+                                    <td>Premium lagringskonto type kun for sideblobber.</td>
+                                </tr>
+                            </table>
+
+                            <p>Lagringskonto-slutpunkter</p>
+
+                            <p>En af fordelene ved at bruge en Azure Storage-konto er at have et unikt navnerum i Azure
+                                til dine data. For at gøre dette skal hver lagringskonto i Azure have et unikt
+                                i-Azure-kontonavn. Kombinationen af kontonavnet og Azure Storage-tjeneste-slutpunktet
+                                danner slutpunkterne for din lagringskonto.</p>
+
+                            <p>Når du navngiver din lagringskonto, skal du huske disse regler:</p>
+
+                            <ul>
+                                <li>Lagringskonto navne skal være mellem 3 og 24 tegn lange og må kun indeholde tal og
+                                    små bogstaver.</li>
+                                <li>Dit lagringskonto navn skal være unikt inden for Azure. Ingen to lagringskonti kan
+                                    have det samme navn. Dette understøtter muligheden for at have et unikt,
+                                    tilgængeligt navnerum i Azure.</li>
+                            </ul>
+
+                            <p>Følgende tabel viser slutpunktsformatet for Azure Storage-tjenester:</p>
+
+                            <table>
+                                <tr>
+                                    <th>Lagringstjeneste</th>
+                                    <th>Slutpunkt</th>
+                                </tr>
+                                <tr>
+                                    <td>Blob Storage</td>
+                                    <td>https://<storage-account-name>.blob.core.windows.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Data Lake Storage Gen2</td>
+                                    <td>https://<storage-account-name>.dfs.core.windows.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Azure Files</td>
+                                    <td>https://<storage-account-name>.file.core.windows.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Kø-lagring</td>
+                                    <td>https://<storage-account-name>.queue.core.windows.net</td>
+                                </tr>
+                                <tr>
+                                    <td>Tabel Storage</td>
+                                    <td>https://<storage-account-name>.table.core.windows.net</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <div>
+                            <h2>Beskrivelse af Azure storage redundans</h2>
+
+                            <p>Azure Storage gemmer altid flere kopier af dine data, så de er beskyttet mod planlagte og
+                                uventede begivenheder såsom midlertidige hardwarefejl, netværks- eller strømafbrydelser
+                                og naturkatastrofer. Redundans sikrer, at din lagringskonto opfylder sine
+                                tilgængeligheds- og holdbarhedsmål, selv i tilfælde af fejl.</p>
+
+                            <p>Ved valg af hvilken redundansmulighed der er bedst for dit scenario, skal du overveje
+                                afvejningerne mellem lavere omkostninger og højere tilgængelighed. De faktorer, der
+                                hjælper med at bestemme, hvilken redundansmulighed du skal vælge, inkluderer:</p>
+
+                            <ul>
+                                <li>Hvordan dine data replikeres i den primære region.</li>
+                                <li>Om dine data replikeres til en anden region, der geografisk er fjernt fra den
+                                    primære region, for at beskytte mod regionale katastrofer.</li>
+                                <li>Om din applikation kræver læsetilgang til de replikerede data i den sekundære
+                                    region, hvis den primære region bliver utilgængelig.</li>
+                            </ul>
+
+                            <h3>Redundans i den primære region</h3>
+
+                            <p>Data i en Azure Storage-konto replikeres altid tre gange i den primære region. Azure
+                                Storage tilbyder to muligheder for, hvordan dine data replikeres i den primære region,
+                                lokalt redundant storage (LRS) og zone-redundant storage (ZRS).</p>
+
+                            <h4>Lokalt redundant storage</h4>
+
+                            <p>Lokalt redundant storage (LRS) replikerer dine data tre gange inden for et enkelt
+                                datacenter i den primære region. LRS giver mindst 11 niere holdbarhed (99.999999999%) af
+                                objekter i løbet af et givent år.</p>
+
+                            <p>LRS er den billigste redundansmulighed og tilbyder den mindste holdbarhed sammenlignet
+                                med andre muligheder. LRS beskytter dine data mod serverrack- og drevfejl. Hvis der
+                                imidlertid opstår en katastrofe såsom brand eller oversvømmelse inden for datacenteret,
+                                kan alle replikaer af en lagringskonto, der bruger LRS, gå tabt eller være uoprettelige.
+                                For at mindske denne risiko anbefaler Microsoft at bruge zone-redundant storage (ZRS),
+                                geo-redundant storage (GRS) eller geo-zone-redundant storage (GZRS).</p>
+
+                            <h4>Zone-redundant storage</h4>
+
+                            <p>For regioner med aktiverede tilgængelighedszoner replikerer zone-redundant storage (ZRS)
+                                dine Azure Storage-data synkront på tværs af tre Azure-tilgængelighedszoner i den
+                                primære region. ZRS tilbyder holdbarhed for Azure Storage-dataobjekter på mindst 12
+                                niere (99.9999999999%) over et givet år.</p>
+
+                            <p>Med ZRS er dine data stadig tilgængelige for både læse- og skriveoperationer, selv hvis
+                                en zone bliver utilgængelig. Der kræves ingen ommontering af Azure-filshares fra de
+                                tilsluttede klienter. Hvis en zone bliver utilgængelig, foretager Azure
+                                netværksopdateringer såsom DNS-omdirigering. Disse opdateringer kan påvirke din
+                                applikation, hvis du får adgang til data, før opdateringerne er afsluttet.</p>
+
+                            <p>Microsoft anbefaler at bruge ZRS i den primære region for scenarier, der kræver høj
+                                tilgængelighed. ZRS anbefales også til at begrænse replikation af data inden for et land
+                                eller en region for at imødekomme kravene til datastyrelse.</p>
+
+                            <h3>Redundans i en sekundær region</h3>
+
+                            <p>For applikationer, der kræver høj holdbarhed, kan du vælge yderligere at kopiere dataene
+                                i din lagringskonto til en sekundær region, der ligger hundredvis af miles væk fra den
+                                primære region. Hvis dataene i din lagringskonto kopieres til en sekundær region, er
+                                dine data holdbare, selv i tilfælde af en katastrofal fejl, der forhindrer, at dataene i
+                                den primære region kan gendannes.</p>
+
+                            <p>Når du opretter en lagringskonto, vælger du den primære region for kontoen. Den parrede
+                                sekundære region er baseret på Azure Region Pairs og kan ikke ændres.</p>
+
+                            <p>Azure Storage tilbyder to muligheder for at kopiere dine data til en sekundær region:
+                                geo-redundant storage (GRS) og geo-zone-redundant storage (GZRS). GRS ligner kørsel af
+                                LRS i to regioner, og GZRS ligner kørsel af ZRS i den primære region og LRS i den
+                                sekundære region.</p>
+
+                            <p>Som standard er dataene i den sekundære region ikke tilgængelige for læse- eller
+                                skriveadgang, medmindre der sker en failover til den sekundære region. Hvis den primære
+                                region bliver utilgængelig, kan du vælge at foretage failover til den sekundære region.
+                                Efter at failoveren er afsluttet, bliver den sekundære region den primære region, og du
+                                kan igen læse og skrive data.</p>
+
+                            <p><strong>Vigtigt</strong>: Fordi data replikeres til den sekundære region asynkront, kan
+                                en fejl, der påvirker den primære region, resultere i datatab, hvis den primære region
+                                ikke kan gendannes. Intervallet mellem de seneste skrivninger til den primære region og
+                                den sidste skrivning til den sekundære region kaldes recovery point objective (RPO). RPO
+                                angiver det tidspunkt, som dataene kan gendannes til. Azure Storage har typisk en RPO på
+                                mindre end 15 minutter, selvom der i øjeblikket ikke er nogen SLA for, hvor lang tid det
+                                tager at replikere data til den sekundære region.</p>
+
+                            <h4>Geo-redundant storage</h4>
+
+                            <p>GRS kopierer dine data synkront tre gange inden for en enkelt fysisk placering i den
+                                primære region ved hjælp af LRS. Derefter kopieres dine data asynkront til en enkelt
+                                fysisk placering i den sekundære region (regionparræet) ved hjælp af LRS. GRS tilbyder
+                                holdbarhed for Azure Storage-dataobjekter på mindst 16 niere (99.99999999999999%) over
+                                et givent år.</p>
+
+                            <h4>Geo-zone-redundant storage</h4>
+
+                            <p>GZRS kombinerer den høje tilgængelighed, som redundans på tværs af tilgængelighedszoner
+                                giver, med beskyttelse mod regionale afbrydelser, som geo-replikation giver. Data i en
+                                GZRS-lagringskonto kopieres på tværs af tre Azure-tilgængelighedszoner i den primære
+                                region (ligesom ZRS) og replikeres også til en sekundær geografisk region ved hjælp af
+                                LRS til beskyttelse mod regionale katastrofer. Microsoft anbefaler at bruge GZRS til
+                                applikationer, der kræver maksimal konsistens, holdbarhed og tilgængelighed, fremragende
+                                ydeevne og robusthed til katastrofegendannelse.</p>
+
+                            <p>GZRS er designet til at give mindst 16 niere (99.99999999999999%) holdbarhed af objekter
+                                over et givent år.</p>
+
+                            <h3>Læsetilgang til data i den sekundære region</h3>
+
+                            <p>Geo-redundant storage (med GRS eller GZRS) replikerer dine data til en anden fysisk
+                                placering i den sekundære region for at beskytte mod regionale afbrydelser. Imidlertid
+                                er disse data kun tilgængelige til læsning, hvis kunden eller Microsoft initierer en
+                                failover fra primær til sekundær region. Hvis du aktiverer læsetilgang til den sekundære
+                                region, er dine data altid tilgængelige, selv når den primære region kører optimalt. For
+                                læsetilgang til den sekundære region skal du aktivere read-access geo-redundant storage
+                                (RA-GRS) eller read-access geo-zone-redundant storage (RA-GZRS).</p>
+
+                        </div>
+
+                        <div>
+                            <h2>Azure Storage-tjenester</h2>
+
+                            <p>Azure Storage-platformen inkluderer følgende datatjenester:</p>
+
+                            <ul>
+                                <li>Azure Blobs: En massivt skalerbar objektlager til tekst- og binære data. Inkluderer
+                                    også understøttelse af big data-analyse gennem Data Lake Storage Gen2.</li>
+                                <li>Azure Files: Administrerede fildele til sky- eller lokal installation.</li>
+                                <li>Azure Queues: En beskedlager til pålidelig beskedudveksling mellem
+                                    applikationskomponenter.</li>
+                                <li>Azure Disks: Blokniveau lagerenheder til Azure-VM'er.</li>
+                                <li>Azure Tables: NoSQL-tabelmulighed til strukturerede, ikke-relaterede data.</li>
+                            </ul>
+
+                            <h3>Fordele ved Azure Storage</h3>
+
+                            <p>Azure Storage-tjenester tilbyder følgende fordele for applikationsudviklere og
+                                IT-fagfolk:</p>
+
+                            <ul>
+                                <li>Holdbar og højt tilgængelig. Redundans sikrer, at dine data er sikre, hvis der
+                                    opstår midlertidige hardwarefejl. Du kan også vælge at replikere data på tværs af
+                                    datacentre eller geografiske regioner for yderligere beskyttelse mod lokale
+                                    katastrofer eller naturkatastrofer.</li>
+                                <li>Sikker. Alle data, der skrives til en Azure Storage-konto, krypteres af tjenesten.
+                                    Azure Storage giver dig finjusteret kontrol over, hvem der har adgang til dine data.
+                                </li>
+                                <li>Skalerbar. Azure Storage er designet til at være massivt skalerbar for at imødekomme
+                                    dagens applikationers dataopbevarings- og ydelsesbehov.</li>
+                                <li>Administreret. Azure håndterer hardwarevedligeholdelse, opdateringer og kritiske
+                                    problemer for dig.</li>
+                                <li>Tilgængelig. Data i Azure Storage er tilgængelige fra hvor som helst i verden over
+                                    HTTP eller HTTPS. Microsoft leverer klientbiblioteker til Azure Storage på en række
+                                    sprog, herunder .NET, Java, Node.js, Python, PHP, Ruby, Go og andre, samt en moden
+                                    REST API.</li>
+                            </ul>
+
+                            <h3>Azure Blobs</h3>
+
+                            <p>Azure Blob Storage er en objektlagerløsning til skyen. Det kan opbevare massive mængder
+                                data, såsom tekst- eller binærdata. Azure Blob Storage er ustruktureret, hvilket
+                                betyder, at der ikke er nogen begrænsninger for de typer data, den kan indeholde.</p>
+
+                            <p>Blobs er ikke begrænset til almindelige filformater. En blob kan indeholde gigabyte af
+                                binære data streamet fra et videnskabeligt instrument, en krypteret besked til en anden
+                                applikation eller data i et brugerdefineret format til en app, du udvikler.</p>
+
+                            <p>Objekter i blob storage kan tilgås fra hvor som helst i verden via HTTP eller HTTPS.
+                                Brugere eller klientapplikationer kan tilgå blobs via URL'er, Azure Storage REST API,
+                                Azure PowerShell, Azure CLI eller et Azure Storage-klientbibliotek.</p>
+
+                            <h3>Azure Files</h3>
+
+                            <p>Azure File storage tilbyder fuldt administrerede fildele i skyen, der er tilgængelige via
+                                de branchestandarder Server Message Block (SMB) eller Network File System (NFS)
+                                protokoller.</p>
+
+                            <p>De vigtigste fordele ved Azure Files inkluderer:</p>
+
+                            <ul>
+                                <li>Delt adgang</li>
+                                <li>Fuldt administreret</li>
+                                <li>Scripting og værktøjer</li>
+                                <li>Modstandsdygtighed</li>
+                                <li>Kendt programmabilitet</li>
+                            </ul>
+
+                            <h3>Azure Queues</h3>
+
+                            <p>Azure Queue storage er en service til opbevaring af store mængder beskeder. Når de er
+                                gemt, kan du få adgang til beskederne fra hvor som helst i verden via godkendte opkald
+                                ved hjælp af HTTP eller HTTPS.</p>
+
+                            <p>Køer bruges typisk til at oprette en backlog af arbejde til at behandle asynkront.</p>
+
+                            <h3>Azure Disks</h3>
+
+                            <p>Azure Disk storage, eller Azure managed disks, er blokniveau-lagerenheder, der
+                                administreres af Azure til brug med Azure-VM'er.</p>
+
+                            <h3>Azure Tables</h3>
+
+                            <p>Azure Table storage opbevarer store mængder strukturerede data. Azure tables er en
+                                NoSQL-datastore, der accepterer godkendte opkald indefra og udenfor Azure-clouden.</p>
+
+                        </div>
+
+                        <div>
+                            <h2>Identificer Azure data migrationsmuligheder</h2>
+
+                            <p>Nu da du forstår de forskellige lagringsmuligheder inden for Azure, er det også vigtigt
+                                at forstå, hvordan du får dine data og informationer ind i Azure. Azure understøtter
+                                både realtidsmigration af infrastruktur, applikationer og data ved hjælp af Azure
+                                Migrate samt asynkron migration af data ved hjælp af Azure Data Box.</p>
+
+                            <h3>Azure Migrate</h3>
+                            <p>Azure Migrate er en service, der hjælper dig med at migrere fra en lokal miljø til skyen.
+                                Azure Migrate fungerer som en central til at hjælpe dig med at administrere vurderingen
+                                og migrationen af din lokale datacenter til Azure. Det giver følgende:</p>
+                            <ul>
+                                <li>Forenet migrationsplatform: En enkelt portal til at starte, køre og spore din
+                                    migration til Azure.</li>
+                                <li>Række værktøjer: En række værktøjer til vurdering og migration. Azure
+                                    Migrate-værktøjer inkluderer Azure Migrate: Opdagelse og vurdering og Azure Migrate:
+                                    Server Migration. Azure Migrate integrerer også med andre Azure-tjenester og
+                                    værktøjer samt uafhængige softwareleverandør (ISV)-tilbud.</li>
+                                <li>Vurdering og migration: I Azure Migrate-huben kan du vurdere og migrere din lokale
+                                    infrastruktur til Azure.</li>
+                            </ul>
+
+                            <h3>Integrerede værktøjer</h3>
+                            <p>Ud over at arbejde med værktøjer fra ISV'er inkluderer Azure Migrate-huben også følgende
+                                værktøjer for at hjælpe med migration:</p>
+                            <ul>
+                                <li>Azure Migrate: Opdagelse og vurdering. Find og vurder lokale servere, der kører på
+                                    VMware, Hyper-V og fysiske servere i forberedelse til migration til Azure.</li>
+                                <li>Azure Migrate: Server Migration. Migrer VMware-VM'er, Hyper-V-VM'er, fysiske
+                                    servere, andre virtualiserede servere og offentlige cloud-VM'er til Azure.</li>
+                                <li>Data Migration Assistant. Data Migration Assistant er et selvstændigt værktøj til at
+                                    vurdere SQL Servere. Det hjælper med at identificere potentielle problemer, der
+                                    blokerer migration. Det identificerer ikke-understøttede funktioner, nye funktioner,
+                                    der kan gavne dig efter migration, og den rette vej for database migration.</li>
+                                <li>Azure Database Migration Service. Migrer lokale databaser til Azure VM'er, der kører
+                                    SQL Server, Azure SQL Database eller SQL Managed Instances.</li>
+                                <li>Azure App Service migration assistant. Azure App Service migration assistant er et
+                                    selvstændigt værktøj til at vurdere lokale websites til migration til Azure App
+                                    Service. Brug Migration Assistant til at migrere .NET- og PHP-webapps til Azure.
+                                </li>
+                            </ul>
+
+                            <h3>Azure Data Box</h3>
+                            <p>Azure Data Box er en fysisk migrationservice, der hjælper med at overføre store mængder
+                                data på en hurtig, billig og pålidelig måde. Den sikre datatransmission fremskyndes ved
+                                at sende dig en proprietær Data Box-opbevaringsenhed, der har en maksimal brugbar
+                                lagerkapacitet på 80 terabyte. Data Box transporteres til og fra dit datacenter via en
+                                regional transportør. Et robust etui beskytter og sikrer Data Box mod skader under
+                                transporten.</p>
+
+                            <p>Du kan bestille Data Box-enheden via Azure-portalen for at importere eller eksportere
+                                data fra Azure. Når enheden er modtaget, kan du hurtigt opsætte den ved hjælp af det
+                                lokale web-UI og tilslutte den til dit netværk. Når du er færdig med at overføre dataene
+                                (enten til eller fra Azure), skal du blot returnere Data Box'en. Hvis du overfører data
+                                til Azure, uploades dataene automatisk, når Microsoft modtager Data Box'en tilbage. Hele
+                                processen spores fra ende til ende af Data Box-tjenesten i Azure-portalen.</p>
+
+                            <h3>Anvendelsesområder</h3>
+                            <p>Data Box er velegnet til at overføre datasæt større end 40 TB i scenarier med ingen eller
+                                begrænset netværksforbindelse. Datatransporten kan være enkeltstående, periodisk eller
+                                en initial bulkdataoverførsel efterfulgt af periodiske overførsler.</p>
+
+                            <p>Her er de forskellige scenarier, hvor Data Box kan bruges til at importere data til
+                                Azure:</p>
+                            <ul>
+                                <li>Engangsmigration - når en stor mængde lokale data flyttes til Azure.</li>
+                                <li>Flytning af et mediebibliotek fra offline bånd til Azure for at oprette et online
+                                    mediebibliotek.</li>
+                                <li>Migrering af dit VM-farm, SQL-server og applikationer til Azure.</li>
+                                <li>Flytning af historiske data til Azure til dybdegående analyse og rapportering ved
+                                    hjælp af HDInsight.</li>
+                                <li>Initial bulkoverførsel - når der udføres en initial bulkoverførsel ved hjælp af Data
+                                    Box (seed) efterfulgt af inkrementelle overførsler over nettet.</li>
+                                <li>Periodiske uploads - når der genereres store mængder data periodisk, som skal
+                                    flyttes til Azure.</li>
+                            </ul>
+
+                            <p>Her er de forskellige scenarier, hvor Data Box kan bruges til at eksportere data fra
+                                Azure:</p>
+                            <ul>
+                                <li>Katastrofeberedskab - når en kopi af data fra Azure gendannes til et lokalt netværk.
+                                    I et typisk katastrofeberedskab eksporteres en stor mængde Azure-data til en Data
+                                    Box. Microsoft sender derefter denne Data Box, og dataene gendannes på din lokation
+                                    på kort tid.</li>
+                                <li>Sikkerhedskrav - når du har brug for at kunne eksportere data ud af Azure på grund
+                                    af regerings- eller sikkerhedskrav.</li>
+                                <li>Migrering tilbage til lokale eller til en anden cloud service provider - når du vil
+                                    flytte alle data tilbage til lokale eller til en anden cloud service provider,
+                                    eksporteres data via Data Box for at migrere arbejdsbelastningerne.</li>
+                            </ul>
+
+                            <p>Når dataene fra din importordre er uploadet til Azure, slettes diskene på enheden i
+                                overensstemmelse med NIST 800-88r1-standarderne. For en eksportordre slettes diskene,
+                                når enheden når Azure-datacenteret.</p>
+
+                        </div>
+
+                        <div>
+                            <h2>Identificer Azure-filbevægelsesmuligheder</h2>
+                            <p>I tillæg til store migrationsoperationer ved hjælp af tjenester som Azure Migrate og
+                                Azure Data Box har Azure også værktøjer designet til at hjælpe dig med at flytte eller
+                                interagere med enkelte filer eller små filgrupper. Blandt disse værktøjer er AzCopy,
+                                Azure Storage Explorer og Azure File Sync.</p>
+
+                            <h3>AzCopy</h3>
+                            <p>AzCopy er et kommandolinjeværktøj, som du kan bruge til at kopiere blobs eller filer til
+                                eller fra din lagringskonto. Med AzCopy kan du uploade filer, downloade filer, kopiere
+                                filer mellem lagringskonti og endda synkronisere filer. AzCopy kan endda konfigureres
+                                til at fungere med andre skyudbydere for at hjælpe med at flytte filer frem og tilbage
+                                mellem skyer.</p>
+                            <p><strong>Vigtigt:</strong> Synchronisering af blobs eller filer med AzCopy er
+                                envejs-synkronisering. Når du synkroniserer, angiver du kilde og destination, og AzCopy
+                                kopierer filer eller blobs i den retning. Det synkroniserer ikke tovejs baseret på
+                                tidsstempler eller anden metadata.</p>
+
+                            <h3>Azure Storage Explorer</h3>
+                            <p>Azure Storage Explorer er en selvstændig app, der giver en grafisk brugergrænseflade til
+                                at administrere filer og blobs i din Azure Storage-konto. Den fungerer på Windows, macOS
+                                og Linux-operativsystemer og bruger AzCopy på backend til at udføre alle fil- og
+                                blobhåndteringstasks. Med Storage Explorer kan du uploade til Azure, downloade fra Azure
+                                eller flytte mellem lagringskonti.</p>
+
+                            <h3>Azure File Sync</h3>
+                            <p>Azure File Sync er et værktøj, der giver dig mulighed for at centralisere dine filmapper
+                                i Azure Files og beholde fleksibiliteten, ydeevnen og kompatibiliteten af en
+                                Windows-filserver. Det er næsten som at omdanne din Windows-filserver til et
+                                miniatureindholdsleveringsnetværk. Når du har installeret Azure File Sync på din lokale
+                                Windows-server, forbliver den automatisk tovejs-synkroniseret med dine filer i Azure.
+                            </p>
+                            <ul>
+                                <li>Brug enhver protokol, der er tilgængelig på Windows Server for at få adgang til dine
+                                    data lokalt, herunder SMB, NFS og FTPS.</li>
+                                <li>Har så mange cache som du har brug for over hele verden.</li>
+                                <li>Udskift en fejlet lokal server ved at installere Azure File Sync på en ny server i
+                                    samme datacenter.</li>
+                                <li>Konfigurer cloud tiering, så de mest hyppigt tilgåede filer replikeres lokalt, mens
+                                    sjældent tilgåede filer holdes i skyen, indtil de anmodes om.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Kilder:</h3>
+                    <ul class="result">
+                        <ul><a href="https://learn.microsoft.com/da-dk/training/modules/configure-subscriptions/">Azure:
+                                Configure subscriptions</a></ul>
+                        <ul><a
+                                href="https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/">Describe
+                                Azure storage services</a></ul>
+
+                    </ul>
         </section>
 
         <section class="bubble">
