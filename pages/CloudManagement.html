@@ -2876,6 +2876,576 @@
                         </div>
                     </div>
 
+                    <div tag="describe-azure-identity-access-security">
+                        <div>
+                            <h2>Beskriv Azure's katalogtjenester</h2>
+
+                            <p>Microsoft Azure AD (Azure Active Directory) er en katalogtjeneste, der giver dig mulighed
+                                for at logge ind og få adgang til både Microsofts skyapplikationer og skyapplikationer,
+                                som du udvikler. Azure AD kan også hjælpe dig med at vedligeholde din lokale Active
+                                Directory-implementering.</p>
+
+                            <p>I lokale miljøer giver Active Directory på Windows Server en identitets- og
+                                adgangsstyringstjeneste, der administreres af din organisation. Azure AD er Microsofts
+                                skybaserede identitets- og adgangsstyringstjeneste. Med Azure AD kontrollerer du
+                                identitetskonti, men Microsoft sikrer, at tjenesten er tilgængelig globalt. Hvis du har
+                                arbejdet med Active Directory, vil Azure AD være velkendt for dig.</p>
+
+                            <p>Når du sikrer identiteter lokalt med Active Directory, overvåger Microsoft ikke
+                                logonforsøg. Når du forbinder Active Directory med Azure AD, kan Microsoft hjælpe med at
+                                beskytte dig ved at registrere mistænkelige logonforsøg uden ekstra omkostninger. For
+                                eksempel kan Azure AD registrere logonforsøg fra uventede steder eller ukendte enheder.
+                            </p>
+
+                            <h3>Hvem bruger Azure AD?</h3>
+
+                            <p>Azure AD er til:</p>
+
+                            <ul>
+                                <li>IT-administratorer. Administratorer kan bruge Azure AD til at styre adgang til
+                                    applikationer og ressourcer baseret på deres forretningskrav.</li>
+                                <li>App-udviklere. Udviklere kan bruge Azure AD til at tilføje funktionalitet til de
+                                    applikationer, de bygger, f.eks. SSO-funktionalitet eller understøttelse af
+                                    brugernes eksisterende legitimationsoplysninger.</li>
+                                <li>Brugere. Brugere kan administrere deres identiteter og udføre
+                                    vedligeholdelseshandlinger som selvbetjeningsadgangskode-nulstilling.</li>
+                                <li>Abonnenter på online tjenester. Abonnenter på Microsoft 365, Microsoft Office 365,
+                                    Azure og Microsoft Dynamics CRM Online bruger allerede Azure AD til at godkende
+                                    deres konto.</li>
+                            </ul>
+
+                            <h3>Hvad gør Azure AD?</h3>
+
+                            <p>Azure AD tilbyder tjenester som:</p>
+
+                            <ul>
+                                <li>Godkendelse: Dette inkluderer at verificere identitet for at få adgang til
+                                    applikationer og ressourcer samt at tilbyde funktioner som
+                                    selvbetjeningsadgangskode-nulstilling og multifaktorgodkendelse.</li>
+                                <li>Single Sign-On (SSO): SSO gør det muligt at huske kun en brugernavn og adgangskode
+                                    til adgang til flere applikationer.</li>
+                                <li>Applikationsstyring: Du kan administrere dine sky- og lokale applikationer ved hjælp
+                                    af Azure AD.</li>
+                                <li>Enhedsstyring: Azure AD understøtter også registrering af enheder og giver mulighed
+                                    for styring af disse enheder gennem værktøjer som Microsoft Intune.</li>
+                            </ul>
+
+                            <h3>Kan jeg forbinde min lokale AD med Azure AD?</h3>
+
+                            <p>Hvis du har et lokalt miljø, der kører Active Directory, og en skyimplementering ved
+                                hjælp af Azure AD, skal du muligvis vedligeholde to identitetssæt. Men du kan forbinde
+                                Active Directory med Azure AD, hvilket muliggør en sammenhængende identitetsoplevelse
+                                mellem skyen og det lokale miljø.</p>
+
+                            <h3>Hvad er Azure AD Domain Services?</h3>
+
+                            <p>Azure AD Domain Services er en tjeneste, der leverer administrerede domænetjenester som
+                                domænetilslutning, gruppepolitik, LDAP og Kerberos/NTLM-godkendelse.</p>
+
+                            <p>Med Azure AD Domain Services kan du køre legacy-applikationer i skyen, der ikke kan bruge
+                                moderne godkendelsesmetoder, eller hvor du ikke ønsker, at directory-opslag altid skal
+                                gå tilbage til et lokal AD-miljø.</p>
+
+                            <h3>Sådan fungerer Azure AD Domain Services</h3>
+
+                            <p>Når du opretter et Azure AD Domain Services-administreret domæne, definerer du et unikt
+                                navneområde, som er domænenavnet. Derefter implementeres to Windows
+                                Server-domænekontrollere i dit valgte Azure-region. Denne implementering af DC'er kaldes
+                                et replikatsæt.</p>
+
+                            <p>Du behøver ikke at administrere, konfigurere eller opdatere disse DC'er. Azure-platformen
+                                håndterer DC'erne som en del af det administrerede domæne, herunder sikkerhedskopiering
+                                og kryptering i ro ved hjælp af Azure Disk Encryption.</p>
+
+                            <p>Et administreret domæne er konfigureret til at udføre envejssynkronisering fra Azure AD
+                                til Azure AD Domain Services. I et hybridmiljø med et lokalt AD-miljø synkroniserer
+                                Azure AD Connect identitetsoplysninger med Azure AD, som derefter synkroniseres til det
+                                administrerede domæne.</p>
+                        </div>
+                        <div>
+                            <h2>Beskriv Azure's autentificeringsmetoder</h2>
+
+                            <p>Autentificering er processen med at fastlægge identiteten af en person, tjeneste eller
+                                enhed. Det kræver, at personen, tjenesten eller enheden giver en form for
+                                legitimationsoplysninger for at bevise, hvem de er. Autentificering ligner at vise ID,
+                                når du rejser. Det bekræfter ikke, at du har en billet, det bekræfter blot, at du er
+                                den, du siger, du er. Azure understøtter flere autentificeringsmetoder, herunder
+                                standardadgangskoder, enkeltlogon (SSO), multifaktorautentificering (MFA) og adgang uden
+                                adgangskode.</p>
+
+                            <p>For længst syntes sikkerhed og bekvemmelighed at være i modstrid med hinanden. Heldigvis
+                                giver nye autentificeringsløsninger både sikkerhed og bekvemmelighed.</p>
+
+                            <p>Firekvadrantdiagram, der viser sikkerhed kontra bekvemmelighed, med Adgangskoder +
+                                2-faktorautentificering som høj sikkerhed men lav bekvemmelighed.</p>
+
+                            <h3>Hvad er enkeltlogon?</h3>
+                            <p>Enkeltlogon (SSO) giver en bruger mulighed for at logge ind én gang og bruge denne
+                                legitimationsoplysning til at få adgang til flere ressourcer og applikationer fra
+                                forskellige udbydere. For at SSO skal fungere, skal de forskellige applikationer og
+                                udbydere stole på den oprindelige autentificering.</p>
+
+                            <p>Flere identiteter betyder flere adgangskoder at huske og ændre. Adgangskodepolitikker kan
+                                variere blandt applikationer. Når kompleksitetskravene øges, bliver det stadig
+                                vanskeligere for brugerne at huske dem. Jo flere adgangskoder en bruger skal
+                                administrere, desto større er risikoen for et sikkerhedsincident relateret til
+                                legitimationsoplysninger.</p>
+
+                            <p>Med SSO behøver du kun at huske én ID og én adgangskode. Adgang til applikationer gives
+                                til en enkelt identitet, der er knyttet til brugeren, hvilket forenkler
+                                sikkerhedsmodellen. Når brugere skifter roller eller forlader en organisation, er
+                                adgangen knyttet til en enkelt identitet. Denne ændring reducerer i høj grad indsatsen,
+                                der er nødvendig for at ændre eller deaktivere konti. Brug af SSO til konti gør det
+                                lettere for brugere at administrere deres identiteter og for IT at administrere brugere.
+                            </p>
+
+                            <p><strong>Vigtigt</strong>: Enkeltlogon er kun så sikkert som den oprindelige
+                                autentificering, fordi de efterfølgende forbindelser alle er baseret på sikkerheden af
+                                den oprindelige autentificering.</p>
+
+                            <h3>Hvad er multifaktorautentificering?</h3>
+                            <p>Multifaktorautentificering er processen med at bede en bruger om en ekstra form (eller
+                                faktor) for identifikation under logonprocessen. MFA hjælper med at beskytte mod en
+                                adgangskodekompromittering i situationer, hvor adgangskoden blev kompromitteret, men den
+                                anden faktor ikke blev det.</p>
+
+                            <p>Tænk på, hvordan du logger ind på websteder, e-mail eller online-tjenester. Efter at have
+                                indtastet dit brugernavn og adgangskode, har du nogensinde haft brug for at indtaste en
+                                kode, der blev sendt til din telefon? Hvis ja, har du brugt multifaktorautentificering
+                                til at logge ind.</p>
+
+                            <p>Multifaktorautentificering giver ekstra sikkerhed for dine identiteter ved at kræve to
+                                eller flere elementer for fuldt ud at autentificere. Disse elementer falder ind under
+                                tre kategorier:</p>
+
+                            <ul>
+                                <li>Noget, brugeren ved – dette kan være et udfordringsspørgsmål.</li>
+                                <li>Noget, brugeren har – dette kan være en kode, der sendes til brugerens mobiltelefon.
+                                </li>
+                                <li>Noget, brugeren er – dette er typisk en form for biometrisk egenskab, såsom et
+                                    fingeraftryk eller ansigtsscanning.</li>
+                            </ul>
+
+                            <p>Multifaktorautentificering øger identitetssikkerheden ved at begrænse konsekvenserne af
+                                udsættelse af legitimationsoplysninger (f.eks. stjålne brugernavne og adgangskoder). Med
+                                multifaktorautentificering aktiveret ville en angriber, der har en brugers adgangskode,
+                                også skulle have besiddelse af deres telefon eller deres fingeraftryk for fuldt ud at
+                                autentificere.</p>
+
+                            <p>Sammenlign multifaktorautentificering med enkelfaktorautentificering. Under
+                                enkelfaktorautentificering ville en angriber kun have brug for et brugernavn og en
+                                adgangskode til at autentificere. Multifaktorautentificering bør aktiveres, hvor det er
+                                muligt, fordi det tilføjer enormt til sikkerheden.</p>
+
+                            <h3>Hvad er Microsoft Entra multifaktorautentificering?</h3>
+                            <p>Microsoft Entra multifaktorautentificering er en Microsoft-tjeneste, der giver
+                                multifaktorautentificeringsfunktioner. Microsoft Entra multifaktorautentificering giver
+                                brugerne mulighed for at vælge en ekstra form for autentificering under logon, såsom et
+                                telefonopkald eller en meddelelse i en mobilapp.</p>
+
+                            <h3>Hvad er adgang uden adgangskode?</h3>
+                            <p>Funktioner som MFA er en fantastisk måde at sikre din organisation på, men brugerne
+                                bliver ofte frustrerede over det yderligere sikkerhedslag oven på at skulle huske deres
+                                adgangskoder. Mennesker er mere tilbøjelige til at overholde, når det er nemt og bekvemt
+                                at gøre det. Metoder til adgang uden adgangskode er mere bekvemme, fordi adgangskoden
+                                fjernes og erstattes med noget, du har, plus noget, du er, eller noget, du ved.</p>
+
+                            <p>Adgang uden adgangskode skal opsættes på en enhed, før det kan fungere. For eksempel er
+                                din computer noget, du har. Når den er blevet registreret eller indskrevet, ved Azure
+                                nu, at den er forbundet med dig. Nu hvor computeren er kendt, når du giver noget, du ved
+                                eller er (som en PIN-kode eller et fingeraftryk), kan du blive autentificeret uden at
+                                bruge en adgangskode.</p>
+
+                            <p>Hver organisation har forskellige behov, når det kommer til autentificering. Microsoft
+                                global Azure og Azure Government tilbyder følgende tre muligheder for autentificering
+                                uden adgangskode, der integrerer med Microsoft Entra ID:</p>
+
+                            <ul>
+                                <li>Windows Hello for Business</li>
+                                <li>Microsoft Authenticator-appen</li>
+                                <li>FIDO2-sikkerhedsnøgler</li>
+                            </ul>
+
+                            <h4>Windows Hello for Business</h4>
+                            <p>Windows Hello for Business er ideel for informationsskabere, der har deres egen
+                                dedikerede Windows PC. De biometriske og PIN-legitimationsoplysninger er direkte knyttet
+                                til brugerens pc, hvilket forhindrer adgang fra nogen andre end ejeren. Med integration
+                                af offentlig nøgle-infrastruktur (PKI) og indbygget support til enkeltlogon (SSO) giver
+                                Windows Hello for Business en bekvem metode til problemfri adgang til
+                                virksomhedsressourcer lokalt og i skyen.</p>
+
+                            <h4>Microsoft Authenticator-appen</h4>
+                            <p>Du kan også lade din medarbejders telefon blive en metode til autentificering uden
+                                adgangskode. Du bruger måske allerede Microsoft Authenticator-appen som en bekvem
+                                multifaktorautentificeringsmulighed ud over en adgangskode. Du kan også bruge
+                                Authenticator-appen som en adgang uden adgangskode.</p>
+
+                            <p>Authenticator-appen omdanner enhver iOS- eller Android-telefon til et stærkt,
+                                adgangskodet frit legitimationsoplysning. Brugere kan logge ind på enhver platform eller
+                                browser ved at få en meddelelse til deres telefon, matche et nummer vist på skærmen med
+                                det på deres telefon og derefter bruge deres biometri (berøring eller ansigt) eller
+                                PIN-kode til at bekræfte. Se Hent og installer Microsoft Authenticator-appen for
+                                installationsdetaljer.</p>
+
+                            <h4>FIDO2-sikkerhedsnøgler</h4>
+                            <p>FIDO (Fast IDentity Online) Alliance hjælper med at fremme åbne
+                                autentificeringsstandarder og reducere brugen af adgangskoder som en form for
+                                autentificering. FIDO2 er den seneste standard, der inkorporerer den webbaserede
+                                autentificeringsstandard (WebAuthn).</p>
+
+                            <p>FIDO2-sikkerhedsnøgler er en ufiskbar standardbaseret metode til autentificering uden
+                                adgangskode, der kan komme i enhver formfaktor. Fast Identity Online (FIDO) er en åben
+                                standard for autentificering uden adgangskode. FIDO giver brugere og organisationer
+                                mulighed for at udnytte standarden til at logge ind på deres ressourcer uden et
+                                brugernavn eller en adgangskode ved at bruge en ekstern sikkerhedsnøgle eller en
+                                platformnøgle indbygget i en enhed.</p>
+
+                            <p>Brugere kan registrere og derefter vælge en FIDO2-sikkerhedsnøgle ved logon-grænsefladen
+                                som deres primære autentificeringsmetode. Disse FIDO2-sikkerhedsnøgler er typisk
+                                USB-enheder, men kan også bruge Bluetooth eller NFC. Med en hardwareenhed, der håndterer
+                                autentificeringen, øges kontoens sikkerhed, da der ikke er nogen adgangskode, der kan
+                                udsættes eller gættes.</p>
+
+                        </div>
+                        <div>
+                            <h2>Beskrivelse af Azure eksterne identiteter</h2>
+
+                            <p>En ekstern identitet er en person, enhed, tjeneste osv., der er uden for din
+                                organisation. Microsoft Entra External ID refererer til alle måder, du sikkert kan
+                                interagere med brugere uden for din organisation. Hvis du ønsker at samarbejde med
+                                partnere, distributører, leverandører eller leverandører, kan du dele dine ressourcer og
+                                definere, hvordan dine interne brugere kan få adgang til eksterne organisationer. Hvis
+                                du er en udvikler, der opretter forbrugerrettede apps, kan du administrere dine kunders
+                                identitetsoplevelser.</p>
+
+                            <p>Eksterne identiteter kan lyde lignende som single sign-on. Med Eksterne Identiteter kan
+                                eksterne brugere "medbringe deres egne identiteter." Uanset om de har en virksomheds-
+                                eller regeringsudstedt digital identitet, eller en uadministreret social identitet som
+                                Google eller Facebook, kan de bruge deres egne legitimationsoplysninger til at logge
+                                ind. Den eksterne brugers identitetsudbyder administrerer deres identitet, og du
+                                administrerer adgangen til dine apps med Microsoft Entra ID eller Azure AD B2C for at
+                                beskytte dine ressourcer.</p>
+
+                            <p>Følgende funktioner udgør Eksterne Identiteter:</p>
+
+                            <ul>
+                                <li>Forretning til forretning (B2B) samarbejde - Samarbejd med eksterne brugere ved at
+                                    lade dem bruge deres foretrukne identitet til at logge ind på dine
+                                    Microsoft-applikationer eller andre virksomhedsapplikationer (SaaS-applikationer,
+                                    skræddersyede applikationer osv.). B2B-samarbejdsbrugere repræsenteres i din
+                                    katalog, normalt som gæstebrugere.</li>
+                                <li>B2B direkte forbindelse - Opret en gensidig, tovejs tillid med en anden Microsoft
+                                    Entra-organisation for problemfrit samarbejde. B2B direkte forbindelse understøtter
+                                    i øjeblikket Teams delte kanaler, så eksterne brugere kan få adgang til dine
+                                    ressourcer fra deres hjemmeinstanser af Teams. B2B direkte forbindelsesbrugere
+                                    repræsenteres ikke i din katalog, men de er synlige fra inden for Teams' delte kanal
+                                    og kan overvåges i Teams-administrationscenterets rapporter.</li>
+                                <li>Microsoft Azure Active Directory forretning til kunde (B2C) - Udgiv moderne
+                                    SaaS-applikationer eller skræddersyede applikationer (ekskluderende
+                                    Microsoft-applikationer) til forbrugere og kunder, samtidig med at du bruger Azure
+                                    AD B2C til identitets- og adgangsstyring.</li>
+                            </ul>
+
+                            <p>Afhængigt af hvordan du ønsker at interagere med eksterne organisationer og de typer af
+                                ressourcer, du har brug for at dele, kan du bruge en kombination af disse funktioner.
+                            </p>
+
+                            <p>Med Microsoft Entra ID kan du nemt muliggøre samarbejde på tværs af organisatoriske
+                                grænser ved hjælp af Microsoft Entra B2B-funktionen. Gæstebrugere fra andre lejere kan
+                                inviteres af administratorer eller af andre brugere. Denne funktion gælder også for
+                                sociale identiteter som Microsoft-konti.</p>
+
+                            <p>Du kan også nemt sikre, at gæstebrugere har passende adgang. Du kan bede gæsterne selv
+                                eller en beslutningstager om at deltage i en adgangsanmeldelse og re-certificere (eller
+                                attester) gæsternes adgang. Anmeldere kan give deres input om hver brugers behov for
+                                fortsat adgang, baseret på forslag fra Microsoft Entra ID. Når en adgangsanmeldelse er
+                                afsluttet, kan du derefter foretage ændringer og fjerne adgang for gæster, der ikke
+                                længere har brug for det.</p>
+
+                        </div>
+                        <div>
+                            <h2>Beskrivelse af Azure Conditional Access</h2>
+                            <p>Conditional Access er et værktøj, som Microsoft Entra ID bruger til at tillade (eller
+                                nægte) adgang til ressourcer baseret på identitetssignaler. Disse signaler inkluderer
+                                hvem brugeren er, hvor brugeren er, og hvilken enhed brugeren anmoder om adgang fra.</p>
+                            <p>Conditional Access hjælper IT-administratorer med at:</p>
+                            <ul>
+                                <li>Give brugerne mulighed for at være produktive hvor som helst og når som helst.</li>
+                                <li>Beskytte organisationens aktiver.</li>
+                            </ul>
+                            <p>Conditional Access giver også en mere detaljeret multifaktorautentifikationsoplevelse for
+                                brugere. For eksempel kan en bruger ikke blive udfordret til et andet
+                                autentifikationsfaktor, hvis de er på en kendt placering. Dog kan de blive udfordret til
+                                et andet autentifikationsfaktor, hvis deres login-signaler er usædvanlige, eller de er
+                                på en uventet placering.</p>
+                            <p>Ved login indsamler Conditional Access signaler fra brugeren, træffer beslutninger
+                                baseret på disse signaler og håndhæver derefter denne beslutning ved at tillade eller
+                                nægte adgangsanmodningen eller udfordre brugeren til et multifaktorautentifikationssvar.
+                            </p>
+                            <p>Et signal kan være brugerens placering, brugerens enhed eller den applikation, som
+                                brugeren forsøger at få adgang til.</p>
+                            <p>Baseret på disse signaler kan beslutningen være at tillade fuld adgang, hvis brugeren
+                                logger ind fra deres sædvanlige placering. Hvis brugeren logger ind fra en usædvanlig
+                                placering eller en placering, der er markeret som høj risiko, kan adgangen blokeres
+                                fuldstændigt eller muligvis gives efter, at brugeren har givet en anden form for
+                                autentifikation.</p>
+                            <p>Håndhævelse er handlingen, der udfører beslutningen. For eksempel er handlingen at
+                                tillade adgang eller kræve, at brugeren giver en anden form for autentifikation.</p>
+                            <p>Hvornår kan jeg bruge Conditional Access?</p>
+                            <p>Conditional Access er nyttigt, når du har brug for at:</p>
+                            <ul>
+                                <li>Kræve multifaktorautentifikation (MFA) for at få adgang til en applikation afhængigt
+                                    af anmoderens rolle, placering eller netværk. For eksempel kan du kræve MFA for
+                                    administratorer, men ikke for almindelige brugere eller for personer, der forbinder
+                                    udefra dit virksomhedsnetværk.</li>
+                                <li>Kræve adgang til tjenester kun gennem godkendte klientapplikationer. For eksempel
+                                    kan du begrænse hvilke e-mail-applikationer der kan tilslutte sig din
+                                    e-mail-tjeneste.</li>
+                                <li>Kræve, at brugere kun får adgang til din applikation fra administrerede enheder. En
+                                    administreret enhed er en enhed, der opfylder dine standarder for sikkerhed og
+                                    overholdelse af regler.</li>
+                                <li>Blokere adgang fra utroværdige kilder, såsom adgang fra ukendte eller uventede
+                                    placeringer.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>Beskrivelse af Azure rollebaseret adgangskontrol</h2>
+
+                            <p>Når du har flere IT- og ingeniørteams, hvordan kan du så kontrollere, hvilken adgang de
+                                har til ressourcerne i din skyomgivelse? Principperne om mindste privilegium siger, at
+                                du kun bør give adgang op til det niveau, der er nødvendigt for at udføre en opgave.
+                                Hvis du kun har brug for læseadgang til en lager-blob, skal du kun tildele læseadgang
+                                til den pågældende lager-blob. Skriveadgang til den blob bør ikke gives, ligesom
+                                læseadgang til andre lager-blobs heller ikke bør gives. Det er en god sikkerhedspraksis
+                                at følge.</p>
+
+                            <p>Men at administrere den niveau af tilladelser for et helt team ville blive kedeligt. I
+                                stedet for at definere de detaljerede adgangskrav for hver enkelt person og derefter
+                                opdatere adgangskravene, når nye ressourcer oprettes, eller nye personer bliver en del
+                                af teamet, giver Azure dig mulighed for at kontrollere adgang via Azure rollebaseret
+                                adgangskontrol (Azure RBAC).</p>
+
+                            <p>Azure tilbyder indbyggede roller, der beskriver almindelige adgangsregler for
+                                skyressourcer. Du kan også definere dine egne roller. Hver rolle har et tilknyttet sæt
+                                adgangstilladelser, der relaterer sig til den rolle. Når du tildele enkeltpersoner eller
+                                grupper til en eller flere roller, modtager de alle de tilknyttede adgangstilladelser.
+                            </p>
+
+                            <p>Så hvis du ansætter en ny ingeniør og tilføjer dem til Azure RBAC-gruppen for ingeniører,
+                                får de automatisk samme adgang som de andre ingeniører i den samme Azure RBAC-gruppe. På
+                                samme måde, hvis du tilføjer yderligere ressourcer og peger Azure RBAC på dem, vil alle
+                                i den Azure RBAC-gruppe nu have de tilladelser til de nye ressourcer såvel som de
+                                eksisterende ressourcer.</p>
+
+                            <h3>Hvordan håndhæves Azure RBAC?</h3>
+
+                            <p>Azure RBAC håndhæves på enhver handling, der initieres mod en Azure-ressource, der går
+                                gennem Azure Resource Manager. Resource Manager er en administrationservice, der giver
+                                en måde at organisere og sikre dine skyressourcer.</p>
+
+                            <p>Du får typisk adgang til Resource Manager fra Azure-portalen, Azure Cloud Shell, Azure
+                                PowerShell og Azure CLI. Azure RBAC håndhæver ikke adgangstilladelser på applikations-
+                                eller dataniveau. Applikationssikkerhed skal håndteres af din applikation.</p>
+
+                            <p>Azure RBAC bruger en tilladelsesmodel. Når du tildeles en rolle, tillader Azure RBAC dig
+                                at udføre handlinger inden for omfanget af den rolle. Hvis én rolletildeling giver dig
+                                læsetilladelser til en ressourcegruppe, og en anden rolletildeling giver dig
+                                skrivetilladelser til den samme ressourcegruppe, har du både læse- og skrivetilladelser
+                                til den ressourcegruppe.</p>
+
+                        </div>
+                        <div>
+                            <h2>Beskrivelse af nul tillidsmodel</h2>
+
+                            <p>Zero Trust er en sikkerhedsmodel, der antager det værst tænkelige scenarie og beskytter
+                                ressourcer ud fra den forventning. Zero Trust antager indtrængen fra begyndelsen og
+                                verificerer derefter hver forespørgsel, som om den stammede fra et ukontrolleret
+                                netværk.</p>
+
+                            <p>I dag har organisationer brug for en ny sikkerhedsmodel, der effektivt tilpasser sig
+                                kompleksiteten i den moderne miljø; omfavner den mobile arbejdsstyrke: og beskytter
+                                personer, enheder, applikationer og data, uanset hvor de befinder sig.</p>
+
+                            <p>For at imødekomme denne nye verden af ​​computing anbefaler Microsoft kraftigt Zero
+                                Trust-sikkerhedsmodellen, som er baseret på disse retningslinjer:</p>
+
+                            <ul>
+                                <li>Verificer eksplicit - Altid godkend og autoriser baseret på alle tilgængelige
+                                    datapunkter.</li>
+                                <li>Brug mindst privilegeret adgang - Begræns brugeradgang med Just-In-Time og
+                                    Just-Enough-Access (JIT/JEA), risikobaserede tilpassede politikker og
+                                    datarbeskyttelse.</li>
+                                <li>Antag indtrængen - Minimer blast radius og segmenter adgang. Verificer
+                                    end-to-end-kryptering. Brug analytics til at få synlighed, drive trusseldetektion og
+                                    forbedre forsvar.</li>
+                            </ul>
+
+                            <h3>Tilpasning til Zero Trust</h3>
+
+                            <p>Traditionelt var virksomhedsnetværk begrænsede, beskyttede og generelt antaget sikre. Kun
+                                administrerede computere kunne slutte sig til netværket, VPN-adgang blev stramt
+                                kontrolleret, og personlige enheder blev ofte begrænset eller blokeret.</p>
+
+                            <p>Zero Trust-modellen vender den situation om. I stedet for at antage, at en enhed er
+                                sikker, fordi den er inden for det virksomhedsnetværk, kræver den, at alle godkender
+                                sig. Derefter giver adgang baseret på godkendelse i stedet for placering.</p>
+
+                        </div>
+                        <div>
+                            <h2>Beskrivelse af Defense-in-Depth</h2>
+                            <p>Formålet med defense-in-depth er at beskytte information og forhindre, at uautoriserede
+                                personer får adgang til den.</p>
+                            <p>En defense-in-depth strategi anvender en række mekanismer til at bremse fremgangen af et
+                                angreb, der sigter mod at opnå uautoriseret adgang til data.</p>
+                            <h3>Lag af defense-in-depth</h3>
+                            <p>Du kan visualisere defense-in-depth som et sæt lag, hvor dataene, der skal sikres, er i
+                                centrum, og alle de andre lag fungerer for at beskytte dette centrale datalag.</p>
+                            <!-- Simple diagram representing the layers -->
+                            <div style="display: flex; justify-content: center;">
+                                <div
+                                    style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; text-align: center; line-height: 80px; margin: 0 20px;">
+                                    Physical Security</div>
+                                <p>></p>
+                                <div
+                                    style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; text-align: center; line-height: 80px; margin: 0 20px;">
+                                    Identity & Access</div>
+                                <p>></p>
+                                <div
+                                    style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; text-align: center; line-height: 80px; margin: 0 20px;">
+                                    Perimeter</div>
+                                <p>></p>
+                                <div
+                                    style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; text-align: center; line-height: 80px; margin: 0 20px;">
+                                    Network</div>
+                                <p>></p>
+                                <div
+                                    style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; text-align: center; line-height: 80px; margin: 0 20px;">
+                                    Compute</div>
+                                <p>></p>
+                                <div
+                                    style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; text-align: center; line-height: 80px; margin: 0 20px;">
+                                    Application</div>
+                                <p>></p>
+                                <div
+                                    style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; text-align: center; line-height: 80px; margin: 0 20px;">
+                                    Data</div>
+                            </div>
+                            <p>Hvert lag giver beskyttelse, så hvis et lag brydes igennem, er et efterfølgende lag
+                                allerede på plads for at forhindre yderligere eksponering. Denne tilgang fjerner
+                                afhængighed af et enkelt beskyttelseslag. Det bremser et angreb og giver
+                                advarselsinformation, som sikkerhedsteam kan handle på, enten automatisk eller manuelt.
+                            </p>
+                            <p>Her er et kort overblik over rollen for hvert lag:</p>
+                            <ul>
+                                <li>Det fysiske sikkerhedslag er den første forsvarslinje for at beskytte
+                                    computerhardwaren i datacenteret.</li>
+                                <li>Identitets- og adgangslaget styrer adgangen til infrastruktur og ændringsstyring.
+                                </li>
+                                <li>Perimeterlaget bruger distribueret denial of service (DDoS) beskyttelse til at
+                                    filtrere store angreb, før de kan forårsage en tjenestenægtelse for brugerne.</li>
+                                <li>Netværkslaget begrænser kommunikationen mellem ressourcer gennem segmentering og
+                                    adgangskontrol.</li>
+                                <li>Computelaget sikrer adgangen til virtuelle maskiner.</li>
+                                <li>Applikationslaget hjælper med at sikre, at applikationer er sikre og fri for
+                                    sikkerhedsårbarheder.</li>
+                                <li>Datalaget styrer adgangen til forretnings- og kundedata, som du skal beskytte.</li>
+                            </ul>
+                            <p>Disse lag giver en retningslinje for dig til at hjælpe med at træffe
+                                sikkerhedskonfigurationsbeslutninger i alle lag af dine applikationer.</p>
+                            <p>Azure leverer sikkerhedsværktøjer og funktioner på alle niveauer af defense-in-depth
+                                konceptet. Lad os se nærmere på hvert lag:</p>
+                            <ol>
+                                <li><strong>Fysisk sikkerhed</strong>: Fysisk sikring af adgang til bygninger og kontrol
+                                    med adgang til computerhardware inden for datacenteret udgør den første
+                                    forsvarslinje.</li>
+                                <li><strong>Identitet og adgang</strong>: Identitets- og adgangslaget handler om at
+                                    sikre, at identiteter er sikre, at adgang kun gives til det, der er nødvendigt, og
+                                    at logge indbegivenheder og ændringer.</li>
+                                <li><strong>Perimeter</strong>: Netværksperimeteret beskytter mod netværksbaserede
+                                    angreb mod dine ressourcer.</li>
+                                <li><strong>Netværk</strong>: Fokus på dette lag er at begrænse netværksforbindelsen på
+                                    tværs af alle dine ressourcer for kun at tillade det nødvendige.</li>
+                                <li><strong>Computelaget</strong>: Fokus her er at sikre, at dine beregningsressourcer
+                                    er sikre og at du har de rette kontroller på plads for at minimere
+                                    sikkerhedsproblemer.</li>
+                                <li><strong>Applikation</strong>: Integrering af sikkerhed i
+                                    applikationsudviklingslivscyklussen hjælper med at reducere antallet af sårbarheder,
+                                    der introduceres i koden.</li>
+                                <li><strong>Data</strong>: Dem, der opbevarer og kontrollerer adgangen til data, er
+                                    ansvarlige for at sikre, at det er ordentligt sikret.</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h2>Beskrivelse af Microsoft Defender for Cloud</h2>
+
+                            <p>Defender for Cloud er et overvågningsværktøj til sikkerhedsstyring og
+                                trusselsbeskyttelse. Det overvåger dine cloud-, on-premises-, hybrid- og
+                                multi-cloud-miljøer for at give vejledning og notifikationer med henblik på at styrke
+                                din sikkerhedsstilling.</p>
+
+                            <p>Defender for Cloud giver de værktøjer, der er nødvendige for at hærde dine ressourcer,
+                                spore din sikkerhedsstilling, beskytte mod cyberangreb og optimere sikkerhedsstyringen.
+                                Implementering af Defender for Cloud er nemt, da det allerede er integreret med Azure.
+                            </p>
+
+                            <p>Beskyttelse overalt hvor du er udrullet</p>
+                            <p>Fordi Defender for Cloud er en Azure-nativ service, overvåges og beskyttes mange
+                                Azure-tjenester uden behov for yderligere implementering. Hvis du også har et
+                                on-premises datacenter eller opererer i et andet cloudmiljø, kan overvågning af
+                                Azure-tjenester muligvis ikke give dig et komplet billede af din sikkerhedssituation.
+                            </p>
+
+                            <p>Ved behov kan Defender for Cloud automatisk implementere en Log Analytics-agent til
+                                indsamling af sikkerhedsrelaterede data. For Azure-maskiner håndteres implementering
+                                direkte. For hybrid- og multi-cloud-miljøer udvides Microsoft Defender-planer til
+                                ikke-Azure-maskiner med hjælp fra Azure Arc. Cloud-sikkerhedsstyringsfunktioner udvides
+                                til multi-cloud-maskiner uden behov for agenter.</p>
+
+                            <p>Azure-nativ beskyttelse</p>
+                            <p>Defender for Cloud hjælper med at opdage trusler på tværs af:</p>
+
+                            <ul>
+                                <li>Azure PaaS-tjenester – Opdag trusler rettet mod Azure-tjenester, herunder Azure App
+                                    Service, Azure SQL, Azure Storage Account og flere dataservices.</li>
+                                <li>Azure-datatjenester – Defender for Cloud inkluderer muligheder, der hjælper dig med
+                                    automatisk at klassificere dine data i Azure SQL.</li>
+                                <li>Netværk – Defender for Cloud hjælper dig med at begrænse eksponeringen for brute
+                                    force-angreb.</li>
+                            </ul>
+
+                            <p>Forsvar dine hybridressourcer</p>
+                            <p>Ud over at forsvare dit Azure-miljø kan du tilføje Defender for Cloud-funktioner til dit
+                                hybrid-cloud-miljø for at beskytte dine ikke-Azure-servere.</p>
+
+                            <p>Forsvar ressourcer, der kører på andre skyer</p>
+                            <p>Defender for Cloud kan også beskytte ressourcer i andre skyer (såsom AWS og GCP).</p>
+
+                            <p>Vurder, sikre og forsvare</p>
+                            <p>Defender for Cloud opfylder tre vitale behov, når du håndterer sikkerheden for dine
+                                ressourcer og arbejdsbelastninger i skyen og on-premises:</p>
+
+                            <ul>
+                                <li>Fortløbende vurdere</li>
+                                <li>Sikre</li>
+                                <li>Forsvare</li>
+                            </ul>
+
+                            <p>Kontinuerlig vurdering</p>
+                            <p>Defender for Cloud hjælper dig med kontinuerligt at vurdere dit miljø. Defender for Cloud
+                                inkluderer sårbarhedsvurderingsløsninger til dine virtuelle maskiner, containerregistre
+                                og SQL-servere.</p>
+
+                            <p>Sikre</p>
+                            <p>For at sikre dine arbejdsbelastninger skal du have sikkerhedspolitikker på plads, der er
+                                skræddersyet til dit miljø og situation.</p>
+
+                            <p>Forsvar</p>
+                            <p>Defender for Cloud hjælper dig også med at forsvare dit miljø ved at levere
+                                sikkerhedsalarmer og avancerede trusselsbeskyttelsesfunktioner.</p>
+
+                        </div>
+                    </div>
+
                     <h3>Kilder:</h3>
                     <ul class="result">
                         <ul><a href="https://learn.microsoft.com/da-dk/training/modules/configure-subscriptions/">Azure:
