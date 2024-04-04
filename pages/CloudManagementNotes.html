@@ -1557,6 +1557,158 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div>
+                        <h2>Azure Directory Services</h2>
+
+                        <ul>
+                            <li>Azure AD (Azure Active Directory) - en katalogtjeneste af Microsoft.</li>
+                            <li>Formål: Log ind på Microsofts skyapplikationer og egne cloud-applikationer.</li>
+                            <li>Forbindelse med lokal Active Directory mulig for konsistent identitetsoplevelse.</li>
+                            <li>Tilbyder godkendelse, Single Sign-On (SSO), applikationsstyring og enhedsstyring.</li>
+                            <li>Administreres af IT-administratorer, brugt af udviklere, brugere og abonnenter på online
+                                tjenester.</li>
+                            <li>Azure AD Domain Services - administrerede domænetjenester i skyen.</li>
+                            <li>Tillader kørsel af legacy-applikationer i skyen uden behov for lokale AD-miljøer.</li>
+                            <li>Opnår envejssynkronisering af identitetsoplysninger fra Azure AD til Azure AD Domain
+                                Services.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Azure Autentificeringsmetoder</h2>
+
+                        <ul>
+                            <li>Autentificering: Identitetsbekræftelse af person, tjeneste eller enhed.</li>
+                            <li>Azure understøtter forskellige autentificeringsmetoder: adgangskoder, SSO, MFA, og
+                                adgang uden adgangskode.</li>
+                            <li>SSO: Bruger kan logge ind én gang for at få adgang til flere ressourcer fra forskellige
+                                udbydere.</li>
+                            <li>MFA: Kræver to eller flere elementer for fuld autentificering, f.eks. noget brugeren
+                                ved, har, eller er.</li>
+                            <li>Microsoft Entra MFA: Tjeneste tilbyder forskellige autentificeringsmetoder som
+                                telefonopkald eller app-notifikation.</li>
+                            <li>Adgang uden adgangskode: Fjerner behovet for adgangskoder og erstatter dem med noget
+                                brugeren har, er eller ved.</li>
+                            <li>Windows Hello for Business: Biometrisk og PIN-autentificering forbundet til brugerens
+                                PC.</li>
+                            <li>Microsoft Authenticator App: Tillader telefonen som adgang uden adgangskode med
+                                notifikation og biometrisk bekræftelse.</li>
+                            <li>FIDO2 sikkerhedsnøgler: Ufiskbare autentificeringsnøgler uden adgangskode, kan være USB
+                                eller Bluetooth enheder.</li>
+                        </ul>
+
+                    </div>
+                    <div>
+                        <h2>Azure Eksterne Identiteter</h2>
+
+                        <ul>
+                            <li>Ekstern identitet: Person, enhed, tjeneste uden for organisationen.</li>
+                            <li>Microsoft Entra External ID: Sikker interaktion med eksterne brugere.</li>
+                            <li>Mulighed for samarbejde med partnere, distributører, osv.</li>
+                            <li>Eksterne brugere kan bruge deres egne identiteter.</li>
+                            <li>Funktioner inkluderer B2B-samarbejde og B2C.</li>
+                            <li>B2B-samarbejde: Eksterne brugere repræsenteres i katalog.</li>
+                            <li>B2B direkte forbindelse: Gensidig tillid med andre Entra-organisationer.</li>
+                            <li>B2C: Identitets- og adgangsstyring til forbrugerrettede apps.</li>
+                            <li>Microsoft Entra ID: Muliggør samarbejde på tværs af organisationer.</li>
+                            <li>Gæstebrugere kan inviteres og administreres med passende adgang.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Azure Conditional Access</h2>
+                        <ul>
+                            <li>Conditional Access er et værktøj brugt af Microsoft Entra ID.</li>
+                            <li>Tillader eller nægter adgang til ressourcer baseret på identitetssignaler.</li>
+                            <li>Signal inkluderer brugeridentitet, placering og enhed.</li>
+                            <li>Empower brugere til produktivitet og beskyt organisationens aktiver.</li>
+                            <li>Tilbyder granulær multifaktorautentifikationsoplevelse.</li>
+                            <li>Samler signaler ved login, træffer beslutninger og håndhæver dem.</li>
+                            <li>Signal kan være brugerens placering, enhed eller applikation.</li>
+                            <li>Beslutning kan føre til fuld adgang, blokering eller kræve yderligere autentifikation.
+                            </li>
+                            <li>Håndhævelse udfører beslutningen, fx tillade eller kræve yderligere autentifikation.
+                            </li>
+                            <li>Conditional Access kan bruges til at kræve MFA baseret på rolle, placering eller
+                                netværk.</li>
+                            <li>Kræver adgang til tjenester gennem godkendte klientapplikationer.</li>
+                            <li>Kun adgang fra administrerede enheder kan tillades.</li>
+                            <li>Utroværdige kilder kan blokeres, fx adgang fra ukendte placeringer.</li>
+                        </ul>
+                    </div>
+                    <div>
+
+                        <h2>Azure Rollebaseret Adgangskontrol</h2>
+
+                        <ul>
+                            <li>Mulighed for at kontrollere adgang til ressourcer i skyen for flere IT- og
+                                ingeniørteams.</li>
+                            <li>Princippet om mindste privilegium: kun give adgang, der er nødvendig for at udføre en
+                                opgave.</li>
+                            <li>Azure RBAC (Rollebaseret Adgangskontrol) gør det muligt at styre adgangen på en effektiv
+                                måde.</li>
+                            <li>Indbyggede roller samt mulighed for at definere egne roller.</li>
+                            <li>Enkeltpersoner eller grupper tildeles roller med tilhørende adgangstilladelser.</li>
+                            <li>Nye medlemmer tilføjet til en RBAC-gruppe får automatisk samme adgang som andre
+                                medlemmer.</li>
+                            <li>Azure RBAC håndhæves gennem Azure Resource Manager.</li>
+                            <li>Resource Manager organiserer og sikrer skyressourcer.</li>
+                            <li>Tilladelsesmodel: tildelte roller bestemmer tilladelser til handlinger inden for
+                                rolleomfanget.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Zero Trust Model - Stikord Referat</h2>
+
+                        <ul>
+                            <li>Sikkerhedsmodel: Zero Trust</li>
+                            <li>Antager værste scenarie og beskytter ressourcer derefter</li>
+                            <li>Forventer indtrængen fra begyndelsen</li>
+                            <li>Verificerer hver forespørgsel, som om den stammede fra et ukontrolleret netværk</li>
+                            <li>Nødvendig på grund af moderne kompleksiteter og mobilitet i arbejdsstyrken</li>
+                            <li>Microsoft anbefaler Zero Trust-model</li>
+                            <li>Retningslinjer for Zero Trust-sikkerhedsmodel inkluderer:</li>
+                            <ul>
+                                <li>Verificer eksplicit baseret på alle tilgængelige datapunkter</li>
+                                <li>Begræns brugeradgang med JIT/JEA, risikobaserede politikker og datarbeskyttelse</li>
+                                <li>Minimer blast radius, segmenter adgang, verificer end-to-end-kryptering</li>
+                                <li>Brug analytics til synlighed, trusseldetektion og forbedrede forsvar</li>
+                            </ul>
+                            <li>Tilpasning til Zero Trust involverer ændringer i traditionelle netværksstrukturer:</li>
+                            <ul>
+                                <li>Ikke længere antage sikkerhed baseret på placering</li>
+                                <li>Kræver godkendelse for alle enheder, uanset placering</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Defense-in-Depth</h2>
+                        <ul>
+                            <li>Formålet er at beskytte information og forhindre uautoriseret adgang.</li>
+                            <li>Bruger en række mekanismer til at bremse angreb mod dataadgang.</li>
+                            <li>Visualiseres som lag med data i centrum, beskyttet af flere lag.</li>
+                            <li>Hvert lag tilbyder beskyttelse; hvis et lag brydes, er der et andet klar.</li>
+                            <li>Lagene inkluderer fysisk sikkerhed, identitet og adgang, perimeter, netværk, computere,
+                                applikationer og data.</li>
+                            <li>Azure tilbyder sikkerhedsværktøjer på hvert lag.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Microsoft Defender for Cloud</h2>
+
+                        <ul>
+                            <li>Overvågningsværktøj til sikkerhedsstyring og trusselsbeskyttelse</li>
+                            <li>Overvåger cloud-, on-premises-, hybrid- og multi-cloud-miljøer</li>
+                            <li>Giver vejledning og notifikationer for at styrke sikkerhedsstillingen</li>
+                            <li>Nem implementering, integreret med Azure</li>
+                            <li>Beskyttelse i Azure og andre miljøer</li>
+                            <li>Automatisk implementering af Log Analytics-agent ved behov</li>
+                            <li>Opdagelse af trusler i Azure PaaS og datatjenester, samt netværksbeskyttelse</li>
+                            <li>Udvidelse af beskyttelse til hybridressourcer og andre skyer som AWS og GCP</li>
+                            <li>Fortløbende vurdering af sikkerhedsstillingen</li>
+                            <li>Sikring af arbejdsbelastninger med Azure Security Benchmark</li>
+                            <li>Forsvar mod trusler med sikkerhedsalarmer og avancerede beskyttelsesfunktioner</li>
+                        </ul>
+                    </div>
             </ul>
         </section>
 
