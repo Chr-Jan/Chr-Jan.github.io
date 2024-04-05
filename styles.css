@@ -140,3 +140,11 @@ footer {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  .table-logbook {
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff; /* Tilføj baggrundsfarve */
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tilføj en let skygge for at fremhæve tabellen */
+}
