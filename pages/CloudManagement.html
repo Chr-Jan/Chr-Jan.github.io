@@ -3400,21 +3400,166 @@
         <section class="bubble">
             <h2>Note #6</h2>
             <p class="date">Uge 15-16</p>
-            <h3>Forventning</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
-            <h3>Forarbejdninger</h3>
-            <ul class="result">
-                <li></li>
-            </ul>
             <h3>Resultat</h3>
             <ul class="result">
-                <li></li>
+                <div tag="poProduct">
+                    <h4>PO nuværende setup:</h4>
+                    <p>Skitse af PO nuværende setup: <a href="https://gitmind.com/app/docs/muotb8zb">PO Layout</a>.</p>
+                    <ul class="no-markers">
+                        <li>I firmaet er der tre grupper, hver med deres egne datagrupper:</li>
+                        <ul>
+                            <li>Gruppe 1 har kun adgang til deres egen data.</li>
+                            <li>Gruppe 2 og 3 har ud over deres egen data adgang til gruppe 1's data.</li>
+                        </ul>
+                        <li><b>Firma #1</b> håndterer licenshåndtering til Dropbox, som bruges af PO.</li>
+                        <li><b>Firma #2</b> håndterer licenser fra Microsoft til PO.</li>
+                    </ul>
+                    <h4>Min hypotese for en løsning til forbedring af PO's firma-model:</h4>
+                    <ul class="no-markers">
+                        <li>Azure Storage:</li>
+                        <ul>
+                            <li>Til opbevaring af store datamængder.</li>
+                        </ul>
+                        <li>Azure Entra ID:</li>
+                        <ul>
+                            <li>Tildeling af rettigheder til de forskellige brugere eller brugergrupper.</li>
+                        </ul>
+                        <li>Problemstilling:</li>
+                        <ul>
+                            <li>Det skal være en nem løsning der er lige så funktionel, hvis ikke mere, end DropBox.
+                            </li>
+                            <li>Usikker om der findes en løsning der er så nem som DropBox.</li>
+                        </ul>
+                    </ul>
+
+
+                    <h4>Interview med PO:</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tidligere erfaring:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Microsoft One Drive.
+                                    <ul>
+                                        <li>For langsom.</li>
+                                        <li>Upålidelig.</li>
+                                    </ul>
+                                    Beslutning faldt på DropBox.
+                                    Backup laves på intern computer regelmæssigt.
+                                    <ul>
+                                        <li>Sky og lokal lagring benyttes.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Proces:</h4>
+                    <h5>Azure Storage:</h5>
+                    <p>Azure Storage muliggør opsætning af online lagerenheder.</p>
+                    <ul class="no-markers">
+                        <li>Fordel:</li>
+                        <ul>
+                            <li>Pay-as-you-go-model.</li>
+                            <li>Mulighed for at tildele roller til grupper af brugere for privilegerede adgange.</li>
+                            <li>Mulighed for at oprette tre forskellige containere til tre arbejdsgrupper med specifikke
+                                tilladelser.</li>
+                            <ul>
+                                <li>Eksemple af 3 containere der kan opbevare 5Tb hver:</li>
+                                <a href="../images/AzureStoragePt1.jpg" target="_blank">
+                                    <img src="../images/AzureStoragePt1.jpg" alt="AzureStoragePt1">
+                                </a>
+                                <li>Eksemple af data på en af containerne:</li>
+                                <a href="../images/AzureStoragePt2.jpg" target="_blank">
+                                    <img src="../images/AzureStoragePt2.jpg" alt="AzureStoragePt2">
+                                </a>
+                                <li>Eksemple hvilke brugere har adgang til containere:</li>
+                                <ul>
+                                    <li>I dette eksemple vises mig som bruger, og 3 arbejds grupper</li>
+                                </ul>
+                                <a href="../images/AzureStorageMembers.jpg" target="_blank">
+                                    <img src="../images/AzureStorageMembers.jpg" alt="AzureStorageMembers">
+                                </a>
+                                <li>Ekemple på rolle fordeling for en container:</li>
+                                <a href="../images/AzureStorageMembersPt2.jpg" target="_blank">
+                                    <img src="../images/AzureStorageMembersPt2.jpg" alt="AzureStorageMembersPt2">
+                                </a>
+                            </ul>
+                        </ul>
+                        <li>Ulempe:</li>
+                        <ul>
+                            <li>Mangler en mobilapp til direkte adgang til Azure Storage som DropBox.</li>
+                            <li>Vil kunne tilgåes som et ekstern drev på en PC.</li>
+                            <ul>
+                                <li>Vil være et problem for medarbejdere der ikke har tilgang til en bærbar på arbejdet.
+                                </li>
+                            </ul>
+                        </ul>
+                    </ul>
+                    <h5>Microsoft Entra ID</h5>
+                    <p>Giver mulighed for oprettelse af grupper til forskellige arbejdsgrupper for nem tildeling af
+                        rettigheder:</p>
+                    <ul class="no-markers">
+                        <li>Eksempel på 3 arbejdsgrupper:</li>
+                        <a href="../images/AzureGroupPt1.jpg" target="_blank">
+                            <img src="../images/AzureGroupPt1.jpg" alt="AzureGroupPt1">
+                        </a>
+                        <li>Eksempel på "Workers" gruppen, hvor jeg har tildelt mig selv og grupperne Projects og House:
+                        </li>
+                        <ul>
+                            <li>Giver mulighed for at give de samme rettigheder til andre grupper som Workers har.</li>
+                        </ul>
+                        <a href="../images/AzureGroupPt2.jpg" target="_blank">
+                            <img src="../images/AzureGroupPt2.jpg" alt="AzureGroupPt2">
+                        </a>
+                    </ul>
+
+                    <h5>Azure Storage Explorer</h5>
+                    <ul>
+                        <li>Med Azure Storage Explorer kan jeg se mine mapper og data:</li>
+                        <li>Eksempel: I min test1-container kan jeg se en uploadet fil:</li>
+                        <a href="../images/AzureStorageExplorer.jpg" target="_blank">
+                            <img src="../images/AzureStorageExplorer.jpg" alt="AzureStorageExplorer">
+                        </a>
+                    </ul>
+
+                    <h5>Mount Azure file Share på sin PC</h5>
+                    <ul class="no-markers">
+                        <li><a
+                                href="https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows">Mount
+                                SMB Azure file share on Windows</a></li>
+                        <li>Se tutorial: <a href="https://youtu.be/bmRZi9iGsK0?si=9HowXUuQexK-OCqg">How to mount an
+                                Azure Files share in Windows | Azure Tips and Tricks</a></li>
+                    </ul>
+
+                    <h5>Cost Management + Billing</h5>
+                    <ul class="no-markers">
+                        <li>Giver overblik over forbruget af Azures services:</li>
+                        <a href="../images/AzureCostManagement.jpg" target="_blank"><img
+                                src="../images/AzureCostManagement.jpg" alt="AzureCostManagement"></a>
+                    </ul>
+                    <h5>Konklusion:</h5>
+                    <ul>
+                        <li>Erstatning af DropBox med Azure Storage som løsning kan udelukkes.</li>
+                        <li>Størstedelen af medarbejdere bruger kun en mobil telefon til dokumentation, og har ikke adgang til en PC som Azure Storage kræver.</li>
+                        <li>Uden en mobilapp med en brugervenlig grænseflade vil en Azure Storage-løsning være uegnet.</li>
+                        <ul>
+                            <li>Yderligere undersøgelser vil dog fortsætte.</li>
+                            <li>Resultatet kan føre til potentielle alternative løsninger for problemer, der kan opstå i fremtiden.</li>
+                        </ul>
+                    </ul>
+                </div>
             </ul>
             <h3>Kilder:</h3>
             <ul class="result">
-                <li></li>
+                <li><a href="https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows">Mount
+                        SMB Azure file share on Windows</a>.</li>
+                <li>YouTube: <a href="https://youtu.be/bmRZi9iGsK0?si=9HowXUuQexK-OCqg">How to mount an Azure Files
+                        share in Windows | Azure Tips and Tricks</a></li>
             </ul>
         </section>
 
