@@ -148,3 +148,7 @@ footer {
     border-radius: 8px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tilføj en let skygge for at fremhæve tabellen */
 }
+
+.no-markers {
+    list-style-type: none; /* Fjerner markeringer */
+}
