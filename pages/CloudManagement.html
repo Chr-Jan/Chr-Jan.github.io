@@ -3545,13 +3545,333 @@
                     <h5>Konklusion:</h5>
                     <ul>
                         <li>Erstatning af DropBox med Azure Storage som løsning kan udelukkes.</li>
-                        <li>Størstedelen af medarbejdere bruger kun en mobil telefon til dokumentation, og har ikke adgang til en PC som Azure Storage kræver.</li>
-                        <li>Uden en mobilapp med en brugervenlig grænseflade vil en Azure Storage-løsning være uegnet.</li>
+                        <li>Størstedelen af medarbejdere bruger kun en mobil telefon til dokumentation, og har ikke
+                            adgang til en PC som Azure Storage kræver.</li>
+                        <li>Uden en mobilapp med en brugervenlig grænseflade vil en Azure Storage-løsning være uegnet.
+                        </li>
                         <ul>
                             <li>Yderligere undersøgelser vil dog fortsætte.</li>
-                            <li>Resultatet kan føre til potentielle alternative løsninger for problemer, der kan opstå i fremtiden.</li>
+                            <li>Resultatet kan føre til potentielle alternative løsninger for problemer, der kan opstå i
+                                fremtiden.</li>
                         </ul>
                     </ul>
+                </div>
+
+                <div tag="ConfigureRole-basedAccessControl ">
+                    <h3>Opsætning af rollebaseret adgangskontrol</h3>
+                    <p>Rollebaseret adgangskontrol (RBAC) er vigtig for virksomheder, der opererer i skyen. Det er en
+                        mekanisme, der hjælper med at styre, hvem der kan få adgang til dine Azure-ressourcer. Med RBAC
+                        kan du bestemme, hvilke handlinger specifikke brugere kan udføre på specifikke ressourcer, og du
+                        kan styre, hvilke områder af en ressource hver bruger kan få adgang til.</p>
+
+                    <h4>Ting at vide om Azure RBAC</h4>
+                    <p>Her er nogle ting, du kan gøre med Azure RBAC:</p>
+                    <ul>
+                        <li>Tillad en applikation at få adgang til alle ressourcer i en ressourcegruppe.</li>
+                        <li>Tillad én bruger at administrere VM'er i et abonnement og en anden bruger at administrere
+                            virtuelle netværk.</li>
+                        <li>Tillad en databaseadministrator (DBA)-gruppe at administrere SQL-databaser i et abonnement.
+                        </li>
+                        <li>Tillad en bruger at administrere alle ressourcer i en ressourcegruppe, såsom VM'er,
+                            websteder og subnet.</li>
+                    </ul>
+
+                    <h4>Azure RBAC-koncepter</h4>
+                    <p>Nedenstående tabel beskriver de grundlæggende koncepter i Azure RBAC:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Koncept</th>
+                                <th>Beskrivelse</th>
+                                <th>Eksempler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sikkerhedsprincip</td>
+                                <td>En genstand, der repræsenterer noget, der anmoder om adgang til ressourcer.</td>
+                                <td>Bruger, gruppe, tjenesteprincip, forvaltet identitet</td>
+                            </tr>
+                            <tr>
+                                <td>Rolledefinition</td>
+                                <td>Et sæt tilladelser, der opregner de tilladte operationer.</td>
+                                <td>Nogle indbyggede rolledefinitioner: Læser, Bidragyder, Ejer,
+                                    Brugeradgangsadministrator</td>
+                            </tr>
+                            <tr>
+                                <td>Område</td>
+                                <td>Grænsen for det ønskede adgangsniveau, eller "hvor meget" adgang der gives.</td>
+                                <td>Forvaltningsgruppe, abonnement, ressourcegruppe, ressource</td>
+                            </tr>
+                            <tr>
+                                <td>Rolleudskrivning</td>
+                                <td>En tildeling, der knytter en rolledefinition til et sikkerhedsprincip på et bestemt
+                                    område.</td>
+                                <td>F.eks.: Tildel rollen Brugeradgangsadministrator til en admin-gruppe i en
+                                    forvaltningsgruppe</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Overvejelser ved brug af Azure RBAC</h4>
+                    <p>Når du overvejer, hvordan du kan implementere roller og omfangstildelinger inden for din
+                        organisation, så tag disse punkter i betragtning:</p>
+                    <ul>
+                        <li>Tag hensyn til dine anmodere. Bestem, hvem der er anmodere i din organisation. Anmodere kan
+                            være interne eller eksterne brugere, grupper af brugere, applikationer og tjenester,
+                            ressourcer osv.</li>
+                        <li>Tag hensyn til dine roller. Undersøg de typer jobansvar og arbejdsscenarier i din
+                            organisation. Visse brugere som administratorer, corporate controllers og ingeniører kan
+                            kræve et adgangsniveau ud over det, de fleste brugere har brug for.</li>
+                        <li>Tag hensyn til omfanget af tilladelser. Tænk over, hvordan du kan sikre sikkerheden ved at
+                            kontrollere omfanget af tilladelser til rolletildelinger. Skitser de typer af tilladelser og
+                            niveauer af omfang, du skal understøtte.</li>
+                        <li>Overvej indbyggede eller brugerdefinerede definitioner. Gennemgå de indbyggede
+                            rolledefinitioner i Azure RBAC. Indbyggede roller kan bruges som de er, eller justeres for
+                            at opfylde de specifikke krav for din organisation. Du kan også oprette brugerdefinerede
+                            rolledefinitioner fra bunden.</li>
+                    </ul>
+
+                    <div>
+                        <h3>Opret en rolledefinition</h3>
+
+                        <p>En rolledefinition består af sæt af tilladelser, der er defineret i en JSON-fil. Hvert
+                            tilladelsessæt har et navn, såsom Handlinger eller IkkeHandlinger, der beskriver
+                            tilladelserne. Nogle eksempler på tilladelsessæt inkluderer:</p>
+
+                        <ul>
+                            <li>Handlinger (Actions) tilladelser identificerer, hvilke handlinger der er tilladt.</li>
+                            <li>IkkeHandlinger (NotActions) tilladelser angiver, hvilke handlinger der ikke er tilladt.
+                            </li>
+                            <li>DataHandlinger (DataActions) tilladelser angiver, hvordan data kan ændres eller bruges.
+                            </li>
+                            <li>TildelbareOmråder (AssignableScopes) tilladelser angiver de områder, hvor en
+                                rolledefinition kan tildeles.
+                            </li>
+                        </ul>
+
+                        <p>Stjernen "*" wildcard betyder "alle." IkkeHandlingerne tilladelser indsnævrer privilegierne,
+                            der tilbydes af Handlinger-sættet, og afviser tre handlinger:</p>
+
+                        <ul>
+                            <li>Autorisation/*/Delete: Ikke autoriseret til at slette eller fjerne for "alle".</li>
+                            <li>Autorisation/*/Write: Ikke autoriseret til at skrive eller ændre for "alle".</li>
+                            <li>Autorisation/elevateAccess/Action: Ikke autoriseret til at øge niveauet eller omfanget
+                                af adgangsprivilegier.</li>
+                        </ul>
+
+                        <h4>Ting at vide om rolledefinitioner</h4>
+
+                        <p>Gennemgå følgende egenskaber ved rolledefinitioner:</p>
+
+                        <ul>
+                            <li>Azure RBAC leverer indbyggede roller og tilladelser. Du kan også oprette
+                                brugerdefinerede roller og tilladelser.</li>
+                            <li>Ejeren af den indbyggede rolle har det højeste niveau af adgangsprivilegium i Azure.
+                            </li>
+                            <li>Systemet trækker IkkeHandlinger tilladelser fra Handlinger tilladelser for at bestemme
+                                de effektive tilladelser for en rolle.</li>
+                            <li>De TildelbareOmråder tilladelser for en rolle kan være administrationsgrupper,
+                                abonnementer, ressourcegrupper eller ressourcer.</li>
+                        </ul>
+
+                        <h4>Rolle tilladelser</h4>
+
+                        <p>Brug Handlinger og IkkeHandlinger tilladelserne sammen til at give og nægte de præcise
+                            privilegier for hver rolle. Handlingerne tilladelserne kan give bredden af adgang, og
+                            IkkeHandlingerne tilladelserne kan indsnævre adgangen.</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rollenavn</th>
+                                    <th>Beskrivelse</th>
+                                    <th>Handlinger tilladelser</th>
+                                    <th>IkkeHandlinger tilladelser</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ejer (Owner)</td>
+                                    <td>Tillad alle handlinger</td>
+                                    <td>*</td>
+                                    <td>n/a</td>
+                                </tr>
+                                <tr>
+                                    <td>Bidragsyder (Contributor)</td>
+                                    <td>Tillad alle handlinger, undtagen skriv eller slet rolletildeling</td>
+                                    <td>*</td>
+                                    <td>- Microsoft.Authorization/*/Slet<br>
+                                        - Microsoft.Authorization/*/Skriv<br>
+                                        - Microsoft.Authorization/elevateAccess/Handling</td>
+                                </tr>
+                                <tr>
+                                    <td>Læser (Reader)</td>
+                                    <td>Tillad alle læsehandling</td>
+                                    <td>/*/læs</td>
+                                    <td>n/a</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Rolleområder</h4>
+                        <p>Efter du har defineret rolletilladelserne, bruger du TildelbareOmråder tilladelserne til at
+                            angive, hvordan rollen kan tildeles. Lad os se på nogle få eksempler.</p>
+                        <ul>
+                            <li>Omfang (scopes) en rolle som tilgængelig til tildeling i to abonnementer:</li>
+                            <ul>
+                                <li>"/abonnementer/c276fc76-9cd4-44c9-99a7-4fd71546436e",
+                                    "/abonnementer/e91d47c4-76f3-4271-a796-21b4ecfe3624"</li>
+                                <li>Dette betyder, at rollen kan tildeles i de angivne abonnementer, hvilket giver
+                                    adgang til ressourcer i hver af disse abonnementer.</li>
+                            </ul>
+                            <li>Omfang (scopes) en rolle som tilgængelig til tildeling kun i Netværksressourcegruppen:
+                            </li>
+                            <ul>
+                                <li>"/abonnementer/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Netværk"</li>
+                                <li>Denne indstilling begrænser tildelingen af rollen til kun at gælde for ressourcer,
+                                    der findes inden for Netværksressourcegruppen i det specificerede abonnement.</li>
+                            </ul>
+                            <li>Omfang (scopes) en rolle som tilgængelig til tildeling for alle anmodere:</li>
+                            <ul>
+                                <li>"/"</li>
+                                <li>Dette tillader rollen at blive tildelt på tværs af hele Azure-miljøet, hvilket
+                                    betyder, at enhver anmoder kan få tildelt denne rolle.</li>
+                            </ul>
+                        </ul>
+
+                        <h3>Opret en rolletildeling</h3>
+                        <p>En rolletildeling er processen med at definere omfanget af en rolle for at begrænse
+                            tilladelser for en anmoder, såsom en bruger, gruppe, tjenestepal eller administreret
+                            identitet.</p>
+
+                        <h4>Ting at vide om rolletildelinger</h4>
+                        <ul>
+                            <li>Formålet med en rolletildeling er at kontrollere adgangen.</li>
+                            <li>Omfanget begrænser, hvilke tilladelser, der er defineret for en rolle, der er
+                                tilgængelige for den tildelte anmoder.</li>
+                            <li>Adgangen fjernes ved at fjerne en rolletildeling.</li>
+                            <li>En ressource arver rolletildelinger fra sin overordnede ressource.</li>
+                            <li>De effektive tilladelser for en anmoder er en kombination af tilladelserne for de
+                                tildelte roller og tilladelserne for de roller, der er tildelt de anmodede ressourcer.
+                            </li>
+                        </ul>
+
+                        <h4>Ting at overveje ved tildeling af omfangsniveauer for roller</h4>
+                        <p>Her er et simpelt eksempel for at forstå rolletildeling, rolledefinition, sikkerhedsprincip
+                            og omfang:</p>
+                        <p>Antag, at du har et system, hvor der er tre typer brugere: Administratorer, Medarbejdere og
+                            Gæster.</p>
+                        <ul>
+                            <li><strong>Role Definition:</strong> Administratorer har fuld adgang til systemet, kan
+                                oprette, ændre og slette data samt administrere brugere.</li>
+                            <li><strong>Role Assignment:</strong> En ny medarbejder tildeles rollen "Medarbejder",
+                                hvilket betyder, at de kun kan læse og ændre data, men ikke slette dem eller
+                                administrere brugere.</li>
+                            <li><strong>Security Principal:</strong> Systemet har en sikkerhedsprincip, der sikrer, at
+                                kun autoriserede brugere kan logge ind og få adgang til systemet.</li>
+                            <li><strong>Scope:</strong> Omfanget af rollerne er defineret, således at Administratorer
+                                har adgang til alle dele af systemet, mens Medarbejdere kun har adgang til visse områder
+                                baseret på deres rolle.</li>
+                        </ul>
+
+                        <div>
+                            <h3>Sammenlign Azure-roller med Microsoft Entra-roller</h3>
+
+                            <p>I Azure er der tre typer af roller til rådighed til adgangsstyring:</p>
+
+                            <ul>
+                                <li>Klassiske abonnementsadministratorroller (Classic subscription administrator roles)
+                                </li>
+                                <li>Azure rollebaserede adgangskontrol (RBAC) roller (Azure role-based access control
+                                    (RBAC) roles)</li>
+                                <li>Microsoft Entra administratorroller (Microsoft Entra administrator roles)</li>
+                            </ul>
+
+                            <p>For at forstå, hvordan disse forskellige roller er defineret og implementeret i Azure, er
+                                det nyttigt at kende noget af historien.</p>
+
+                            <p>Da Azure først blev frigivet, blev adgang til ressourcer administreret med kun tre
+                                administratorroller: Kontoadministrator (Account Administrator), Tjenesteadministrator
+                                (Service Administrator) og Medadministrator Co-Administrator (Co-Administrator)
+                                (Account Administrator, Service Administrator, and Co-Administrator). Adgang blev
+                                kontrolleret ved at tildele adminroller til abonnementer.</p>
+
+                            <p>Senere blev rollebaseret adgangskontrol (RBAC) til Azure-ressourcer tilføjet. Azure RBAC
+                                er et nyere autorisationssystem, der giver finmasket adgangsstyring til
+                                Azure-ressourcer. RBAC inkluderer mange indbyggede roller, der kan tildeles på
+                                forskellige områder. Azure RBAC-modellen giver også mulighed for at oprette dine egne
+                                brugerdefinerede roller.</p>
+
+                            <p>Ud over Azure RBAC-roller leverer Microsoft Entra ID indbyggede administratorroller til
+                                at administrere Microsoft Entra-ressourcer som brugere, grupper og domæner.</p>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Azure RBAC-roller (Azure RBAC roles)</th>
+                                        <th>Microsoft Entra ID-administratorroller (Microsoft Entra ID admin roles)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Adgangsstyring (Access management)</td>
+                                        <td>Administrerer adgang til Azure-ressourcer (Manages access to Azure
+                                            resources)</td>
+                                        <td>Administrerer adgang til Microsoft Entra-ressourcer (Manages access to
+                                            Microsoft Entra resources)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Område tildeling (Scope assignment)</td>
+                                        <td>Område kan specificeres på flere niveauer, herunder administrationsgrupper,
+                                            abonnementer, ressourcegrupper og ressourcer (Scope can be specified at
+                                            multiple levels, including management groups, subscriptions, resource
+                                            groups, and resources)</td>
+                                        <td>Område er specificeret på lejerniveau (Scope is specified at the tenant
+                                            level)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rollederinitioner (Role definitions)</td>
+                                        <td>Roller kan defineres via Azure-portalen, Azure CLI, Azure PowerShell, Azure
+                                            Resource Manager- skabeloner og REST API (Roles can be defined via the Azure
+                                            portal, the Azure CLI, Azure PowerShell, Azure Resource Manager templates,
+                                            and the REST API)</td>
+                                        <td>Roller kan defineres via Azure-administrationsportalen, Microsoft
+                                            365-administrationsportalen og Microsoft Graph PowerShell (Roles can be
+                                            defined via the Azure admin portal, Microsoft 365 admin portal, and
+                                            Microsoft Graph PowerShell)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div>
+                                <h3>Implementering af rollebaseret adgangskontrol</h3>
+
+                                <p>Der er defineret indbyggede roller til flere kategorier af tjenester, opgaver og
+                                    brugere. Du kan tildele indbyggede roller på forskellige områder for at understøtte
+                                    forskellige scenarier og opbygge brugerdefinerede roller ud fra de grundlæggende
+                                    definitioner.</p>
+
+                                <p>Microsoft Entra ID tilbyder også indbyggede roller til at administrere ressourcer i
+                                    Microsoft Entra ID, herunder brugere, grupper og domæner. Microsoft Entra ID
+                                    tilbyder administratorroller, som du kan implementere for din organisation, såsom
+                                    Global admin, Application admin og Application developer.</p>
+
+                                <p>Microsoft Entra-administratorroller bruges til at administrere ressourcer i Microsoft
+                                    Entra ID, såsom brugere, grupper og domæner. Disse roller er defineret for Microsoft
+                                    Entra-tenanten på rodniveauet af konfigurationen.</p>
+
+                                <p>Azure RBAC-roller giver mere detaljeret adgangsstyring til Azure-ressourcer. Disse
+                                    roller er defineret for en anmoder eller ressource og kan anvendes på flere
+                                    niveauer: roden, administrationsgrupper, abonnementer, ressourcegrupper eller
+                                    ressourcer.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
             </ul>
             <h3>Kilder:</h3>
