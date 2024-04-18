@@ -1900,21 +1900,30 @@
                             <tr>
                                 <td>Adgangsstyring (Access management)</td>
                                 <td>Administrerer adgang til Azure-ressourcer (Manages access to Azure resources)</td>
-                                <td>Administrerer adgang til Microsoft Entra-ressourcer (Manages access to Microsoft Entra resources)</td>
+                                <td>Administrerer adgang til Microsoft Entra-ressourcer (Manages access to Microsoft
+                                    Entra resources)</td>
                             </tr>
                             <tr>
                                 <td>Område tildeling (Scope assignment)</td>
-                                <td>Område kan specificeres på flere niveauer, herunder administrationsgrupper, abonnementer, ressourcegrupper og ressourcer (Scope can be specified at multiple levels, including management groups, subscriptions, resource groups, and resources)</td>
+                                <td>Område kan specificeres på flere niveauer, herunder administrationsgrupper,
+                                    abonnementer, ressourcegrupper og ressourcer (Scope can be specified at multiple
+                                    levels, including management groups, subscriptions, resource groups, and resources)
+                                </td>
                                 <td>Område er specificeret på lejerniveau (Scope is specified at the tenant level)</td>
                             </tr>
                             <tr>
                                 <td>Rollederinitioner (Role definitions)</td>
-                                <td>Roller kan defineres via Azure-portalen, Azure CLI, Azure PowerShell, Azure Resource Manager-skabeloner og REST API (Roles can be defined via the Azure portal, the Azure CLI, Azure PowerShell, Azure Resource Manager templates, and the REST API)</td>
-                                <td>Roller kan defineres via Azure-administrationsportalen, Microsoft 365-administrationsportalen og Microsoft Graph PowerShell (Roles can be defined via the Azure admin portal, Microsoft 365 admin portal, and Microsoft Graph PowerShell)</td>
+                                <td>Roller kan defineres via Azure-portalen, Azure CLI, Azure PowerShell, Azure Resource
+                                    Manager-skabeloner og REST API (Roles can be defined via the Azure portal, the Azure
+                                    CLI, Azure PowerShell, Azure Resource Manager templates, and the REST API)</td>
+                                <td>Roller kan defineres via Azure-administrationsportalen, Microsoft
+                                    365-administrationsportalen og Microsoft Graph PowerShell (Roles can be defined via
+                                    the Azure admin portal, Microsoft 365 admin portal, and Microsoft Graph PowerShell)
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+
                 </div>
 
                 <div>
@@ -1931,6 +1940,28 @@
                         <li>Disse roller kan anvendes på flere niveauer, inklusive roden, administrationsgrupper,
                             abonnementer, ressourcegrupper eller ressourcer</li>
                     </ul>
+                </div>
+
+                <div>
+                    <h3> Gennemgang af grundlæggende Azure RBAC-roller </h3>
+
+                    <ul>
+                        <li>Azure tilbyder over 100 foruddefinerede rolledefinitioner.</li>
+                        <li>Roller giver adgang til data inden for et objekt.</li>
+                        <li>Eksempel: Hvis en bruger har læseadgang til data i en lagringskonto, kan de læse blobber
+                            eller beskeder i lagringskontoen.</li>
+                    </ul>
+
+                    <h4> Grundlæggende rollebeskrivelser: </h4>
+
+                    <ul>
+                        <li>Owner: Har fuld adgang til alle ressourcer og kan delegere adgang til andre.</li>
+                        <li>Contributor: Kan oprette og administrere alle typer af Azure-ressourcer, men kan ikke give
+                            adgang til andre.</li>
+                        <li>Reader: Kan se eksisterende Azure-ressourcer.</li>
+                        <li>User Access Administrator: Kan administrere brugeradgang til Azure-ressourcer.</li>
+                    </ul>
+
                 </div>
             </ul>
         </section>
