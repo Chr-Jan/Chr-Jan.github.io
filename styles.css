@@ -153,6 +153,6 @@ footer {
     list-style-type: none; /* Fjerner markeringer */
 }
 
-.bullet-points {
+.bullet-points ol li {
     margin-bottom: 10px;
 }
