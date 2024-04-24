@@ -6,3 +6,8 @@ Website Hosting testing
 *tilføj logbog med dato
 
 *tilføj tidsplan
+
+*tilfæj personlige mål ved langsigtede mål.
+- mål som motivationer (eks. penge etc.)
+
+*beskriv mine korte spring hvad mine lærings mål.
