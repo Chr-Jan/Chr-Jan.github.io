@@ -1,158 +1,94 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
+a {
+    text-decoration: none;
+    color: cadetblue;
 }
 
-.header-title {
-    font-size: 12px;
-    font-family: 'Frank Ruhl Libre', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-right: 2%;
+div {
+    unicode-bidi: isolate;
+}
+
+.hr-line {
+    height:2px;
+    border-width:0;
+}
+
+/* Header Styles */
+.header {
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.header-content {
+    position: relative;
+}
+
+.header-image {
+    width: 100%;
+    height: 800px;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f1f1f1;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+.header h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+.header h3 {
+    font-size: 3em;
+    margin: 10px 0 0;
 }
 
 .navbar {
-    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    transform: translate(-50%, 0%);
+    display: flex;    
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .navbar a {
-    color: #f2f2f2;
+    color: #000;
     text-decoration: none;
-    font-size: 17px;
-    padding: 14px 16px;
-    border-bottom: 3px solid transparent;
-    transition: border-bottom-color 0.3s ease;
+    padding: 8px 16px; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .navbar a:hover {
-    color: #f2f2f2;
-    border-bottom-color: #ddd;
-}
-
-.navbar a.active {
-    color: #f2f2f2;
-    border-bottom-color: #ddd;
-}
-
-main {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.bubble {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 85%;
-    margin-bottom: 20px;
-    padding: 15px;
-}
-
-.bubble:nth-child(odd) {
-    margin-right: 8%;
-    margin-left: auto;
-}
-
-.bubble:nth-child(even) {
-    margin-left: 8%;
-    margin-right: auto;
-}
-
-.bubble img {
-    max-width: 300px;
-    height: auto;
-    margin-top: 10px;
-}
-
-.date,
-.result {
-    color: #1b1b1b;
+    color: #000;
     font-style: italic;
+    background-color: gray;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: auto;
-}
 
-.media-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-  }
-
-  .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: #f2f2f2;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    z-index: 1;
-    padding-bottom: 5px;
-  }
-  
-  .dropdown-content a {
-    float: none;
-    color: #f2f2f2;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #333;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .table-logbook {
-    padding: 10px;
-    margin: 10px;
-    background-color: #fff; /* Tilføj baggrundsfarve */
-    border-radius: 8px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tilføj en let skygge for at fremhæve tabellen */
-}
-
-.no-markers {
-    list-style-type: none; /* Fjerner markeringer */
-}
-
-.bullet-points ol li ul {
-    margin-bottom: 10px;
+/* Portfolio Section */
+.content {
+    padding: 20px;
+    max-width: 1500px;
+    margin: auto;
 }
