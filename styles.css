@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: beige;
 }
 
 a {
@@ -42,9 +43,10 @@ div {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #f1f1f1;
+    color: #000000;
     padding: 15px;
     border: 1px solid #ccc;
+    background-color: rgba(169, 169, 169, 0.5);
 }
 
 .header h1 {
@@ -63,7 +65,7 @@ div {
     bottom: -16px;
     transform: translate(-50%, 0%);
     display: flex;    
-    background-color: #f1f1f1;
+    background-color: #000000;
     border-radius: 4px;
     overflow: hidden;
     font-family: Verdana, sans-serif;
@@ -73,7 +75,7 @@ div {
 }
 
 .navbar a {
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     padding: 8px 16px; 
     transition: background-color 0.3s, color 0.3s; 
@@ -91,4 +93,12 @@ div {
     padding: 20px;
     max-width: 1500px;
     margin: auto;
+}
+
+/* Footer Section */
+
+/* background-color: #b6ab70; */
+.content-footer {
+    background-color: #b6ac70c4;
+    height: 50px;
 }
