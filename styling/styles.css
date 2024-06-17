@@ -104,7 +104,8 @@ div {
 .content {
     padding: 20px;
     max-width: 1500px;
-    min-height: 760px;
+    min-height: 790px;
+    margin-top: 25px;
     margin: auto;
 }
 
@@ -123,6 +124,7 @@ div {
     max-width: 50%;
     min-width: 850px;
     border-radius: 15px;
+    margin-bottom: 20px;
   }
 
 /* Footer Section */
