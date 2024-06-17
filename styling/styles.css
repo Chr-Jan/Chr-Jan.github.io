@@ -116,10 +116,19 @@ div {
   .grid-item {
     background-color: rgba(255, 255, 255, 0.5);
     border: 5px solid rgba(0, 0, 0, 0.8);
-    text-align: center;
     min-width: 850px;
     border-radius: 15px;
     margin: 20px 20px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .grid-item h2 {
+    text-align: center;
+  }
+
+  .grid-item p {
+    text-align: start;
   }
 
 /* Footer Section */
