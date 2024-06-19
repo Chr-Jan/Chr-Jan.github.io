@@ -13,7 +13,7 @@ a {
     font-weight: bold;
 }
 
-a.hover {
+a:hover {
     color: #000;
 }
 
@@ -22,7 +22,7 @@ div {
 }
 
 .hr-line {
-    height:2px;
+    height: 2px;
     border-radius: 5px;
     background-color: #000;
     margin: 20px 0;
@@ -44,7 +44,7 @@ div {
 .header-image {
     width: 100%;
     height: 400px;
-    background-image: url('images/header-image.png')
+    background-image: url('images/header-image.png');
 }
 
 .header-text {
@@ -74,7 +74,7 @@ div {
     left: 50%;
     bottom: -16px;
     transform: translate(-50%, 0%);
-    display: flex;    
+    display: flex;
     background-color: #292929;
     border-radius: 4px;
     overflow: hidden;
@@ -82,15 +82,15 @@ div {
     font-size: 15px;
     line-height: 1.5;
     text-align: center;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar a {
     color: #ffffff;
     text-decoration: none;
-    padding: 8px 16px; 
-    transition: background-color 0.3s, color 0.3s; 
+    padding: 8px 16px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar a:hover {
@@ -98,7 +98,6 @@ div {
     font-style: italic;
     background-color: gray;
 }
-
 
 /* Portfolio Section */
 .content {
@@ -111,48 +110,46 @@ div {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+}
 
-  }
-
-  .grid-item {
+.grid-item {
     background-color: rgba(255, 255, 255, 0.5);
     border: 5px solid rgba(0, 0, 0, 0.8);
-    max-width: 100%;
     border-radius: 15px;
     margin: 20px 20px;
     padding: 0 20px;
     text-align: center;
-  }
+}
 
-  .grid-item h2 {
+.grid-item h2 {
     text-align: center;
-  }
+}
 
-  .grid-item p {
+.grid-item p {
     text-align: start;
-  }
+}
 
 /* Footer Section */
 .content-footer {
     background-color: #b6ac70c4;
     height: 50px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
 
 /* My GitHub link styling */
-
 .github-link {
     padding: 10px;
     text-decoration: none;
 }
+
 .github-link:hover {
     background-color: rgb(177, 173, 173);
 }
 
 /* image styling */
-
 .image {
     max-width: 400px;
     max-height: 400px;
@@ -160,9 +157,15 @@ div {
     border: 5px solid #555;
 }
 
-.image:hover
-{
+.image:hover {
     opacity: 1.0;
     transition: 1.1s;
     transform: scale(1.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }
