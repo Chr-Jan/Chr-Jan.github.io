@@ -41,6 +41,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: #333 3px 3px 5px;
 }
 
 .header-image {
@@ -83,7 +84,7 @@ a:hover {
 .navbar {
     position: absolute;
     display: flex;
-    background-color: #073870;
+    background-color: #000546;
     border-radius: 4px;
     overflow: hidden;
     font-family: Verdana, sans-serif;
