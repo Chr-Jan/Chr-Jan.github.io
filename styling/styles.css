@@ -157,7 +157,7 @@ a:hover {
 }
 
 .image:hover {
-    opacity: 1.0;
+    opacity: 0.8;
     transition: 1.1s;
     transform: scale(1.1);
 }
@@ -179,10 +179,23 @@ a:hover {
 
     .navbar {
         bottom: -8px; /* Adjust navbar position */
-        font-size: 12px; /* Adjust font size */
+        font-size: 12px;
     }
 
     .navbar a {
-        padding: 6px 12px; /* Adjust padding */
+        padding: 6px 12px;
+    }
+
+    .image {
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 15px;
+        border: 5px solid #555;
+    }
+    
+    .image:hover {
+        opacity: 0.8;
+        transition: 1.1s;
+        transform: scale(1.1);
     }
 }
