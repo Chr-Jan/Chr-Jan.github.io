@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: beige;
+    background-color: #FAE2B4;
 }
 
 a {
@@ -19,9 +19,9 @@ a:hover {
 
 .hr-line {
     height: 2px;
-    border-radius: 5px;
-    background-color: #000;
-    margin: 20px 0;
+    background-color: #073870;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header Styles */
@@ -29,29 +29,33 @@ a:hover {
     width: 100%;
     margin: auto;
     position: relative;
-    background-image: url('images/header-image.png');
+    background-image: url('images/header-image_v3.png');
     background-position: center;
     background-size: cover;
 }
 
 .header-content {
     position: relative;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-image {
     width: 100%;
-    height: 400px;
-    background-image: url('images/header-image.png');
+    height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the image is behind the content */
 }
 
 .header-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
-    color: #000000;
+    color: #ffffff;
     padding: 15px;
     border: 1px solid #ccc;
     background-color: rgba(169, 169, 169, 0.5);
@@ -68,13 +72,18 @@ a:hover {
     margin: 10px 0 0;
 }
 
+.navbar-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .navbar {
     position: absolute;
-    left: 50%;
-    bottom: -16px;
-    transform: translate(-50%, 0%);
     display: flex;
-    background-color: #292929;
+    background-color: #073870;
     border-radius: 4px;
     overflow: hidden;
     font-family: Verdana, sans-serif;
@@ -83,6 +92,11 @@ a:hover {
     text-align: center;
     justify-content: center;
     align-items: center;
+    top: -16px; /* Adjust this value to perfectly align the navbar with the hr-line */
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%; /* Set the navbar to take 80% of the container width */
+    max-width: 1200px; /* Optional: Set a maximum width for the navbar */
 }
 
 .navbar a {
@@ -102,6 +116,7 @@ a:hover {
 .content {
     max-height: 100%;
     margin: auto;
+    margin-top: 40px;
     width: auto;
     height: auto;
 }
@@ -114,7 +129,7 @@ a:hover {
 
 .grid-item {
     background-color: rgba(255, 255, 255, 0.5);
-    border: 5px solid #978f63;
+    border: 5px solid #073870;
     border-radius: 15px;
     margin: 20px 20px;
     padding: 0 20px;
@@ -131,7 +146,7 @@ a:hover {
 
 /* Footer Section */
 .content-footer {
-    background-color: #b6ac70;
+    background-color: #073870;
     height: 50px;
     position: fixed;
     bottom: 0;
@@ -163,14 +178,20 @@ a:hover {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .navbar a {
+        font-size: 12px;
+    }    
+}
+
+@media screen and (max-width: 768px) {
     .grid-container {
         grid-template-columns: 1fr;
         padding: 0 10px; /* Reduce padding on smaller screens */
     }
 
     .header h1 {
-        font-size: 2.5em; /* Adjust header font sizes for smaller screens */
+        font-size: 2.5em;
     }
 
     .header h3 {
@@ -178,8 +199,8 @@ a:hover {
     }
 
     .navbar {
-        bottom: -8px; /* Adjust navbar position */
         font-size: 12px;
+        width: 90%;
     }
 
     .navbar a {
