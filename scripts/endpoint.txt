@@ -1,0 +1,2 @@
+This is a test endpoint file.
+You can put any text here.
