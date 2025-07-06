@@ -9,4 +9,4 @@ COPY endpoint.txt /app/endpoint.txt
 
 RUN chmod +x /app/run.sh
 
-CMD ["/app/run.sh"]
+CMD ["/app/scripts/start.sh"]
