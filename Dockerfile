@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y bash
 
-COPY scripts/run.sh /app/start.sh
+COPY scripts/start.sh /app/start.sh
 COPY endpoint.txt /app/endpoint.txt
 
 RUN chmod +x /app/start.sh
