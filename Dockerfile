@@ -4,9 +4,8 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y bash
 
-COPY scripts/start.sh /app/start.sh
-COPY scripts/endpoint.sh /app/endpoint.sh
+COPY scripts /app/scripts
 
-RUN chmod +x /app/start.sh
+RUN chmod +x /app/scripts/start.sh /app/scripts/endpoint.sh
 
-CMD ["/app/start.sh"]
+CMD ["/app/scripts/start.sh"]
